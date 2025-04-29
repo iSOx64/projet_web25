@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>AFCON Morocco 2025 | Official Portal</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header class="sticky-top">
+        <!-- Main navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
+                </a>
+                <!-- Mobile menu toggle button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navigation links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="stadiums.html">Stadiums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="schedule.html">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero section with background image and countdown -->
+    <section class="hero-section">
+        <div class="overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-8 text-center text-md-start" data-aos="fade-right">
+                    <h1 class="display-3 fw-bold text-white">AFCON MOROCCO 2025</h1>
+                    <p class="lead text-white">Africa's greatest football spectacle comes to Morocco</p>
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+                        <a href="schedule.html" class="btn btn-primary btn-lg">View Matches</a>
+                        <a href="teams.html" class="btn btn-outline-light btn-lg">Explore Teams</a>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center mt-5 mt-md-0" data-aos="fade-left">
+                    <div class="countdown-container">
+                        <h3 class="text-white text-center mb-3">Tournament Begins In</h3>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <span id="days">000</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="hours">00</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="minutes">00</span>
+                                <span class="countdown-label">Mins</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="seconds">00</span>
+                                <span class="countdown-label">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournament highlights section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Tournament Highlights</h2>
+            <div class="row g-4">
+                <!-- Highlight card 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card highlight-card h-100">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">December 2024</h3>
+                            <p class="card-text">The 35th edition of the Africa Cup of Nations will showcase Africa's finest football talent across Morocco's beautiful cities.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Highlight card 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card highlight-card h-100">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">24 Elite Teams</h3>
+                            <p class="card-text">Africa's top national teams will compete in 52 matches of thrilling football, showcasing the continent's best talent.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Highlight card 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card highlight-card h-100">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">6 Modern Venues</h3>
+                            <p class="card-text">State-of-the-art stadiums in Casablanca, Rabat, Marrakech, Tangier, Agadir, and Fez will host this prestigious tournament.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured teams section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Featured Teams</h2>
+            <div class="row g-4">
+                <!-- Team card 1 -->
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <img src="img/flags/morocco.png" alt="Morocco Flag" class="team-flag">
+                        <h4 class="team-name">Morocco</h4>
+                        <p class="team-status">Host Nation</p>
+                    </div>
+                </div>
+                <!-- Team card 2 -->
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <img src="img/flags/senegal.png" alt="Senegal Flag" class="team-flag">
+                        <h4 class="team-name">Senegal</h4>
+                        <p class="team-status">Defending Champion</p>
+                    </div>
+                </div>
+                <!-- Team card 3 -->
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <img src="img/flags/egypt.png" alt="Egypt Flag" class="team-flag">
+                        <h4 class="team-name">Egypt</h4>
+                        <p class="team-status">Record 7-time Champion</p>
+                    </div>
+                </div>
+                <!-- Team card 4 -->
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card">
+                        <img src="img/flags/nigeria.png" alt="Nigeria Flag" class="team-flag">
+                        <h4 class="team-name">Nigeria</h4>
+                        <p class="team-status">3-time Champion</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="teams.html" class="btn btn-outline-primary">View All Teams</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest news section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Latest News</h2>
+            <div class="row g-4">
+                <!-- News card 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card news-card h-100">
+                        <img src="img/news/stadium-preparation.jpg" class="card-img-top" alt="Stadium Preparation">
+                        <div class="card-body">
+                            <h5 class="card-title">Stadium Renovations On Track for AFCON 2025</h5>
+                            <p class="card-text">Morocco's preparations for hosting the 2025 Africa Cup of Nations are proceeding smoothly with stadium renovations on schedule.</p>
+                            <a href="news-detail.html" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>May 10, 2024</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- News card 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card news-card h-100">
+                        <img src="img/news/qualifying-rounds.jpg" class="card-img-top" alt="Qualifying Rounds">
+                        <div class="card-body">
+                            <h5 class="card-title">AFCON 2025 Qualifying Rounds to Begin in September</h5>
+                            <p class="card-text">The Confederation of African Football has announced that qualifying matches for AFCON 2025 will commence in September 2024.</p>
+                            <a href="news-detail.html" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>May 5, 2024</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- News card 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card news-card h-100">
+                        <img src="img/news/sponsorship-announcement.jpg" class="card-img-top" alt="Sponsorship Announcement">
+                        <div class="card-body">
+                            <h5 class="card-title">Major Sponsors Announced for AFCON Morocco 2025</h5>
+                            <p class="card-text">CAF has unveiled the official sponsorship lineup for the upcoming Africa Cup of Nations to be held in Morocco.</p>
+                            <a href="news-detail.html" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>April 28, 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="news.html" class="btn btn-outline-primary">More News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Host cities section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Host Cities</h2>
+            <div class="row g-4">
+                <!-- City card 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="city-card">
+                        <img src="img/cities/casablanca.jpg" alt="Casablanca" class="city-image">
+                        <div class="city-overlay">
+                            <h3>Casablanca</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- City card 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="city-card">
+                        <img src="img/cities/marrakech.jpg" alt="Marrakech" class="city-image">
+                        <div class="city-overlay">
+                            <h3>Marrakech</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- City card 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="city-card">
+                        <img src="img/cities/rabat.jpg" alt="Rabat" class="city-image">
+                        <div class="city-overlay">
+                            <h3>Rabat</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Official partners section -->
+    <section class="py-5 bg-light partners-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Official Partners</h2>
+            <div class="row g-4 align-items-center justify-content-center">
+                <div class="col-6 col-md-2" data-aos="fade-up">
+                    <img src="img/sponsors/sponsor1.png" alt="Sponsor 1" class="img-fluid partner-logo">
+                </div>
+                <div class="col-6 col-md-2" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/sponsors/sponsor2.png" alt="Sponsor 2" class="img-fluid partner-logo">
+                </div>
+                <div class="col-6 col-md-2" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/sponsors/sponsor3.png" alt="Sponsor 3" class="img-fluid partner-logo">
+                </div>
+                <div class="col-6 col-md-2" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/sponsors/sponsor4.png" alt="Sponsor 4" class="img-fluid partner-logo">
+                </div>
+                <div class="col-6 col-md-2" data-aos="fade-up" data-aos-delay="400">
+                    <img src="img/sponsors/sponsor5.png" alt="Sponsor 5" class="img-fluid partner-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter subscription -->
+    <section class="py-5 newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title text-white">Stay Updated</h2>
+                    <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Enter your email address">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Footer logo and about -->
+                <div class="col-lg-4">
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60" class="mb-3">
+                    <p class="text-white-50">The Africa Cup of Nations (AFCON) is the main international men's association football competition in Africa. It is sanctioned by the Confederation of African Football (CAF) and Morocco is proud to host the 2025 edition.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <!-- Quick links -->
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="stadiums.html">Stadiums</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <!-- Tournament info -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="text-white mb-3">Tournament Info</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Competition Format</a></li>
+                        <li><a href="#">Ticketing Information</a></li>
+                        <li><a href="#">Host Cities</a></li>
+                        <li><a href="#">Past Winners</a></li>
+                        <li><a href="#">Qualification Process</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <!-- Contact info -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="text-white mb-3">Contact</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> CAF Headquarters, 6th of October City, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> +212 5XX XXX XXX</li>
+                        <li><i class="fas fa-envelope"></i> info@afcon2025.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-secondary">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-md-0">&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="footer-bottom-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="btn btn-primary back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

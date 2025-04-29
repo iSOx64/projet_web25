@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>Match Schedule | AFCON Morocco 2025</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Additional CSS for schedule page -->
+    <style>
+        /* Schedule page specific styles */
+        .fixture-tabs {
+            border-bottom: 2px solid var(--gray-light);
+            margin-bottom: 2rem;
+        }
+        
+        .fixture-tab-link {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .fixture-tab-link:hover {
+            color: var(--primary);
+        }
+        
+        .fixture-tab-link.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        
+        .fixture-tab-content {
+            display: none;
+        }
+        
+        .fixture-tab-content.active {
+            display: block;
+        }
+        
+        .match-card {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .match-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .match-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        
+        .match-date {
+            font-weight: 700;
+        }
+        
+        .match-time {
+            font-weight: 600;
+        }
+        
+        .match-venue {
+            font-size: 0.85rem;
+        }
+        
+        .match-teams {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .match-team {
+            text-align: center;
+            width: 40%;
+        }
+        
+        .match-team-flag {
+            width: 80px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .match-team-name {
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        
+        .match-vs {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .match-footer {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--gray-light);
+            border-radius: 0 0 var(--radius) var(--radius);
+            font-size: 0.85rem;
+        }
+        
+        .group-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+        }
+        
+        .knockout-stage {
+            margin-bottom: 3rem;
+        }
+        
+        .knockout-title {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header class="sticky-top">
+        <!-- Main navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
+                </a>
+                <!-- Mobile menu toggle button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navigation links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="stadiums.html">Stadiums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="schedule.html">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page title section -->
+    <section class="page-title-section">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Match Schedule</h1>
+            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Schedule</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Schedule info section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" data-aos="fade-up">
+                    <h2 class="section-title">Tournament Format</h2>
+                    <p>The Africa Cup of Nations Morocco 2025 will feature 24 teams divided into six groups of four. The top two teams from each group, along with the four best third-placed teams, will advance to the round of 16. From there, the tournament will proceed with knockout matches until a champion is crowned.</p>
+                    <p>The tournament will kick off on December 1, 2025, with the opening match in Casablanca, and will conclude with the final on January 4, 2026.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
+                        <h3>Key Dates</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-calendar-day me-2"></i> Opening Match: December 1, 2025</li>
+                            <li><i class="fas fa-calendar-day me-2"></i> Group Stage: Dec 1-12, 2025</li>
+                            <li><i class="fas fa-calendar-day me-2"></i> Round of 16: Dec 14-17, 2025</li>
+                            <li><i class="fas fa-calendar-day me-2"></i> Quarter-finals: Dec 19-20, 2025</li>
+                            <li><i class="fas fa-calendar-day me-2"></i> Semi-finals: Dec 23-24, 2025</li>
+                            <li><i class="fas fa-calendar-day me-2"></i> Final: January 4, 2026</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Match schedule tabs section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Match Schedule</h2>
+            
+            <!-- Fixture tabs -->
+            <ul class="nav fixture-tabs mb-4 flex-nowrap overflow-auto" id="fixture-tabs" role="tablist" data-aos="fade-up">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fixture-tab-link active" id="all-matches-tab" data-bs-toggle="tab" href="#all-matches" role="tab" aria-controls="all-matches" aria-selected="true">All Matches</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fixture-tab-link" id="group-stage-tab" data-bs-toggle="tab" href="#group-stage" role="tab" aria-controls="group-stage" aria-selected="false">Group Stage</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fixture-tab-link" id="round-of-16-tab" data-bs-toggle="tab" href="#round-of-16" role="tab" aria-controls="round-of-16" aria-selected="false">Round of 16</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fixture-tab-link" id="quarter-finals-tab" data-bs-toggle="tab" href="#quarter-finals" role="tab" aria-controls="quarter-finals" aria-selected="false">Quarter-finals</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fixture-tab-link" id="semi-finals-tab" data-bs-toggle="tab" href="#semi-finals" role="tab" aria-controls="semi-finals" aria-selected="false">Semi-finals</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link fixture-tab-link" id="final-tab" data-bs-toggle="tab" href="#final" role="tab" aria-controls="final" aria-selected="false">Final</a>
+                </li>
+            </ul>
+            
+            <!-- Filter and search options -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <select class="form-select" id="venue-filter" data-aos="fade-up">
+                        <option value="">All Venues</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Marrakech">Marrakech</option>
+                        <option value="Tangier">Tangier</option>
+                        <option value="Agadir">Agadir</option>
+                        <option value="Fez">Fez</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" data-aos="fade-up">
+                        <input type="text" class="form-control" placeholder="Search teams..." id="team-search">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab content -->
+            <div class="tab-content" id="fixture-tabs-content">
+                <!-- All Matches Tab -->
+                <div class="tab-pane fade show active" id="all-matches" role="tabpanel" aria-labelledby="all-matches-tab">
+                    <div class="row">
+                        <div class="col-lg-12" data-aos="fade-up">
+                            <h3 class="mb-4">Complete Tournament Schedule</h3>
+                            <p>Below is the complete match schedule for AFCON Morocco 2025. Please note that all times are local Morocco time (GMT+1).</p>
+                            
+                            <!-- Group Stage -->
+                            <h4 class="knockout-title">Group Stage</h4>
+                            
+                            <!-- Day 1 -->
+                            <div class="match-day mb-4">
+                                <h5 class="text-primary mb-3">Day 1 - December 1, 2025</h5>
+                                
+                                <!-- Opening Match -->
+                                <div class="match-card">
+                                    <div class="match-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="match-date">December 1, 2025</span> | <span class="match-time">17:00</span>
+                                        </div>
+                                        <div class="match-venue">
+                                            <i class="fas fa-map-marker-alt me-1"></i> Stade Mohammed V, Casablanca
+                                        </div>
+                                    </div>
+                                    <div class="match-teams">
+                                        <div class="match-team">
+                                            <img src="img/flags/morocco.png" alt="Morocco" class="match-team-flag">
+                                            <p class="match-team-name">Morocco</p>
+                                        </div>
+                                        <div class="match-vs">vs</div>
+                                        <div class="match-team">
+                                            <img src="img/flags/ghana.png" alt="Ghana" class="match-team-flag">
+                                            <p class="match-team-name">Ghana</p>
+                                        </div>
+                                    </div>
+                                    <div class="match-footer d-flex justify-content-between">
+                                        <span>Group A - Match 1</span>
+                                        <span class="badge bg-danger">Opening Match</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Match 2 -->
+                                <div class="match-card">
+                                    <div class="match-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="match-date">December 1, 2025</span> | <span class="match-time">20:00</span>
+                                        </div>
+                                        <div class="match-venue">
+                                            <i class="fas fa-map-marker-alt me-1"></i> Stade Moulay Abdallah, Rabat
+                                        </div>
+                                    </div>
+                                    <div class="match-teams">
+                                        <div class="match-team">
+                                            <img src="img/flags/cameroon.png" alt="Cameroon" class="match-team-flag">
+                                            <p class="match-team-name">Cameroon</p>
+                                        </div>
+                                        <div class="match-vs">vs</div>
+                                        <div class="match-team">
+                                            <img src="img/flags/mauritania.png" alt="Mauritania" class="match-team-flag">
+                                            <p class="match-team-name">Mauritania</p>
+                                        </div>
+                                    </div>
+                                    <div class="match-footer">
+                                        <span>Group A - Match 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 2 -->
+                            <div class="match-day mb-4">
+                                <h5 class="text-primary mb-3">Day 2 - December 2, 2025</h5>
+                                
+                                <!-- Match 3 -->
+                                <div class="match-card">
+                                    <div class="match-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="match-date">December 2, 2025</span> | <span class="match-time">14:00</span>
+                                        </div>
+                                        <div class="match-venue">
+                                            <i class="fas fa-map-marker-alt me-1"></i> Grand Stade de Marrakech, Marrakech
+                                        </div>
+                                    </div>
+                                    <div class="match-teams">
+                                        <div class="match-team">
+                                            <img src="img/flags/senegal.png" alt="Senegal" class="match-team-flag">
+                                            <p class="match-team-name">Senegal</p>
+                                        </div>
+                                        <div class="match-vs">vs</div>
+                                        <div class="match-team">
+                                            <img src="img/flags/mozambique.png" alt="Mozambique" class="match-team-flag">
+                                            <p class="match-team-name">Mozambique</p>
+                                        </div>
+                                    </div>
+                                    <div class="match-footer">
+                                        <span>Group B - Match 3</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Match 4 -->
+                                <div class="match-card">
+                                    <div class="match-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="match-date">December 2, 2025</span> | <span class="match-time">17:00</span>
+                                        </div>
+                                        <div class="match-venue">
+                                            <i class="fas fa-map-marker-alt me-1"></i> Stade Ibn Batouta, Tangier
+                                        </div>
+                                    </div>
+                                    <div class="match-teams">
+                                        <div class="match-team">
+                                            <img src="img/flags/tunisia.png" alt="Tunisia" class="match-team-flag">
+                                            <p class="match-team-name">Tunisia</p>
+                                        </div>
+                                        <div class="match-vs">vs</div>
+                                        <div class="match-team">
+                                            <img src="img/flags/mali.png" alt="Mali" class="match-team-flag">
+                                            <p class="match-team-name">Mali</p>
+                                        </div>
+                                    </div>
+                                    <div class="match-footer">
+                                        <span>Group B - Match 4</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Match 5 -->
+                                <div class="match-card">
+                                    <div class="match-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="match-date">December 2, 2025</span> | <span class="match-time">20:00</span>
+                                        </div>
+                                        <div class="match-venue">
+                                            <i class="fas fa-map-marker-alt me-1"></i> Stade Adrar, Agadir
+                                        </div>
+                                    </div>
+                                    <div class="match-teams">
+                                        <div class="match-team">
+                                            <img src="img/flags/egypt.png" alt="Egypt" class="match-team-flag">
+                                            <p class="match-team-name">Egypt</p>
+                                        </div>
+                                        <div class="match-vs">vs</div>
+                                        <div class="match-team">
+                                            <img src="img/flags/gabon.png" alt="Gabon" class="match-team-flag">
+                                            <p class="match-team-name">Gabon</p>
+                                        </div>
+                                    </div>
+                                    <div class="match-footer">
+                                        <span>Group C - Match 5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- More match days would continue here -->
+                            
+                            <!-- Round of 16 -->
+                            <h4 class="knockout-title">Round of 16</h4>
+                            
+                            <!-- Round of 16 - Match 1 -->
+                            <div class="match-card">
+                                <div class="match-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="match-date">December 14, 2025</span> | <span class="match-time">17:00</span>
+                                    </div>
+                                    <div class="match-venue">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Stade Mohammed V, Casablanca
+                                    </div>
+                                </div>
+                                <div class="match-teams">
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner Group A</p>
+                                    </div>
+                                    <div class="match-vs">vs</div>
+                                    <div class="match-team">
+                                        <p class="match-team-name">3rd Place Group C/D/E</p>
+                                    </div>
+                                </div>
+                                <div class="match-footer">
+                                    <span>Round of 16 - Match 1</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Round of 16 - Match 2 -->
+                            <div class="match-card">
+                                <div class="match-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="match-date">December 14, 2025</span> | <span class="match-time">20:00</span>
+                                    </div>
+                                    <div class="match-venue">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Grand Stade de Marrakech, Marrakech
+                                    </div>
+                                </div>
+                                <div class="match-teams">
+                                    <div class="match-team">
+                                        <p class="match-team-name">Runner-up Group D</p>
+                                    </div>
+                                    <div class="match-vs">vs</div>
+                                    <div class="match-team">
+                                        <p class="match-team-name">Runner-up Group B</p>
+                                    </div>
+                                </div>
+                                <div class="match-footer">
+                                    <span>Round of 16 - Match 2</span>
+                                </div>
+                            </div>
+                            
+                            <!-- More Round of 16 matches would continue here -->
+                            
+                            <!-- Quarter-finals -->
+                            <h4 class="knockout-title">Quarter-finals</h4>
+                            
+                            <!-- Quarter-final 1 -->
+                            <div class="match-card">
+                                <div class="match-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="match-date">December 19, 2025</span> | <span class="match-time">17:00</span>
+                                    </div>
+                                    <div class="match-venue">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Stade Mohammed V, Casablanca
+                                    </div>
+                                </div>
+                                <div class="match-teams">
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner R16 Match 1</p>
+                                    </div>
+                                    <div class="match-vs">vs</div>
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner R16 Match 3</p>
+                                    </div>
+                                </div>
+                                <div class="match-footer">
+                                    <span>Quarter-final 1</span>
+                                </div>
+                            </div>
+                            
+                            <!-- More quarter-finals would continue here -->
+                            
+                            <!-- Semi-finals -->
+                            <h4 class="knockout-title">Semi-finals</h4>
+                            
+                            <!-- Semi-final 1 -->
+                            <div class="match-card">
+                                <div class="match-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="match-date">December 23, 2025</span> | <span class="match-time">20:00</span>
+                                    </div>
+                                    <div class="match-venue">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Stade Mohammed V, Casablanca
+                                    </div>
+                                </div>
+                                <div class="match-teams">
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner QF1</p>
+                                    </div>
+                                    <div class="match-vs">vs</div>
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner QF2</p>
+                                    </div>
+                                </div>
+                                <div class="match-footer">
+                                    <span>Semi-final 1</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Semi-final 2 -->
+                            <div class="match-card">
+                                <div class="match-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="match-date">December 24, 2025</span> | <span class="match-time">20:00</span>
+                                    </div>
+                                    <div class="match-venue">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Grand Stade de Marrakech, Marrakech
+                                    </div>
+                                </div>
+                                <div class="match-teams">
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner QF3</p>
+                                    </div>
+                                    <div class="match-vs">vs</div>
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner QF4</p>
+                                    </div>
+                                </div>
+                                <div class="match-footer">
+                                    <span>Semi-final 2</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Final -->
+                            <h4 class="knockout-title">Final</h4>
+                            
+                            <!-- Final Match -->
+                            <div class="match-card">
+                                <div class="match-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="match-date">January 4, 2026</span> | <span class="match-time">20:00</span>
+                                    </div>
+                                    <div class="match-venue">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Stade Mohammed V, Casablanca
+                                    </div>
+                                </div>
+                                <div class="match-teams">
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner SF1</p>
+                                    </div>
+                                    <div class="match-vs">vs</div>
+                                    <div class="match-team">
+                                        <p class="match-team-name">Winner SF2</p>
+                                    </div>
+                                </div>
+                                <div class="match-footer d-flex justify-content-between">
+                                    <span>Final</span>
+                                    <span class="badge bg-warning text-dark">Championship Match</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Group Stage Tab -->
+                <div class="tab-pane fade" id="group-stage" role="tabpanel" aria-labelledby="group-stage-tab">
+                    <div class="row">
+                        <div class="col-lg-12" data-aos="fade-up">
+                            <h3 class="mb-4">Group Stage Matches</h3>
+                            
+                            <!-- Group A -->
+                            <div class="group-header mb-4">
+                                <h4 class="m-0">Group A</h4>
+                            </div>
+                            
+                            <!-- Group A matches would go here -->
+                            <div class="match-card">
+                                <div class="match-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="match-date">December 1, 2025</span> | <span class="match-time">17:00</span>
+                                    </div>
+                                    <div class="match-venue">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Stade Mohammed V, Casablanca
+                                    </div>
+                                </div>
+                                <div class="match-teams">
+                                    <div class="match-team">
+                                        <img src="img/flags/morocco.png" alt="Morocco" class="match-team-flag">
+                                        <p class="match-team-name">Morocco</p>
+                                    </div>
+                                    <div class="match-vs">vs</div>
+                                    <div class="match-team">
+                                        <img src="img/flags/ghana.png" alt="Ghana" class="match-team-flag">
+                                        <p class="match-team-name">Ghana</p>
+                                    </div>
+                                </div>
+                                <div class="match-footer d-flex justify-content-between">
+                                    <span>Group A - Match 1</span>
+                                    <span class="badge bg-danger">Opening Match</span>
+                                </div>
+                            </div>
+                            
+                            <!-- More Group A matches would continue here -->
+                            
+                            <!-- Group B, C, D, E, F would follow the same pattern -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Round of 16 Tab -->
+                <div class="tab-pane fade" id="round-of-16" role="tabpanel" aria-labelledby="round-of-16-tab">
+                    <div class="row">
+                        <div class="col-lg-12" data-aos="fade-up">
+                            <h3 class="mb-4">Round of 16 Matches</h3>
+                            <p>The top two teams from each group, along with the four best third-placed teams, will advance to the Round of 16.</p>
+                            
+                            <!-- Round of 16 matches would go here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quarter-finals Tab -->
+                <div class="tab-pane fade" id="quarter-finals" role="tabpanel" aria-labelledby="quarter-finals-tab">
+                    <div class="row">
+                        <div class="col-lg-12" data-aos="fade-up">
+                            <h3 class="mb-4">Quarter-final Matches</h3>
+                            <p>The eight winners from the Round of 16 will compete in the quarter-finals.</p>
+                            
+                            <!-- Quarter-final matches would go here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semi-finals Tab -->
+                <div class="tab-pane fade" id="semi-finals" role="tabpanel" aria-labelledby="semi-finals-tab">
+                    <div class="row">
+                        <div class="col-lg-12" data-aos="fade-up">
+                            <h3 class="mb-4">Semi-final Matches</h3>
+                            <p>The four winners from the quarter-finals will compete in the semi-finals.</p>
+                            
+                            <!-- Semi-final matches would go here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Final Tab -->
+                <div class="tab-pane fade" id="final" role="tabpanel" aria-labelledby="final-tab">
+                    <div class="row">
+                        <div class="col-lg-12" data-aos="fade-up">
+                            <h3 class="mb-4">Final Match</h3>
+                            <p>The two winners from the semi-finals will compete in the final to determine the champion of AFCON 2025.</p>
+                            
+                            <!-- Final match would go here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download schedule section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-up">
+                    <h2 class="section-title">Get the Complete Schedule</h2>
+                    <p>Download the complete AFCON Morocco 2025 match schedule to stay updated with all the matches. Available in multiple formats for your convenience.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#" class="btn btn-primary"><i class="fas fa-download me-2"></i> PDF Format</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="far fa-calendar-alt me-2"></i> Add to Calendar</a>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="schedule-mobile-app text-center">
+                        <img src="img/schedule-app-mockup.png" alt="AFCON 2025 Mobile App" class="img-fluid">
+                        <h4 class="mt-3">Get the Official AFCON 2025 App</h4>
+                        <p>Download the official mobile app for real-time updates, live scores, and personalized match notifications.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-3">
+                            <a href="#" class="btn btn-sm btn-dark"><i class="fab fa-apple me-2"></i> App Store</a>
+                            <a href="#" class="btn btn-sm btn-dark"><i class="fab fa-google-play me-2"></i> Google Play</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue distribution section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Match Distribution by Venue</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="venue-distribution-card">
+                        <h3>Stade Mohammed V, Casablanca</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Group Stage
+                                <span class="badge bg-primary rounded-pill">6 matches</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Round of 16
+                                <span class="badge bg-primary rounded-pill">2 matches</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Quarter-finals
+                                <span class="badge bg-primary rounded-pill">1 match</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Semi-finals
+                                <span class="badge bg-primary rounded-pill">1 match</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Final
+                                <span class="badge bg-primary rounded-pill">1 match</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="venue-distribution-card">
+                        <h3>Grand Stade de Marrakech</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Group Stage
+                                <span class="badge bg-primary rounded-pill">6 matches</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Round of 16
+                                <span class="badge bg-primary rounded-pill">2 matches</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Quarter-finals
+                                <span class="badge bg-primary rounded-pill">1 match</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Semi-finals
+                                <span class="badge bg-primary rounded-pill">1 match</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="venue-distribution-card">
+                        <h3>Stade Ibn Batouta, Tangier</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Group Stage
+                                <span class="badge bg-primary rounded-pill">6 matches</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Round of 16
+                                <span class="badge bg-primary rounded-pill">2 matches</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Quarter-finals
+                                <span class="badge bg-primary rounded-pill">1 match</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- More venues would continue here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter subscription -->
+    <section class="py-5 newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title text-white">Stay Updated</h2>
+                    <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Enter your email address">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Footer logo and about -->
+                <div class="col-lg-4">
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60" class="mb-3">
+                    <p class="text-white-50">The Africa Cup of Nations (AFCON) is the main international men's association football competition in Africa. It is sanctioned by the Confederation of African Football (CAF) and Morocco is proud to host the 2025 edition.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <!-- Quick links -->
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="stadiums.html">Stadiums</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <!-- Tournament info -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="text-white mb-3">Tournament Info</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Competition Format</a></li>
+                        <li><a href="#">Ticketing Information</a></li>
+                        <li><a href="#">Host Cities</a></li>
+                        <li><a href="#">Past Winners</a></li>
+                        <li><a href="#">Qualification Process</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <!-- Contact info -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="text-white mb-3">Contact</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> CAF Headquarters, 6th of October City, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> +212 5XX XXX XXX</li>
+                        <li><i class="fas fa-envelope"></i> info@afcon2025.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-secondary">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-md-0">&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="footer-bottom-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="btn btn-primary back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <!-- Initialize fixture tabs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initFixtureTabs();
+            
+            // Venue filter functionality
+            const venueFilter = document.getElementById('venue-filter');
+            if (venueFilter) {
+                venueFilter.addEventListener('change', function() {
+                    const selectedVenue = this.value.toLowerCase();
+                    const matchCards = document.querySelectorAll('.match-card');
+                    
+                    matchCards.forEach(function(card) {
+                        const venueText = card.querySelector('.match-venue').textContent.toLowerCase();
+                        if (selectedVenue === '' || venueText.includes(selectedVenue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Team search functionality
+            const teamSearch = document.getElementById('team-search');
+            if (teamSearch) {
+                teamSearch.addEventListener('keyup', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const matchCards = document.querySelectorAll('.match-card');
+                    
+                    matchCards.forEach(function(card) {
+                        const teamNames = card.querySelectorAll('.match-team-name');
+                        let matchFound = false;
+                        
+                        teamNames.forEach(function(name) {
+                            if (name.textContent.toLowerCase().includes(searchTerm)) {
+                                matchFound = true;
+                            }
+                        });
+                        
+                        if (matchFound || searchTerm === '') {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
