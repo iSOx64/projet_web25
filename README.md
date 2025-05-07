@@ -1,116 +1,117 @@
-# AFCON Morocco 2025 – Portail Officiel
+# AFCON Morocco 2025 – Official Portal
 
-Bienvenue sur le portail officiel de la Coupe d'Afrique des Nations 2025 (AFCON) au Maroc. Ce projet web vise à offrir une expérience immersive et complète autour du plus grand événement footballistique africain, avec une interface moderne, responsive et riche en fonctionnalités.
-
----
-
-## Sommaire
-
-- [Présentation](#présentation)
-- [Fonctionnalités](#fonctionnalités)
-- [Aperçu du projet](#aperçu-du-projet)
-- [Structure du projet](#structure-du-projet)
-- [Technologies utilisées](#technologies-utilisées)
-- [Organisation des images](#organisation-des-images)
+Welcome to the official portal of the 2025 Africa Cup of Nations (AFCON) in Morocco. This web project aims to provide an immersive and comprehensive experience around Africa's biggest football event, with a modern, responsive, and feature-rich interface.
 
 ---
 
-## Présentation
+## Table of Contents
 
-Ce portail centralise toutes les informations relatives à la CAN 2025 : actualités, équipes, stades, calendrier, résultats, statistiques, et bien plus.
-
----
-
-## Fonctionnalités
-
-- **Accueil** : Présentation du tournoi, compte à rebours, points forts, équipes vedettes, dernières actualités.
-- **Équipes** : Liste interactive des 24 équipes participantes, avec drapeaux, effectifs, statistiques et historique.
-- **Stades** : Fiches détaillées des 6 stades hôtes (photos, capacité, localisation, matchs programmés).
-- **Calendrier** : Planning dynamique des matchs, filtrage par groupe, date, stade ou équipe.
-- **Actualités** : Fil d'actualité, articles détaillés, images, partage sur réseaux sociaux.
-- **Statistiques** : Graphiques interactifs (Chart.js) sur les scores, classements, performances.
-- **À propos** : Informations sur l'organisation, les partenaires, la mission du site.
-- **Responsive** : Expérience optimale sur mobile, tablette et desktop.
-- **Accessibilité** : Navigation clavier, contraste, textes alternatifs pour les images.
-- **SEO** : Balises meta optimisées, sitemap, structure sémantique.
-- **Performance** : Chargement asynchrone des ressources, optimisation des images.
+- [Overview](#overview)
+- [Features](#features)
+- [Project Preview](#project-preview)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+- [Image Organization](#image-organization)
+- [Authors](#authors)
 
 ---
 
-## Aperçu du projet
+## Overview
 
-![Aperçu du site](img/afcon-logo.png)
+This portal centralizes all information related to AFCON 2025: news, teams, stadiums, schedule, results, statistics, and more.
 
 ---
 
-## Structure du projet
+## Features
+
+- **Home**: Tournament presentation, countdown, highlights, featured teams, latest news.
+- **Teams**: Interactive list of the 24 participating teams, with flags, squads, statistics, and history.
+- **Stadiums**: Detailed profiles of the 6 host stadiums (photos, capacity, location, scheduled matches).
+- **Schedule**: Dynamic match schedule, filterable by group, date, stadium, or team.
+- **News**: News feed, detailed articles, images, social media sharing.
+- **Statistics**: Interactive charts (Chart.js) for scores, rankings, and performances.
+- **About**: Information about the organization, partners, and the site's mission.
+- **Responsive**: Optimal experience on mobile, tablet, and desktop.
+- **Accessibility**: Keyboard navigation, contrast, alternative text for images.
+- **SEO**: Optimized meta tags, sitemap, semantic structure.
+- **Performance**: Asynchronous resource loading, image optimization.
+
+---
+
+## Project Preview
+
+![Site Preview](img/afcon-logo.png)
+
+---
+
+## Project Structure
 
 ```text
 projet_web25/
 │
-├── index.html             # Page d'accueil
-├── teams.html             # Page des équipes
-├── stadiums.html          # Page des stades
-├── schedule.html          # Calendrier des matchs
-├── news.html              # Actualités
-├── news-detail.html       # Détail d'une actualité
-├── about.html             # À propos
+├── index.html             # Home page
+├── teams.html             # Teams page
+├── stadiums.html          # Stadiums page
+├── schedule.html          # Match schedule
+├── news.html              # News
+├── news-detail.html       # News detail
+├── about.html             # About
 │
 ├── css/
-│   └── styles.css         # Styles personnalisés
+│   └── styles.css         # Custom styles
 │
 ├── js/
-│   ├── main.js            # Logique générale
-│   ├── news.js            # Gestion des actualités
-│   ├── news-detail.js     # Détail d'une actualité
-│   └── share-links.js     # Partage réseaux sociaux
+│   ├── main.js            # General logic
+│   ├── news.js            # News management
+│   ├── news-detail.js     # News detail logic
+│   └── share-links.js     # Social sharing
 │
 ├── img/
-│   ├── afcon-logo.png     # Logo du tournoi
+│   ├── afcon-logo.png     # Tournament logo
 │   ├── favicon.ico        # Favicon
-│   ├── flags/             # Drapeaux des équipes
-│   ├── news/              # Images pour les actualités
-│   ├── teams/             # Photos des équipes
-│   └── partners/          # Logos des partenaires
+│   ├── flags/             # Team flags
+│   ├── news/              # News images
+│   ├── teams/             # Team photos
+│   └── partners/          # Partner logos
 │
 ├── public/
-│   └── vite.svg           # Ressources statiques
+│   └── vite.svg           # Static resources
 │
 ├── .bolt/
-│   └── config.json        # Configuration Vite
+│   └── config.json        # Vite configuration
 │
-├── package.json           # Dépendances et scripts npm
-├── package-lock.json      # Verrouillage des dépendances
-├── .gitignore             # Fichiers exclus du versionnement
-└── README.md              # Documentation du projet
+├── package.json           # npm dependencies and scripts
+├── package-lock.json      # Dependency lock file
+├── .gitignore             # Version control exclusions
+└── README.md              # Project documentation
 ```
 
 ---
 
-## Technologies utilisées
+## Technologies Used
 
-- **HTML5 / CSS3** : Structure et style des pages
-- **JavaScript (ES6+)** : Logique dynamique, modules par page
-- **Vite** : Serveur de développement et build ultra-rapide
-- **Chart.js** : Visualisation de données/statistiques
-- **Bootstrap 5** : Mise en page responsive et composants UI
-- **Font Awesome** : Icônes vectorielles
-- **AOS** : Animations au scroll
-
----
-
-## Organisation des images
-
-- **img/flags/** : 24 drapeaux officiels (PNG, 120x80px), utilisés dans les listes, tableaux, fiches équipes.
-- **img/teams/** : Photos des équipes nationales.
-- **img/news/** : Illustrations pour les articles d'actualité.
-- **img/partners/** : Logos des sponsors et partenaires officiels.
-
-Toutes les images sont libres de droits ou issues du domaine public.
+- **HTML5 / CSS3**: Page structure and styling
+- **JavaScript (ES6+)**: Dynamic logic, per-page modules
+- **Vite**: Ultra-fast development server and build tool
+- **Chart.js**: Data/statistics visualization
+- **Bootstrap 5**: Responsive layout and UI components
+- **Font Awesome**: Vector icons
+- **AOS**: Scroll animations
 
 ---
 
-## Auteurs
+## Image Organization
+
+- **img/flags/**: 24 official flags (PNG, 120x80px), used in lists, tables, and team profiles.
+- **img/teams/**: National team photos.
+- **img/news/**: Illustrations for news articles.
+- **img/partners/**: Official sponsor and partner logos.
+
+All images are royalty-free or from the public domain.
+
+---
+
+## Authors
 
 - Tafraouti Sanae
 - Essebaiy Aya
