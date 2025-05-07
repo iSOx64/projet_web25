@@ -1461,3 +1461,72 @@ html {
         font-size: 1.3rem;
     }
 }
+/* Section de l'article avec padding et bordure */
+.article-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #eee;
+}
+/* Dernière section sans bordure */
+.article-section:last-child {
+    border-bottom: none;
+}
+/* Style des titres de section */
+.article-section h2 {
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+/* Barre colorée sous les titres de section */
+.article-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #007bff;
+}
+/* Marges pour la galerie d'images */
+.article-gallery {
+    margin: 2rem 0;
+}
+/* Arrondir les images de la galerie */
+.article-gallery img {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+/* Style des citations dans l'article */
+.article-quote {
+    background: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding: 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+}
+/* Métadonnées de l'article (auteur, date, etc.) */
+.article-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    color: #666;
+}
+/* Style des éléments de métadonnées */
+.article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+/* Couleur des icônes de métadonnées */
+.article-meta i {
+    color: #007bff;
+}
+/* Marges pour les tags de l'article */
+.article-tags {
+    margin: 2rem 0;
+}
+/* Style des badges de tags */
+.article-tags .badge {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+}
