@@ -147,24 +147,26 @@ function initSmoothScrolling() {
         });
     });
 }
-// Team data for all 24 participating teams (using accurate AFCON 2025 info)
+// Donnees des equipes pour les 24 equipes participantes (avec infos precises pour AFCON 2025)
 const teams = [
     {
-        "id": "morocco",
-        "name": "Morocco",
-        "subtitle": "Morocco, known as the Atlas Lions, is one of Africa's most prominent football teams, boasting a rich history and a passionate fan base.",
-        "flag": "img/flags/morocco.png",
-        "background": "img/teams/morocco.jpg",
-        "video": "https://youtu.be/ikGoQkUqZcg?si=nt9DqWwZSF12y17k",
-        "link": "https://en.wikipedia.org/wiki/Morocco_national_football_team",
+        "id": "morocco", // Identifiant unique pour l'equipe
+        "name": "Morocco", // Nom de l'equipe
+        "subtitle": "Morocco, known as the Atlas Lions, is one of Africa's most prominent football teams, boasting a rich history and a passionate fan base.",  // Sous-titre descriptif
+        "flag": "img/flags/morocco.png", // Chemin vers le drapeau
+        "background": "img/teams/morocco.jpg",  // Image de fond
+        "video": "https://youtu.be/ikGoQkUqZcg?si=nt9DqWwZSF12y17k", // Lien video YouTube
+        "link": "https://en.wikipedia.org/wiki/Morocco_national_football_team",// Lien Wikipedia
        "history": "The Moroccan national team, nicknamed the <span style='color:#05b360;'>Atlas Lions</span>, has been a formidable force in African football. They made history in the <span style='color:#05b360;'>2022 FIFA World Cup</span> by becoming the first <span style='color:#05b360;'>African and Arab</span> nation to reach the <span style='color:#05b360;'>semi-finals</span>, showcasing their tactical prowess and resilience. Morocco's only <span style='color:#05b360;'>AFCON</span> title came in <span style='color:#05b360;'>1976</span>, but they have consistently been strong contenders in the tournament. The team has produced legendary players like <span style='color:#05b360;'>Ahmed Faras</span> and <span style='color:#05b360;'>Noureddine Naybet</span>, and currently boasts stars such as <span style='color:#05b360;'>Achraf Hakimi</span> and <span style='color:#05b360;'>Hakim Ziyech</span>. Hosting the <span style='color:#05b360;'>2025 AFCON</span>, Morocco aims to leverage home advantage to clinch their second continental title.",
- "stats": {
-          "appearances": 20,
-          "firstParticipation": 1972,
-          "bestResult": "Champions (1976)",
-          "lastParticipation": "2023"
+ // Histoire de l'equipe (HTML)
+       "stats": {// Statistiques de l'equipe
+          "appearances": 20, // Nombre de participations
+          "firstParticipation": 1972, // Premiere participation
+          "bestResult": "Champions (1976)", // Meilleur resultat
+          "lastParticipation": "2023"  // Derniere participation
         }
       },
+        // ... (autres equipes avec la meme structure)
     {
         id: 'egypt',
         name: 'Egypt',
@@ -549,48 +551,33 @@ const teams = [
     },
 
 ];
-
-// Initialize slideshow and team sections when DOM is loaded
+// Initialisation quand le DOM est chargé
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-    });
-    
-    // Team page specific initializations
     if (document.querySelector('.team-slideshow')) {
         initSlideshow();
         initTeamSections();
     }
     
-    // Other common initializations
-    initCountdown();
     initBackToTop();
-    initStickyHeader();
-    initTeamSearch();
+    initScrollButtons();
 });
 
-// Initialize the team slideshow
+// Initialisation du diaporama
 function initSlideshow() {
     const slideshow = document.querySelector('.team-slideshow');
     const navContainer = document.createElement('div');
     navContainer.className = 'slide-nav';
     
     teams.forEach((team, index) => {
-        // Create slide container
         const slide = document.createElement('div');
         slide.className = `team-slide ${index === 0 ? 'active' : ''}`;
         
-        // Create image element (instead of background image)
         const img = document.createElement('img');
         img.className = 'team-slide-image';
         img.src = team.background;
         img.alt = `${team.name} Team`;
         img.loading = 'lazy';
         
-        // Create overlay
         const overlay = document.createElement('div');
         overlay.className = 'slide-overlay';
         overlay.innerHTML = `
@@ -603,7 +590,6 @@ function initSlideshow() {
         slide.appendChild(overlay);
         slideshow.appendChild(slide);
         
-        // Create nav button
         const navBtn = document.createElement('button');
         navBtn.className = `slide-nav-btn ${index === 0 ? 'active' : ''}`;
         navBtn.dataset.slide = index;
@@ -612,7 +598,6 @@ function initSlideshow() {
     
     slideshow.appendChild(navContainer);
     
-    // Set up slide navigation
     const slides = document.querySelectorAll('.team-slide');
     const navButtons = document.querySelectorAll('.slide-nav-btn');
     let currentSlide = 0;
@@ -627,19 +612,16 @@ function initSlideshow() {
     }
     
     navButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            showSlide(index);
-        });
+        button.addEventListener('click', () => showSlide(index));
     });
     
-    // Auto-advance slides every 5 seconds
     setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
     }, 5000);
 }
 
-// Initialize all team sections
+// Initialisation des sections d'équipe
 function initTeamSections() {
     const container = document.getElementById('teams-container');
     
@@ -647,7 +629,6 @@ function initTeamSections() {
         const section = document.createElement('section');
         section.className = 'team-section';
         section.id = team.id;
-        section.setAttribute('data-aos', 'fade-up');
         
         section.innerHTML = `
             <div class="container">
@@ -681,19 +662,18 @@ function initTeamSections() {
                         </div>
                     </div>
                     
-      <div class="video-container">
-        <iframe 
-            src="https://www.youtube.com/embed/${extractYouTubeId(team.video)}?autoplay=1&mute=1&modestbranding=1&rel=0&enablejsapi=1" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/${extractYouTubeId(team.video)}" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                     
                     <div class="discover-more">
-                        <a href="${team.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
-                        Discover More About ${team.name}
-                    </a>
+                        <a href="${team.link}" target="_blank" class="btn btn-outline-primary">
+                            Discover More About ${team.name}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -703,13 +683,39 @@ function initTeamSections() {
     });
 }
 
+// Extraction de l'ID YouTube
+function extractYouTubeId(url) {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+}
 
+// Bouton retour en haut
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+    
+    backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
-document.addEventListener('DOMContentLoaded', function() {
+// Boutons de défilement
+function initScrollButtons() {
     const backToTopBtn = document.getElementById('backToTopBtn');
     const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
     
-    // Back to top function
     backToTopBtn.addEventListener('click', function(e) {
         e.preventDefault();
         window.scrollTo({
@@ -718,7 +724,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Scroll to bottom function
     scrollToBottomBtn.addEventListener('click', function(e) {
         e.preventDefault();
         window.scrollTo({
@@ -727,7 +732,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Show/hide buttons based on scroll position
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             backToTopBtn.style.display = 'flex';
@@ -735,17 +739,10 @@ document.addEventListener('DOMContentLoaded', function() {
             backToTopBtn.style.display = 'none';
         }
         
-        // Optional: Hide scroll-to-bottom button when near bottom
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
             scrollToBottomBtn.style.display = 'none';
         } else {
             scrollToBottomBtn.style.display = 'flex';
         }
     });
-});
-// Add this helper function to extract YouTube ID from any URL format
-function extractYouTubeId(url) {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
 }
