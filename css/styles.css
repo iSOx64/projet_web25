@@ -2,16 +2,15 @@
 =================================================
   AFCON Morocco 2025 - Custom Styles
   Author: [Your Name]
-  Version: 1.0
+  Version: 1.1
 ================================================= 
 */
 
 /* 
  * Base styles and variables
  * Setting up color variables based on Morocco's flag colors
- * Removed white background references for cleaner transitions
  */
- :root {
+:root {
     --primary-red: #840404;
     --primary-red-dark: #5a0303;
     --primary-red-light: #a30606;
@@ -19,6 +18,7 @@
     --secondary-green-dark: #05b360;
     --secondary-green-light: #07f07f;
     --accent-gold: #f7d000;
+    --accent-gold-dark: #d9b800;
     --dark: #1a1a1a;
     --light: #f8f8f8;
     --gray: #6c757d;
@@ -32,14 +32,13 @@
 
 /* 
  * General Styles 
- * Removed default white background for smoother transitions
  */
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--dark);
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: transparent; /* Ensures no white background */
+    background-color: transparent;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,43 +47,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: var(--primary);
+    color: var(--primary-red);
     text-decoration: none;
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--primary-dark);
+    color: var(--primary-red-dark);
 }
 
-/* Button styles - removed white flash on hover */
+/* Button styles */
 .btn {
     border-radius: var(--radius);
     padding: 0.5rem 1.5rem;
     font-weight: 600;
     transition: var(--transition);
-    background-color: transparent; /* Prevents white flash */
+    background-color: transparent;
 }
 
 .btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    color: white;
 }
 
 .btn-primary:hover, .btn-primary:focus {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
+    background-color: var(--primary-red-dark);
+    border-color: var(--primary-red-dark);
 }
 
 .btn-outline-primary {
-    color: var(--primary);
-    border-color: var(--primary);
-    background-color: transparent; /* Ensures no white background */
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    background-color: transparent;
 }
 
 .btn-outline-primary:hover, .btn-outline-primary:focus {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    color: white;
 }
 
 /* Section title with accent line */
@@ -100,7 +101,7 @@ a:hover {
     display: block;
     width: 50px;
     height: 4px;
-    background-color: var(--primary);
+    background-color: var(--primary-red);
     margin: 0.5rem 0 0;
 }
 
@@ -110,12 +111,11 @@ a:hover {
 
 /* 
  * Header & Navigation Styles 
- * Solid red background with no white gaps
  */
 header {
     position: relative;
     z-index: 1000;
-    background-color: var(--primary-red); /* Ensures full coverage */
+    background-color: var(--primary-red);
 }
 
 .navbar {
@@ -134,7 +134,7 @@ header {
     text-transform: uppercase;
     padding: 0.5rem 1rem !important;
     position: relative;
-    background-color: transparent; /* No white flash on hover */
+    background-color: transparent;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -153,7 +153,6 @@ header {
 
 /* 
  * Hero Section Styles 
- * Full bleed background with gradient overlay
  */
 .hero-section {
     position: relative;
@@ -165,7 +164,7 @@ header {
     color: white;
     display: flex;
     align-items: center;
-    margin: 0; /* Remove any default margin */
+    margin: 0;
 }
 
 .hero-section .overlay {
@@ -190,24 +189,19 @@ header {
 
 /* 
  * Countdown Styles 
- * Solid red background with no white edges
  */
 .countdown-container {
     background-color: rgba(132, 4, 4, 0.8);
     border-radius: var(--radius);
     padding: 1.5rem;
     box-shadow: var(--shadow-lg);
-    border: none; /* Remove any default borders */
-}
-
-.countdown-item span:first-child {
-    color: var(--secondary-green);
+    border: none;
 }
 
 .countdown-timer {
     display: flex;
     justify-content: space-between;
-    background-color: transparent; /* Ensures no white background */
+    background-color: transparent;
 }
 
 .countdown-item span {
@@ -217,7 +211,7 @@ header {
 .countdown-item span:first-child {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--secondary-green);
 }
 
 .countdown-label {
@@ -228,7 +222,6 @@ header {
 
 /* 
  * Highlight Cards Styles 
- * Clean transitions without white flashes
  */
 .highlight-card {
     border: none;
@@ -249,12 +242,30 @@ header {
 .card-icon {
     background-color: var(--primary-red);
     color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
 }
 
 .highlight-card .card-body {
     padding-top: 2rem;
     text-align: center;
-    background-color: transparent; /* For smooth transitions */
+}
+
+.highlight-card .card-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.highlight-card .card-body {
+    padding-top: 2rem;
+    text-align: center;
+    background-color: transparent;
 }
 
 .highlight-card .card-title {
@@ -264,7 +275,6 @@ header {
 
 /* 
  * Teams Section Styles 
- * Clean card transitions
  */
 .team-card {
     text-align: center;
@@ -287,7 +297,7 @@ header {
     border-radius: 4px;
     margin-bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 .team-name {
@@ -326,7 +336,6 @@ header {
 
 /* 
  * News Cards Styles 
- * Smooth hover transitions
  */
 .news-card {
     border: none;
@@ -345,7 +354,7 @@ header {
 .news-card .card-img-top {
     height: 200px;
     object-fit: cover;
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 .news-card .card-title {
@@ -357,9 +366,14 @@ header {
     border-top: 1px solid var(--gray-light);
 }
 
+/* Article tags */
+.article-tags .badge {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
 /* 
  * City Cards Styles 
- * Full-bleed images with overlay
  */
 .city-card {
     position: relative;
@@ -368,7 +382,7 @@ header {
     box-shadow: var(--shadow);
     margin-bottom: 1.5rem;
     height: 250px;
-    background-color: transparent; /* Ensures no white background */
+    background-color: transparent;
 }
 
 .city-image {
@@ -376,7 +390,7 @@ header {
     height: 100%;
     object-fit: cover;
     transition: var(--transition);
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 .city-overlay {
@@ -395,7 +409,7 @@ header {
 }
 
 .city-card:hover .city-overlay {
-    background: linear-gradient(to top, rgba(193, 39, 45, 0.8) 0%, rgba(193, 39, 45, 0) 100%);
+    background: linear-gradient(to top, rgba(132, 4, 4, 0.8) 0%, rgba(132, 4, 4, 0) 100%);
 }
 
 .city-overlay h3 {
@@ -405,65 +419,65 @@ header {
 
 /* 
  * Partners Section Styles 
- * Clean logo transitions
  */
 .partners-section {
     padding: 4rem 0;
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
+/* Partner logo styling - always show in color */
 .partner-logo {
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: var(--transition);
-    max-height: 60px;
-    background-color: transparent; /* Ensures no white background */
+  filter: grayscale(0%) !important; /* Force full color */
+  opacity: 1 !important; /* Ensure full visibility */
+  transition: all 0.3s ease;
+  max-height: 80px; /* Adjust as needed */
+  width: auto;
+  padding: 10px; /* Add some spacing around logos */
 }
 
+/* Optional hover effect (if you want to enhance on hover) */
 .partner-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
+  transform: scale(1.05); /* Slight zoom */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); /* Add shadow */
 }
 
 /* 
  * Newsletter Section Styles 
- * Dark background with no white edges
  */
 .newsletter-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/newsletter-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    margin: 0; /* Remove default margins */
+    margin: 0;
 }
 
 .newsletter-form .form-control {
     height: 50px;
     border-radius: var(--radius) 0 0 var(--radius);
-    background-color: rgba(255,255,255,0.9); /* Slightly transparent white */
+    background-color: rgba(255,255,255,0.9);
 }
 
 .newsletter-form .btn {
     border-radius: 0 var(--radius) var(--radius) 0;
-    background-color: var(--accent);
-    border-color: var(--accent);
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
     color: var(--dark);
     font-weight: 700;
 }
 
 .newsletter-form .btn:hover {
-    background-color: var(--accent-dark);
-    border-color: var(--accent-dark);
+    background-color: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
 }
 
 /* 
  * Footer Styles 
- * Solid dark background
  */
 .footer {
     background-color: var(--dark);
     color: var(--light);
-    margin: 0; /* Remove default margins */
+    margin: 0;
 }
 
 .footer-links {
@@ -479,11 +493,11 @@ header {
 .footer-links a {
     color: var(--gray);
     transition: var(--transition);
-    background-color: transparent; /* No white flash on hover */
+    background-color: transparent;
 }
 
 .footer-links a:hover {
-    color: var(--accent);
+    color: var(--accent-gold);
     padding-left: 5px;
 }
 
@@ -502,7 +516,7 @@ header {
 
 .footer-contact li i {
     margin-right: 0.75rem;
-    color: var(--primary);
+    color: var(--primary-red);
 }
 
 .social-icons {
@@ -524,7 +538,7 @@ header {
 }
 
 .social-icon:hover {
-    background-color: var(--primary);
+    background-color: var(--primary-red);
     color: white;
     transform: translateY(-3px);
 }
@@ -545,12 +559,11 @@ header {
 }
 
 .footer-bottom-links li a:hover {
-    color: var(--accent);
+    color: var(--accent-gold);
 }
 
 /* 
  * Back to Top Button Styles 
- * Clean floating button
  */
 .back-to-top {
     position: fixed;
@@ -562,13 +575,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary);
+    background-color: var(--primary-red);
     color: white;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
     transition: var(--transition);
-    border: none; /* Remove default button border */
+    border: none;
 }
 
 .back-to-top.show {
@@ -577,13 +590,12 @@ header {
 }
 
 .back-to-top:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--primary-red-dark);
     transform: translateY(-3px);
 }
 
 /* 
  * Page Title Section Styles 
- * Full bleed background
  */
 .page-title-section {
     background: var(--primary-red);
@@ -596,823 +608,6 @@ header {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
-}
-
-.breadcrumb {
-    background: transparent;
-    padding: 0;
-    margin: 0;
-}
-
-.breadcrumb-item a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-}
-
-.breadcrumb-item.active {
-    color: white;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-/* 
- * Info Card Styles 
- * Solid color card
- */
-.info-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-}
-
-.info-card h3 {
-    color: #333;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #840404;
-    padding-bottom: 10px;
-}
-
-.info-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.info-card ul li {
-    margin-bottom: 10px;
-    color: #666;
-    display: flex;
-    align-items: center;
-}
-
-.info-card ul li i {
-    color: #840404;
-    margin-right: 10px;
-    width: 20px;
-}
-
-/* 
- * Group Card Styles 
- * Clean card design
- */
-.group-card {
-    border: none;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
-    transition: var(--transition);
-    background-color: white;
-}
-
-.group-card:hover {
-    box-shadow: var(--shadow-lg);
-}
-
-.group-title {
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 700;
-}
-
-.group-flag {
-    width: 40px;
-    height: 28px;
-    object-fit: cover;
-    border-radius: 2px;
-    background-color: transparent; /* No white background */
-}
-
-.list-group-item {
-    padding: 0.75rem 1rem;
-    border-color: var(--gray-light);
-    background-color: transparent; /* For smooth transitions */
-}
-
-/* 
- * Champions Table Styles 
- * Clean table design
- */
-.champions-table {
-    box-shadow: var(--shadow);
-    border-radius: var(--radius);
-    overflow: hidden;
-    background-color: white; /* Table needs solid background */
-}
-
-.champions-table th, .champions-table td {
-    vertical-align: middle;
-    background-color: transparent; /* Cells transparent within white table */
-}
-
-.champions-table th {
-    background-color: var(--primary);
-    color: white;
-    font-weight: 600;
-}
-
-.country-record {
-    padding: 1rem;
-    background-color: transparent; /* For smooth transitions */
-}
-
-.record-flag {
-    width: 60px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-    background-color: transparent; /* No white background */
-}
-
-/* 
- * Responsive Styles 
- * Maintain clean transitions at all sizes
- */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: var(--dark);
-        padding: 1rem;
-        border-radius: var(--radius);
-        margin-top: 0.5rem;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-section .lead {
-        font-size: 1.2rem;
-    }
-    
-    .countdown-item span:first-child {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-section {
-        text-align: center;
-        height: auto;
-        padding: 8rem 0;
-    }
-    
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-    
-    .countdown-container {
-        margin-top: 2rem;
-    }
-    
-    .page-title {
-        font-size: 2.2rem;
-    }
-    
-    .city-card {
-        height: 200px;
-    }
-    
-    .footer-bottom-links {
-        justify-content: center;
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 575px) {
-    .team-flag {
-        width: 80px;
-        height: 56px;
-    }
-    
-    .countdown-item span:first-child {
-        font-size: 1.2rem;
-    }
-    
-    .countdown-label {
-        font-size: 0.7rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-}
-
-/* 
- * Animation Classes 
- * Smooth animations without white flashes
- */
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-    background-color: transparent; /* Ensures no white background during animation */
-}
-
-.slide-in-left {
-    animation: slideInLeft 1s ease-in-out;
-    background-color: transparent; /* Ensures no white background during animation */
-}
-
-.slide-in-right {
-    animation: slideInRight 1s ease-in-out;
-    background-color: transparent; /* Ensures no white background during animation */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
-    from { transform: translateX(-50px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-    from { transform: translateX(50px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-/* Team Member Card Styles */
-.team-member-card {
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: var(--transition);
-    margin-bottom: 2rem;
-}
-
-.team-member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.team-member-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background-color: transparent; /* No white background */
-}
-
-.team-member-info {
-    padding: 1.5rem;
-    background-color: transparent; /* For smooth transitions */
-}
-
-.team-member-info h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.position {
-    color: var(--primary);
-    font-weight: 600;
-    margin: 0.5rem 0;
-}
-
-.member-details {
-    margin: 1rem 0;
-    font-size: 0.9rem;
-}
-
-.member-details p {
-    margin-bottom: 0.5rem;
-}
-
-.member-social {
-    margin-top: 1rem;
-}
-
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background: var(--gray-light);
-    border-radius: 50%;
-    color: var(--dark);
-    margin-right: 0.5rem;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background: var(--primary);
-    color: white;
-}
-
-/* Organization Chart Styles */
-.org-chart-container {
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: var(--radius);
-}
-
-/* Achievement Timeline Styles */
-.achievement-timeline {
-    position: relative;
-    padding-left: 2rem;
-    background-color: transparent; /* No white background */
-}
-
-.achievement-item {
-    position: relative;
-    padding-bottom: 1.5rem;
-    border-left: 2px solid var(--primary);
-    padding-left: 1.5rem;
-    background-color: transparent; /* No white background */
-}
-
-.achievement-item:last-child {
-    padding-bottom: 0;
-}
-
-.achievement-item::before {
-    content: '';
-    position: absolute;
-    left: -0.5rem;
-    top: 0;
-    width: 1rem;
-    height: 1rem;
-    background: var(--primary);
-    border-radius: 50%;
-}
-
-.achievement-date {
-    font-weight: 700;
-    color: var(--primary);
-    display: block;
-    margin-bottom: 0.25rem;
-}
-/* Team Hero Section */
-.team-hero {
-    /* Fond dégradé rouge avec image en arrière-plan */
-    background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg');
-    /* L'image de fond couvre toute la zone */
-    background-size: cover;
-    /* Centre l'image de fond */
-    background-position: center;
-    /* Espacement intérieur haut/bas */
-    padding: 100px 0;
-    /* Couleur du texte en blanc */
-    color: white;
-    /* Alignement du texte au centre */
-    text-align: center;
-    /* Position relative pour les éléments enfants positionnés absolument */
-    position: relative;
-    /* Supprime les marges par défaut */
-    margin: 0;
-}
-
-.team-hero .container {
-    /* Position relative pour le contexte d'empilement */
-    position: relative;
-    /* Met le conteneur au-dessus de l'overlay */
-    z-index: 1;
-}
-
-/* Slideshow Section */
-.team-slideshow {
-    /* Position relative pour les enfants positionnés absolument */
-    position: relative;
-    /* Supprime la marge inférieure (important pour override) */
-    margin-bottom: 0 !important;
-    /* Prend toute la largeur */
-    width: 100%;
-    /* Hauteur à 70% de la hauteur de la fenêtre */
-    height: 70vh;
-    /* Hauteur minimale de 500px */
-    min-height: 500px;
-    /* Cache le contenu qui dépasse */
-    overflow: hidden;
-    /* Marge en bas */
-    margin-bottom: 50px;
-    /* Couleur de fond rouge */
-    background-color: #840404;
-}
-
-.team-slide {
-    /* Position absolue par rapport au parent */
-    position: absolute;
-    /* Prend toute la largeur */
-    width: 100%;
-    /* Prend toute la hauteur */
-    height: 100%;
-    /* Initialement invisible */
-    opacity: 0;
-    /* Transition douce pour l'opacité */
-    transition: opacity 1.5s ease-in-out;
-    /* Disposition en flex */
-    display: flex;
-    /* Centre verticalement */
-    align-items: center;
-    /* Centre horizontalement */
-    justify-content: center;
-    /* Couleur de fond rouge */
-    background-color: #840404;
-}
-
-.team-slide-image {
-    /* Ajuste l'image sans la déformer */
-    object-fit: contain;
-    /* Prend toute la largeur */
-    width: 100%;
-    /* Prend toute la hauteur */
-    height: 100%;
-    /* Largeur minimale */
-    min-width: 100%;
-    /* Hauteur minimale */
-    min-height: 100%;
-    /* Couleur de fond rouge */
-    background-color: #840404;
-}
-
-.slide-overlay {
-    /* Position absolue en bas */
-    position: absolute;
-    /* Aligné en bas */
-    bottom: 0;
-    /* Aligné à gauche */
-    left: 0;
-    /* Aligné à droite */
-    right: 0;
-    /* Dégradé pour améliorer la lisibilité du texte */
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    /* Espacement intérieur */
-    padding: 30px;
-    /* Texte en blanc */
-    color: white;
-    /* Met l'overlay au-dessus de l'image */
-    z-index: 2;
-}
-
-.slide-title {
-    /* Taille de police importante */
-    font-size: 3rem;
-    /* Texte en gras */
-    font-weight: 700;
-    /* Marge en bas */
-    margin-bottom: 10px;
-    /* Ombre portée pour meilleure lisibilité */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.slide-nav {
-    /* Position absolue en bas à droite */
-    position: absolute;
-    /* 20px du bas */
-    bottom: 20px;
-    /* 20px de la droite */
-    right: 20px;
-    /* Disposition en flex */
-    display: flex;
-    /* Espace entre les boutons */
-    gap: 10px;
-    /* Met la navigation au-dessus du contenu */
-    z-index: 10;
-}
-
-.slide-nav-btn {
-    /* Boutons ronds de 12x12px */
-    width: 12px;
-    height: 12px;
-    /* Forme circulaire */
-    border-radius: 50%;
-    /* Pas de bordure */
-    border: none;
-    /* Couleur semi-transparente */
-    background-color: rgba(255,255,255,0.5);
-    /* Curseur en forme de main */
-    cursor: pointer;
-    /* Transition douce pour les changements */
-    transition: all 0.3s ease;
-}
-
-.slide-nav-btn.active {
-    /* Couleur blanche pour le bouton actif */
-    background-color: white;
-    /* Légère augmentation de taille */
-    transform: scale(1.3);
-}
-
-/* Team Sections */
-.team-section {
-    /* Espacement intérieur haut/bas */
-    padding: 80px 0;
-    /* Marge pour la navigation ancrée */
-    scroll-margin-top: 100px;
-    /* Couleur de fond rouge */
-    background-color: #840404;
-    /* Texte en blanc */
-    color: white;
-    /* Position relative pour contexte */
-    position: relative;
-    /* Supprime un trait blanc entre sections */
-    margin-top: -1px;
-}
-
-.team-header {
-    /* Marge en bas */
-    margin-bottom: 40px;
-    /* Texte centré */
-    text-align: center;
-}
-
-.team-name {
-    /* Taille de police importante */
-    font-size: 2.5rem;
-    /* Texte en gras */
-    font-weight: 700;
-    /* Texte en blanc */
-    color: white;
-    /* Marge en bas */
-    margin-bottom: 15px;
-    /* Ombre portée pour lisibilité */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-.team-subtitle {
-    /* Taille de police moyenne */
-    font-size: 1.2rem;
-    /* Texte blanc semi-transparent */
-    color: rgba(255,255,255,0.8);
-    /* Marge en bas */
-    margin-bottom: 30px;
-}
-
-.team-flag {
-    /* Largeur maximale */
-    max-width: 200px;
-    /* Hauteur automatique pour garder les proportions */
-    height: auto;
-    /* Marge en bas */
-    margin-bottom: 20px;
-    /* Fond transparent */
-    background-color: transparent;
-}
-
-.team-content {
-    /* Largeur maximale */
-    max-width: 800px;
-    /* Centrage horizontal */
-    margin: 0 auto;
-    /* Fond semi-transparent */
-    background-color: rgba(255,255,255,0.1);
-    /* Espacement intérieur */
-    padding: 30px;
-    /* Coins arrondis */
-    border-radius: 8px;
-    /* Effet de flou derrière */
-    backdrop-filter: blur(5px);
-}
-
-.team-history {
-    /* Marge en bas */
-    margin-bottom: 30px;
-    /* Hauteur de ligne confortable */
-    line-height: 1.8;
-    /* Texte en blanc */
-    color: white;
-}
-
-.team-stats {
-    /* Disposition en flex */
-    display: flex;
-    /* Espace égal entre les éléments */
-    justify-content: space-around;
-    /* Passage à la ligne si nécessaire */
-    flex-wrap: wrap;
-    /* Marges haut/bas */
-    margin: 30px 0;
-    /* Fond semi-transparent */
-    background-color: rgba(0,0,0,0.2);
-    /* Espacement intérieur */
-    padding: 20px;
-    /* Coins arrondis */
-    border-radius: 8px;
-}
-
-.stat-item {
-    /* Texte centré */
-    text-align: center;
-    /* Espacement intérieur */
-    padding: 15px;
-    /* Largeur minimale */
-    min-width: 150px;
-}
-
-.stat-number {
-    /* Taille de police importante */
-    font-size: 2rem;
-    /* Texte en gras */
-    font-weight: 700;
-    /* Couleur verte */
-    color: #05b360;
-}
-
-.stat-label {
-    /* Petite taille de police */
-    font-size: 0.9rem;
-    /* Texte semi-transparent */
-    color: rgba(255,255,255,0.7);
-    /* Texte en majuscules */
-    text-transform: uppercase;
-}
-
-.video-container {
-    /* Position relative pour l'iframe */
-    position: relative;
-    /* Ratio 16:9 (hauteur calculée à partir de la largeur) */
-    padding-bottom: 56.25%;
-    /* Hauteur à 0 (gérée par le padding) */
-    height: 0;
-    /* Cache le débordement */
-    overflow: hidden;
-    /* Marges haut/bas */
-    margin: 40px 0;
-    /* Coins arrondis */
-    border-radius: 8px;
-    /* Ombre portée */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.video-container iframe {
-    /* Position absolue pour remplir le conteneur */
-    position: absolute;
-    /* Aligné en haut */
-    top: 0;
-    /* Aligné à gauche */
-    left: 0;
-    /* Prend toute la largeur */
-    width: 100%;
-    /* Prend toute la hauteur */
-    height: 100%;
-    /* Pas de bordure */
-    border: none;
-}
-
-.discover-more {
-    /* Texte centré */
-    text-align: center;
-    /* Marge en haut */
-    margin-top: 30px;
-}
-
-/* Scroll Navigation */
-.scroll-nav {
-    /* Position fixe pour rester visible au défilement */
-    position: fixed;
-    /* 20px de la droite */
-    right: 20px;
-    /* 20px du bas */
-    bottom: 20px;
-    /* Au-dessus de tout */
-    z-index: 1000;
-    /* Disposition en colonne */
-    display: flex;
-    flex-direction: column;
-    /* Espace entre boutons */
-    gap: 15px;
-}
-
-.scroll-btn {
-    /* Boutons ronds de 50x50px */
-    width: 50px;
-    height: 50px;
-    /* Forme circulaire */
-    border-radius: 50%;
-    /* Couleur de fond verte */
-    background-color: #05b360;
-    /* Texte en blanc */
-    color: white;
-    /* Centrage du contenu */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Taille de police */
-    font-size: 1.5rem;
-    /* Curseur en main */
-    cursor: pointer;
-    /* Ombre portée */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    /* Transition douce */
-    transition: all 0.3s ease;
-    /* Pas de bordure */
-    border: none;
-    /* Légère transparence */
-    opacity: 0.8;
-    /* Taille normale */
-    transform: scale(1);
-}
-
-.scroll-btn:hover {
-    /* Couleur de fond plus foncée au survol */
-    background-color: #048a4a;
-    /* Opacité totale */
-    opacity: 1;
-    /* Légère augmentation de taille */
-    transform: scale(1.1);
-    /* Ombre plus prononcée */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    /* Ajustements pour petits écrans */
-    .team-slideshow {
-        height: 50vh;
-        min-height: 400px;
-    }
-    
-    .slide-title {
-        font-size: 2rem;
-    }
-    
-    .team-name {
-        font-size: 2rem;
-    }
-    
-    .team-stats {
-        /* Passage en colonne */
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .stat-item {
-        margin-bottom: 15px;
-    }
-    
-    .scroll-nav {
-        /* Plus proche des bords */
-        right: 10px;
-        bottom: 10px;
-    }
-    
-    .scroll-btn {
-        /* Boutons légèrement plus petits */
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-    }
-}
-
-/* Comportement de défilement doux */
-html {
-    scroll-behavior: smooth;
-}
-
-.stadium-list-item {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.stadium-list-image {
-    width: 200px;
-    height: 150px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.stadium-list-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.stadium-list-content {
-    padding: 15px;
-    flex-grow: 1;
-}
-
-.stadium-list-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.stadium-location, .stadium-capacity {
-    color: #666;
-    margin-bottom: 5px;
-}
-
-@media (max-width: 768px) {
-    .stadium-list-item {
-        flex-direction: column;
-    }
-    
-    .stadium-list-image {
-        width: 100%;
-        height: 200px;
-    }
 }
 
 .page-subtitle {
@@ -1426,738 +621,6 @@ html {
     line-height: 1.5;
 }
 
-.testimonial-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #840404;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.testimonial-item {
-    padding: 30px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 20px;
-}
-
-.testimonial-item h4 {
-    color: #333;
-    font-size: 1.25rem;
-    margin-bottom: 5px;
-}
-
-.testimonial-position {
-    color: #840404;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.testimonial-text {
-    color: #666;
-    font-style: italic;
-    line-height: 1.6;
-}
-
-.gallery-item {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    height: 200px;
-    margin-bottom: 20px;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .gallery-item {
-        height: 180px;
-    }
-}
-
-@media (max-width: 576px) {
-    .gallery-item {
-        height: 150px;
-    }
-}
-
-.map-container {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.map-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 4px;
-}
-
-@media (max-width: 768px) {
-    .map-container {
-        padding: 15px;
-    }
-}
-
-/* About Page Styles */
-.about-hero {
-    background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 100px 0;
-    margin: 0;
-}
-.about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #840404;
-    opacity: 0.7;
-    z-index: 0;
-}
-.about-hero .container {
-    position: relative;
-    z-index: 1;
-}
-<<<<<<< HEAD
-/* Style des badges de tags */
-.article-tags .badge {
-    margin-right: 0.5rem;
-    padding: 0.5rem 1rem;
-}
-
-/* 
-=================================================
-  AFCON Morocco 2025 - Custom Styles
-  Author: [Your Name]
-  Version: 1.0
-================================================= 
-*/
-
-/* 
- * Base styles and variables
- * Setting up color variables based on Morocco's flag colors
- * Removed white background references for cleaner transitions
- */
- :root {
-    --primary-red: #840404;
-    --primary-red-dark: #5a0303;
-    --primary-red-light: #a30606;
-    --secondary-green: #06d672;
-    --secondary-green-dark: #05b360;
-    --secondary-green-light: #07f07f;
-    --accent-gold: #f7d000;
-    --dark: #1a1a1a;
-    --light: #f8f8f8;
-    --gray: #6c757d;
-    --gray-light: #e9ecef;
-    --gray-dark: #343a40;
-    --transition: all 0.3s ease;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --radius: 8px;
-}
-
-/* 
- * General Styles 
- * Removed default white background for smoother transitions
- */
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--dark);
-    line-height: 1.6;
-    overflow-x: hidden;
-    background-color: transparent; /* Ensures no white background */
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--primary-dark);
-}
-
-/* Button styles - removed white flash on hover */
-.btn {
-    border-radius: var(--radius);
-    padding: 0.5rem 1.5rem;
-    font-weight: 600;
-    transition: var(--transition);
-    background-color: transparent; /* Prevents white flash */
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-}
-
-.btn-primary:hover, .btn-primary:focus {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-}
-
-.btn-outline-primary {
-    color: var(--primary);
-    border-color: var(--primary);
-    background-color: transparent; /* Ensures no white background */
-}
-
-.btn-outline-primary:hover, .btn-outline-primary:focus {
-    background-color: var(--primary);
-    border-color: var(--primary);
-}
-
-/* Section title with accent line */
-.section-title {
-    position: relative;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--dark);
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: var(--primary);
-    margin: 0.5rem 0 0;
-}
-
-.text-center .section-title::after {
-    margin: 0.5rem auto 0;
-}
-
-/* 
- * Header & Navigation Styles 
- * Solid red background with no white gaps
- */
-header {
-    position: relative;
-    z-index: 1000;
-    background-color: var(--primary-red); /* Ensures full coverage */
-}
-
-.navbar {
-    padding: 1rem 0;
-    background-color: var(--primary-red) !important;
-    transition: var(--transition);
-}
-
-.navbar-brand img {
-    transition: var(--transition);
-}
-
-.nav-link {
-    color: white !important;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem !important;
-    position: relative;
-    background-color: transparent; /* No white flash on hover */
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--secondary-green) !important;
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1rem;
-    right: 1rem;
-    height: 3px;
-    background-color: var(--secondary-green);
-}
-
-/* 
- * Hero Section Styles 
- * Full bleed background with gradient overlay
- */
-.hero-section {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    background-image: url('../img/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    align-items: center;
-    margin: 0; /* Remove any default margin */
-}
-
-.hero-section .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(132, 4, 4, 0.8) 0%, rgba(132, 4, 4, 0.4) 100%);
-}
-
-.hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-section .lead {
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* 
- * Countdown Styles 
- * Solid red background with no white edges
- */
-.countdown-container {
-    background-color: rgba(132, 4, 4, 0.8);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-lg);
-    border: none; /* Remove any default borders */
-}
-
-.countdown-item span:first-child {
-    color: var(--secondary-green);
-}
-
-.countdown-timer {
-    display: flex;
-    justify-content: space-between;
-    background-color: transparent; /* Ensures no white background */
-}
-
-.countdown-item span {
-    display: block;
-}
-
-.countdown-item span:first-child {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent);
-}
-
-.countdown-label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: var(--light);
-}
-
-/* 
- * Highlight Cards Styles 
- * Clean transitions without white flashes
- */
-.highlight-card {
-    border: none;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    overflow: hidden;
-    background-color: white;
-    border-top: 4px solid var(--primary-red);
-}
-
-.highlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-top-color: var(--secondary-green);
-}
-
-.card-icon {
-    background-color: var(--primary-red);
-    color: white;
-}
-
-.highlight-card .card-body {
-    padding-top: 2rem;
-    text-align: center;
-    background-color: transparent; /* For smooth transitions */
-}
-
-.highlight-card .card-title {
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-/* 
- * Teams Section Styles 
- * Clean card transitions
- */
-.team-card {
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    background-color: white;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.team-flag {
-    width: 100px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: transparent; /* No white background */
-}
-
-.team-name {
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-}
-
-.team-status {
-    color: var(--gray);
-    font-size: 0.9rem;
-}
-
-.team-detailed-card {
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    background-color: white;
-    height: 100%;
-}
-
-.team-detailed-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.team-details {
-    margin: 0.5rem 0;
-}
-
-.team-info {
-    margin-bottom: 0.25rem;
-    font-size: 0.85rem;
-}
-
-/* 
- * News Cards Styles 
- * Smooth hover transitions
- */
-.news-card {
-    border: none;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    overflow: hidden;
-    background-color: white;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.news-card .card-img-top {
-    height: 200px;
-    object-fit: cover;
-    background-color: transparent; /* No white background */
-}
-
-.news-card .card-title {
-    font-weight: 700;
-}
-
-.news-card .card-footer {
-    background-color: transparent;
-    border-top: 1px solid var(--gray-light);
-}
-
-/* 
- * City Cards Styles 
- * Full-bleed images with overlay
- */
-.city-card {
-    position: relative;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
-    height: 250px;
-    background-color: transparent; /* Ensures no white background */
-}
-
-.city-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-    background-color: transparent; /* No white background */
-}
-
-.city-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-    color: white;
-    transition: var(--transition);
-}
-
-.city-card:hover .city-image {
-    transform: scale(1.05);
-}
-
-.city-card:hover .city-overlay {
-    background: linear-gradient(to top, rgba(193, 39, 45, 0.8) 0%, rgba(193, 39, 45, 0) 100%);
-}
-
-.city-overlay h3 {
-    margin: 0;
-    font-weight: 700;
-}
-
-/* 
- * Partners Section Styles 
- * Clean logo transitions
- */
-.partners-section {
-    padding: 4rem 0;
-    background-color: transparent; /* No white background */
-}
-
-.partner-logo {
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: var(--transition);
-    max-height: 60px;
-    background-color: transparent; /* Ensures no white background */
-}
-
-.partner-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* 
- * Newsletter Section Styles 
- * Dark background with no white edges
- */
-.newsletter-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/newsletter-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    margin: 0; /* Remove default margins */
-}
-
-.newsletter-form .form-control {
-    height: 50px;
-    border-radius: var(--radius) 0 0 var(--radius);
-    background-color: rgba(255,255,255,0.9); /* Slightly transparent white */
-}
-
-.newsletter-form .btn {
-    border-radius: 0 var(--radius) var(--radius) 0;
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: var(--dark);
-    font-weight: 700;
-}
-
-.newsletter-form .btn:hover {
-    background-color: var(--accent-dark);
-    border-color: var(--accent-dark);
-}
-
-/* 
- * Footer Styles 
- * Solid dark background
- */
-.footer {
-    background-color: var(--dark);
-    color: var(--light);
-    margin: 0; /* Remove default margins */
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links a {
-    color: var(--gray);
-    transition: var(--transition);
-    background-color: transparent; /* No white flash on hover */
-}
-
-.footer-links a:hover {
-    color: var(--accent);
-    padding-left: 5px;
-}
-
-.footer-contact {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-contact li {
-    margin-bottom: 1rem;
-    color: var(--gray);
-    display: flex;
-    align-items: flex-start;
-}
-
-.footer-contact li i {
-    margin-right: 0.75rem;
-    color: var(--primary);
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: var(--light);
-    transition: var(--transition);
-}
-
-.social-icon:hover {
-    background-color: var(--primary);
-    color: white;
-    transform: translateY(-3px);
-}
-
-.footer-bottom-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: flex-end;
-}
-
-.footer-bottom-links li a {
-    color: var(--gray);
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.footer-bottom-links li a:hover {
-    color: var(--accent);
-}
-
-/* 
- * Back to Top Button Styles 
- * Clean floating button
- */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary);
-    color: white;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-    transition: var(--transition);
-    border: none; /* Remove default button border */
-}
-
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-3px);
-}
-
-/* 
- * Page Title Section Styles 
- * Full bleed background
- */
-.page-title-section {
-    background: var(--primary-red);
-    padding: 60px 0;
-    color: white;
-    margin-bottom: 40px;
-}
-
-.page-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
 .breadcrumb {
     background: transparent;
     padding: 0;
@@ -2179,13 +642,12 @@ header {
 
 /* 
  * Info Card Styles 
- * Solid color card
  */
 .info-card {
     background: #fff;
-    border-radius: 8px;
+    border-radius: var(--radius);
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
     margin-bottom: 20px;
     border: 1px solid #ddd;
 }
@@ -2194,7 +656,7 @@ header {
     color: #333;
     font-size: 1.25rem;
     margin-bottom: 15px;
-    border-bottom: 2px solid #840404;
+    border-bottom: 2px solid var(--primary-red);
     padding-bottom: 10px;
 }
 
@@ -2212,15 +674,28 @@ header {
 }
 
 .info-card ul li i {
-    color: #840404;
+    color: var(--primary-red);
     margin-right: 10px;
     width: 20px;
 }
 
 /* 
  * Group Card Styles 
- * Clean card design
  */
+ /* Custom btn-link styles */
+.btn-link {
+  color: var(--primary-red);
+  text-decoration: none;
+  padding: 0;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.btn-link:hover {
+  color: var(--primary-red-dark);
+  text-decoration: underline;
+}
+
 .group-card {
     border: none;
     border-radius: var(--radius);
@@ -2246,40 +721,39 @@ header {
     height: 28px;
     object-fit: cover;
     border-radius: 2px;
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 .list-group-item {
     padding: 0.75rem 1rem;
     border-color: var(--gray-light);
-    background-color: transparent; /* For smooth transitions */
+    background-color: transparent;
 }
 
 /* 
  * Champions Table Styles 
- * Clean table design
  */
 .champions-table {
     box-shadow: var(--shadow);
     border-radius: var(--radius);
     overflow: hidden;
-    background-color: white; /* Table needs solid background */
+    background-color: white;
 }
 
 .champions-table th, .champions-table td {
     vertical-align: middle;
-    background-color: transparent; /* Cells transparent within white table */
+    background-color: transparent;
 }
 
 .champions-table th {
-    background-color: var(--primary);
+    background-color: var(--primary-red);
     color: white;
     font-weight: 600;
 }
 
 .country-record {
     padding: 1rem;
-    background-color: transparent; /* For smooth transitions */
+    background-color: transparent;
 }
 
 .record-flag {
@@ -2288,117 +762,12 @@ header {
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 0.5rem;
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 /* 
- * Responsive Styles 
- * Maintain clean transitions at all sizes
+ * Team Member Card Styles 
  */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: var(--dark);
-        padding: 1rem;
-        border-radius: var(--radius);
-        margin-top: 0.5rem;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-section .lead {
-        font-size: 1.2rem;
-    }
-    
-    .countdown-item span:first-child {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-section {
-        text-align: center;
-        height: auto;
-        padding: 8rem 0;
-    }
-    
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-    
-    .countdown-container {
-        margin-top: 2rem;
-    }
-    
-    .page-title {
-        font-size: 2.2rem;
-    }
-    
-    .city-card {
-        height: 200px;
-    }
-    
-    .footer-bottom-links {
-        justify-content: center;
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 575px) {
-    .team-flag {
-        width: 80px;
-        height: 56px;
-    }
-    
-    .countdown-item span:first-child {
-        font-size: 1.2rem;
-    }
-    
-    .countdown-label {
-        font-size: 0.7rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-}
-
-/* 
- * Animation Classes 
- * Smooth animations without white flashes
- */
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-    background-color: transparent; /* Ensures no white background during animation */
-}
-
-.slide-in-left {
-    animation: slideInLeft 1s ease-in-out;
-    background-color: transparent; /* Ensures no white background during animation */
-}
-
-.slide-in-right {
-    animation: slideInRight 1s ease-in-out;
-    background-color: transparent; /* Ensures no white background during animation */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
-    from { transform: translateX(-50px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-    from { transform: translateX(50px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-/* Team Member Card Styles */
 .team-member-card {
     background: #fff;
     border-radius: var(--radius);
@@ -2417,12 +786,12 @@ header {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 .team-member-info {
     padding: 1.5rem;
-    background-color: transparent; /* For smooth transitions */
+    background-color: transparent;
 }
 
 .team-member-info h3 {
@@ -2432,7 +801,7 @@ header {
 }
 
 .position {
-    color: var(--primary);
+    color: var(--primary-red);
     font-weight: 600;
     margin: 0.5rem 0;
 }
@@ -2464,30 +833,34 @@ header {
 }
 
 .social-link:hover {
-    background: var(--primary);
+    background: var(--primary-red);
     color: white;
 }
 
-/* Organization Chart Styles */
+/* 
+ * Organization Chart Styles 
+ */
 .org-chart-container {
     padding: 1rem;
     background: #f8f9fa;
     border-radius: var(--radius);
 }
 
-/* Achievement Timeline Styles */
+/* 
+ * Achievement Timeline Styles 
+ */
 .achievement-timeline {
     position: relative;
     padding-left: 2rem;
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 .achievement-item {
     position: relative;
     padding-bottom: 1.5rem;
-    border-left: 2px solid var(--primary);
+    border-left: 2px solid var(--primary-red);
     padding-left: 1.5rem;
-    background-color: transparent; /* No white background */
+    background-color: transparent;
 }
 
 .achievement-item:last-child {
@@ -2501,24 +874,26 @@ header {
     top: 0;
     width: 1rem;
     height: 1rem;
-    background: var(--primary);
+    background: var(--primary-red);
     border-radius: 50%;
 }
 
 .achievement-date {
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primary-red);
     display: block;
     margin-bottom: 0.25rem;
 }
 
-/* Team Hero Section - Matching Header Red */
+/* 
+ * Team Hero Section
+ */
 .team-hero {
     background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
     padding: 100px 0 20px 0;
+    color: white;
     text-align: center;
     position: relative;
     margin: 0;
@@ -2531,7 +906,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #840404;
+    background-color: var(--primary-red);
     opacity: 0.7;
     z-index: 0;
 }
@@ -2541,6 +916,23 @@ header {
     z-index: 1;
 }
 
+.team-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.team-hero .lead {
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* 
+ * Team Slideshow
+ */
 .team-slideshow {
     position: relative;
     margin-bottom: 0 !important;
@@ -2549,7 +941,7 @@ header {
     min-height: 500px;
     overflow: hidden;
     margin-bottom: 50px;
-    background-color: #840404;
+    background-color: var(--primary-red);
 }
 
 .team-slide {
@@ -2561,7 +953,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #840404;
+    background-color: var(--primary-red);
+}
+
+.team-slide.active {
+    opacity: 1;
 }
 
 .team-slide-image {
@@ -2570,43 +966,7 @@ header {
     height: 100%;
     min-width: 100%;
     min-height: 100%;
-}
-
-.slide-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(132, 4, 4, 0.9));
-    padding: 30px;
-    color: white;
-}
-
-@media (max-aspect-ratio: 16/9) {
-    .team-slide-image {
-        object-fit: cover;
-        width: auto;
-        height: 100%;
-    }
-}
-
-@media (min-aspect-ratio: 16/9) {
-    .team-slide-image {
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-    }
-}
-
-.team-slide.active {
-    opacity: 1;
-}
-
-.slide-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-color: var(--primary-red);
 }
 
 .slide-overlay {
@@ -2617,6 +977,14 @@ header {
     background: linear-gradient(transparent, rgba(0,0,0,0.8));
     padding: 30px;
     color: white;
+    z-index: 2;
+}
+
+.slide-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .slide-nav {
@@ -2643,14 +1011,9 @@ header {
     transform: scale(1.3);
 }
 
-.team-slide-image {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-}
-
+/* 
+ * Team Section
+ */
 .team-section {
     padding: 80px 0;
     scroll-margin-top: 100px;
@@ -2665,33 +1028,12 @@ header {
     text-align: center;
 }
 
-.team-name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-.team-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 30px;
-}
-
-.team-flag {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-    background-color: transparent;
-}
-
 .team-content {
     max-width: 800px;
     margin: 0 auto;
     background-color: rgba(255,255,255,0.1);
     padding: 30px;
-    border-radius: 8px;
+    border-radius: var(--radius);
     backdrop-filter: blur(5px);
 }
 
@@ -2708,42 +1050,11 @@ header {
     margin: 30px 0;
     background-color: rgba(0,0,0,0.2);
     padding: 20px;
-    border-radius: 8px;
-=======
-.about-hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-.about-hero .lead {
-    font-size: 1.5rem;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-@media (max-width: 767px) {
-    .about-hero {
-        padding: 60px 0;
-    }
-    .about-hero h1 {
-        font-size: 2rem;
-    }
-    .about-hero .lead {
-        font-size: 1.1rem;
-    }
-}
-
-.hero-stats {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
->>>>>>> ace72496df250834b472a5d6fc56991f2982dc99
+    border-radius: var(--radius);
 }
 
 .stat-item {
     text-align: center;
-<<<<<<< HEAD
     padding: 15px;
     min-width: 150px;
 }
@@ -2766,8 +1077,8 @@ header {
     height: 0;
     overflow: hidden;
     margin: 40px 0;
-    border-radius: 8px;
-    background-color: transparent;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .video-container iframe {
@@ -2784,35 +1095,9 @@ header {
     margin-top: 30px;
 }
 
-@media (max-width: 768px) {
-    .team-slideshow {
-        height: 50vh;
-        min-height: 400px;
-    }
-    
-    .slide-title {
-        font-size: 2rem;
-    }
-    
-    .team-name {
-        font-size: 2rem;
-    }
-    
-    .team-stats {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .stat-item {
-        margin-bottom: 15px;
-    }
-}
-
-html {
-    scroll-behavior: smooth;
-    background-color: transparent;
-}
-
+/* 
+ * Scroll Navigation
+ */
 .scroll-nav {
     position: fixed;
     right: 20px;
@@ -2848,24 +1133,16 @@ html {
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
-@media (max-width: 768px) {
-    .scroll-nav {
-        right: 10px;
-        bottom: 10px;
-    }
-    .scroll-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-    }
-}
-
+/* 
+ * Stadium List
+ */
 .stadium-list-item {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     overflow: hidden;
     margin-bottom: 20px;
+    display: flex;
 }
 
 .stadium-list-image {
@@ -2896,34 +1173,15 @@ html {
     margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-    .stadium-list-item {
-        flex-direction: column;
-    }
-    
-    .stadium-list-image {
-        width: 100%;
-        height: 200px;
-    }
-}
-
-.page-subtitle {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 15px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-}
-
+/* 
+ * Testimonials
+ */
 .testimonial-img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #840404;
+    border: 3px solid var(--primary-red);
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -2931,9 +1189,10 @@ html {
 .testimonial-item {
     padding: 30px;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     margin: 20px;
+    text-align: center;
 }
 
 .testimonial-item h4 {
@@ -2943,7 +1202,7 @@ html {
 }
 
 .testimonial-position {
-    color: #840404;
+    color: var(--primary-red);
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
@@ -2954,12 +1213,15 @@ html {
     line-height: 1.6;
 }
 
+/* 
+ * Gallery
+ */
 .gallery-item {
     display: block;
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease;
     height: 200px;
     margin-bottom: 20px;
@@ -2976,26 +1238,17 @@ html {
     transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .gallery-item {
-        height: 180px;
-    }
-}
-
-@media (max-width: 576px) {
-    .gallery-item {
-        height: 150px;
-    }
-}
-
+/* 
+ * Map Container
+ */
 .map-container {
     text-align: center;
     margin: 0 auto;
     max-width: 800px;
     padding: 20px;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
 .map-container img {
@@ -3006,35 +1259,46 @@ html {
     border-radius: 4px;
 }
 
-@media (max-width: 768px) {
-    .map-container {
-        padding: 15px;
-    }
-}
-=======
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    transition: transform 0.3s ease;
-}
-
-.stat-item:hover {
-    transform: translateY(-5px);
-}
-
-.stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--secondary-green);
-    margin-bottom: 0.5rem;
+/* 
+ * About Hero Section
+ */
+.about-hero {
+    background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 100px 0;
+    margin: 0;
 }
 
-.stat-label {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-red);
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.about-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .history-timeline {
@@ -3083,8 +1347,8 @@ html {
 .feature-card {
     background: white;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     text-align: center;
     transition: transform 0.3s ease;
     height: 100%;
@@ -3156,8 +1420,8 @@ html {
 .step-content {
     background: white;
     padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
 .step-content h3 {
@@ -3186,8 +1450,8 @@ html {
 .legacy-image {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
 .legacy-image img {
@@ -3198,7 +1462,97 @@ html {
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+.accordion-button {
+    background-color: white !important;
+    color: var(--dark) !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-red) !important;
+    color: white !important;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(132, 4, 4, 0.25) !important;
+}
+
+.badge.bg-secondary {
+    background-color: var(--secondary-green) !important;
+    color: #fff !important;
+}
+
+/* 
+ * Animation Classes 
+ */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+    background-color: transparent;
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s ease-in-out;
+    background-color: transparent;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-in-out;
+    background-color: transparent;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* 
+ * Responsive Styles 
+ */
+@media (max-aspect-ratio: 16/9) {
+    .team-slide-image {
+        object-fit: cover;
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .team-slide-image {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: var(--dark);
+        padding: 1rem;
+        border-radius: var(--radius);
+        margin-top: 0.5rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.2rem;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.5rem;
+    }
+    
     .hero-stats {
         flex-direction: column;
         gap: 1rem;
@@ -3225,21 +1579,416 @@ html {
     }
 }
 
-.accordion-button {
-    background-color: white !important;
-    color: var(--dark) !important;
+@media (max-width: 767px) {
+    .hero-section {
+        text-align: center;
+        height: auto;
+        padding: 8rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .countdown-container {
+        margin-top: 2rem;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .city-card {
+        height: 200px;
+    }
+    
+    .footer-bottom-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .team-slideshow {
+        height: 50vh;
+        min-height: 400px;
+    }
+    
+    .slide-title {
+        font-size: 2rem;
+    }
+    
+    .team-name {
+        font-size: 2rem;
+    }
+    
+    .team-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        margin-bottom: 15px;
+    }
+    
+    .scroll-nav {
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .scroll-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .stadium-list-item {
+        flex-direction: column;
+    }
+    
+    .stadium-list-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .about-hero {
+        padding: 60px 0;
+    }
+    
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .about-hero .lead {
+        font-size: 1.1rem;
+    }
 }
 
-.accordion-button:not(.collapsed) {
-    background-color: #c1272d !important;
-    color: white !important;
+@media (max-width: 575px) {
+    .team-flag {
+        width: 80px;
+        height: 56px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-item {
+        height: 150px;
+    }
 }
 
-.accordion-button:focus {
-    box-shadow: 0 0 0 0.25rem rgba(193, 39, 45, 0.25) !important;
+/* Improved Performance */
+html {
+    scroll-behavior: smooth;
+    background-color: transparent;
 }
 
-.badge.bg-secondary {
-    background-color: var(--secondary-green) !important;
-    color: #fff !important;
+/* Red pagination styling to match your theme */
+.pagination {
+  margin-top: 2rem;
+}
+
+.page-item .page-link {
+  color: var(--primary-red); /* Using your theme's red color variable */
+  border: 1px solid #dee2e6;
+  transition: var(--transition); /* Using your theme's transition */
+  margin: 0 3px;
+  border-radius: var(--radius) !important; /* Using your theme's radius */
+}
+
+.page-item .page-link:hover {
+  color: var(--primary-red-dark); /* Your darker red variable */
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+  color: white !important;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+/* Next/Previous arrows with red color */
+.page-link[aria-label^="Next"],
+.page-link[aria-label^="Previous"] {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  color: var(--primary-red) !important;
+}
+
+.page-link[aria-label^="Next"]:hover,
+.page-link[aria-label^="Previous"]:hover {
+  color: var(--primary-red-dark) !important;
+}
+
+/* Font Awesome arrows */
+.page-link[aria-label^="Next"]::after,
+.page-link[aria-label^="Previous"]::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: inherit;
+}
+
+.page-link[aria-label^="Next"]::after {
+  content: "\f054"; /* arrow-right */
+}
+
+.page-link[aria-label^="Previous"]::before {
+  content: "\f053"; /* arrow-left */
+}
+
+/* Group Cards Styling */
+.group-card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.group-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Group Header - Red Background */
+.group-card .card-header {
+  background-color: var(--primary-red) !important;
+  border-bottom: none;
+  padding: 1rem;
+}
+
+.group-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: white;
+  text-align: center;
+}
+
+/* Group Body Styling */
+.group-card .card-body {
+  padding: 0;
+}
+
+.group-card .list-group-item {
+  padding: 1rem;
+  border-color: rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+.group-card .list-group-item:hover {
+  background-color: rgba(132, 4, 4, 0.05);
+}
+
+.group-flag {
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Alternate row coloring for better readability */
+.group-card .list-group-item:nth-child(odd) {
+  background-color: rgba(248, 249, 250, 0.5);
+}
+
+/* Hover effect on flags */
+.group-flag {
+  transition: transform 0.2s ease;
+}
+
+.group-card .list-group-item:hover .group-flag {
+  transform: scale(1.1);
+}
+
+/* Match Schedule Tabs Styling - Always Visible */
+.fixture-tabs {
+  border-bottom: 2px solid #e9ecef;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 5px;
+}
+
+/* Base tab style - always visible */
+.fixture-tab-link {
+  color: var(--dark) !important; /* Force dark text always */
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Hover state */
+.fixture-tab-link:hover {
+  color: var(--primary-red-dark) !important;
+  border-bottom-color: rgba(132, 4, 4, 0.3);
+}
+
+/* Active state */
+.fixture-tab-link.active {
+  color: var(--primary-red) !important;
+  border-bottom-color: var(--primary-red);
+  font-weight: 700;
+}
+
+/* Active tab indicator */
+.fixture-tab-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-red);
+}
+
+/* Scrollbar styling */
+.fixture-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.fixture-tabs::-webkit-scrollbar-thumb {
+  background-color: var(--primary-red);
+  border-radius: 4px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .fixture-tabs {
+    padding-bottom: 8px;
+  }
+  
+  .fixture-tab-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Override Bootstrap's default blue colors with red theme */
+:root {
+  --bs-primary: #840404;       /* Your primary red */
+  --bs-primary-rgb: 132, 4, 4;
+  --bs-primary-dark: #5a0303;   /* Darker red */
+  --bs-primary-light: #a30606;  /* Lighter red */
+}
+
+/* Primary color overrides */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary-dark);
+  --bs-btn-hover-border-color: var(--bs-primary-dark);
+  --bs-btn-active-bg: var(--bs-primary-dark);
+  --bs-btn-active-border-color: var(--bs-primary-dark);
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+/* Link colors */
+a {
+  color: var(--bs-primary);
+}
+a:hover {
+  color: var(--bs-primary-dark);
+}
+
+/* Nav tabs */
+.nav-tabs {
+  --bs-nav-tabs-link-active-color: var(--bs-primary);
+  --bs-nav-tabs-link-active-border-color: var(--bs-primary);
+}
+.nav-tabs .nav-link:hover {
+  border-color: rgba(132, 4, 4, 0.1);
+}
+
+/* Pagination */
+.pagination {
+  --bs-pagination-active-bg: var(--bs-primary);
+  --bs-pagination-active-border-color: var(--bs-primary);
+  --bs-pagination-color: var(--bs-primary);
+  --bs-pagination-hover-color: var(--bs-primary-dark);
+}
+
+/* Form controls */
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(132, 4, 4, 0.25);
+}
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+/* Alerts */
+.alert-primary {
+  --bs-alert-color: #fff;
+  --bs-alert-bg: var(--bs-primary);
+  --bs-alert-border-color: var(--bs-primary);
+}
+
+/* Badges */
+.badge.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+/* Dropdowns */
+.dropdown-item.active, 
+.dropdown-item:active {
+  background-color: var(--bs-primary);
+}
+
+/* Progress bars */
+.progress-bar {
+  background-color: var(--bs-primary);
+}
+
+/* Tooltips */
+.tooltip .tooltip-inner {
+  background-color: var(--bs-primary);
+}
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
+.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: var(--bs-primary);
+}
+
+/* Popovers */
+.popover-header {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+/* Override all primary utility classes */
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+.border-primary {
+  border-color: var(--bs-primary) !important;
 }
