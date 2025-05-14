@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFCON 2025 About | Official Portal</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Variables de couleurs principales - Définition des couleurs de base utilisées dans tout le site */
+        :root {
+            --primary-red: #840404; /* Rouge principal de l'AFCON */
+            --secondary-green: #06d672; /* Vert secondaire pour les accents */
+            --secondary-green-dark: #05b35f; /* Version plus foncée du vert pour les hovers */
+            --dark: #333; /* Couleur de texte principale */
+        }
+
+        /* Section héro - Style de la bannière principale avec image de fond */
+        .about-hero {
+            background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
+            background-size: cover; /*l'image couvre toute la section */
+            background-position: center; /* Centre l'image horizontalement et verticalement */
+            background-attachment: fixed; /* Effet parallaxe lors du défilement */
+            min-height: 70vh; /* Hauteur minimale de 70% de la hauteur de la fenêtre */
+            display: flex; /* Utilise flexbox pour le centrage vertical */
+            align-items: center; /* Centre verticalement le contenu */
+            color: white; /* Couleur du texte */
+            position: relative; /* Pour le positionnement de l'overlay */
+            overflow: hidden; /* Cache tout débordement */
+            text-align: center; /* Centre le texte horizontalement */
+            padding: 100px 0; /* Espacement vertical */
+            margin: 0; 
+        }
+
+        /* Superposition - Ajoute un filtre sombre sur l'image de fond */
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #840404; /* Rouge semi-transparent */
+            opacity: 0.7; /* Niveau de transparence */
+            z-index: 0; /* Place l'overlay sous le contenu */
+        }
+
+        /* Conteneur*/
+        .about-hero .container {
+            position: relative;
+            z-index: 1; /* Place le contenu au-dessus de l'overlay */
+        }
+
+        /* Titre - Style du titre principal */
+        .about-hero h1 {
+            font-size: 3rem; /* Taille de police importante */
+            font-weight: 700; /* Police en gras */
+            margin-bottom: 20px; /* Espacement sous le titre */
+            color: #fff; /* Texte blanc */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Ombre portée pour meilleure lisibilité */
+        }
+
+        /* Texte descriptif - Style du texte d'introduction */
+        .about-hero .lead {
+            font-size: 1.5rem; /* Taille de police plus grande que le texte normal */
+            color: #fff; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
+        }
+
+        /* Media queries mobile  */
+        @media (max-width: 767px) {
+            .about-hero {
+                padding: 60px 0; 
+            }
+            .about-hero h1 {
+                font-size: 2rem; 
+            }
+            .about-hero .lead {
+                font-size: 1.1rem; 
+            }
+        }
+
+        /* Statistiques - Conteneur flex pour les statistiques */
+        .hero-stats {
+            display: flex; /* Utilise flexbox pour l'alignement */
+            gap: 2rem; /* Espace entre les éléments */
+            margin-top: 2rem; /* Espace au-dessus des stats */
+        }
+
+        /* Carte statistique - Style de chaque élément statistique */
+        .stat-item {
+            text-align: center; /* Centre le contenu */
+            background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
+            padding: 1.5rem; /* Espacement interne */
+            border-radius: 8px; /* Coins arrondis */
+            backdrop-filter: blur(5px); /* Effet de flou sur le fond */
+            transition: transform 0.3s ease; /* Animation de transformation */
+        }
+
+        /* Hover statistique - Effet au survol */
+        .stat-item:hover {
+            transform: translateY(-5px); /* Légère élévation */
+        }
+
+        /* Chiffre - Style des nombres statistiques */
+        .stat-number {
+            display: block; /* Affiche en bloc */
+            font-size: 2.5rem; /* Grande taille de police */
+            font-weight: 700; /* Police en gras */
+            color: var(--secondary-green); /* Couleur verte */
+            margin-bottom: 0.5rem; /* Espace sous le nombre */
+        }
+
+        /* Label - Style des textes descriptifs */
+        .stat-label {
+            font-size: 1rem; /* Taille de police normale */
+            text-transform: uppercase; /* Texte en majuscules */
+            letter-spacing: 1px; /* Espacement des lettres */
+        }
+
+        /* Timeline - Conteneur principal de la frise chronologique */
+        .timeline {
+            position: relative; /* Pour le positionnement des éléments enfants */
+            padding: 2rem 0; /* Espacement vertical */
+        }
+
+        /* Ligne centrale - Élément décoratif de la timeline */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%; /* Centre horizontalement */
+            transform: translateX(-50%); /* Ajustement précis du centrage */
+            width: 2px; /* Épaisseur de la ligne */
+            height: 100%; /* Hauteur complète */
+            background: var(--primary-red); /* Couleur rouge de l'AFCON */
+        }
+
+        /* Événement - Style de chaque élément de la timeline */
+        .timeline-item {
+            margin-bottom: 3rem; /* Espace entre les événements */
+            position: relative; /* Pour le positionnement des éléments enfants */
+        }
+
+        /* Contenu de l'événement - Style du bloc d'information */
+        .timeline-content {
+            background: white; /* Fond blanc */
+            padding: 1.5rem; /* Espacement interne */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombre portée */
+            position: relative; /* Pour le positionnement des éléments enfants */
+            width: calc(50% - 30px); /* Largeur de 50% moins l'espace pour la ligne */
+        }
+
+        /* Positionnement alterné - Alternance gauche/droite des événements */
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto; /* Aligne à droite */
+        }
+
+        /* Point central - Marqueur sur la ligne de temps */
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px; /* Taille du point */
+            height: 20px; /* Taille du point */
+            background: var(--secondary-green); /* Couleur verte */
+            border-radius: 50%; /* Forme circulaire */
+            top: 50%; /* Centre verticalement */
+            transform: translateY(-50%); /* Ajustement précis du centrage */
+        }
+
+        /* Position du point */
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -40px; /* Point à gauche pour les éléments pairs */
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -40px; /* Point à droite pour les éléments impairs */
+        }
+
+        /* Style de l'année */
+        .timeline-date {
+            font-size: 1.2rem; /* Taille de police */
+            font-weight: 700; /* Police en gras */
+            color: var(--primary-red); /* Couleur rouge */
+            margin-bottom: 0.5rem; /* Espace sous la date */
+        }
+
+        /*Style du titre de l'événement */
+        .timeline-title {
+            font-size: 1.5rem; /* Taille de police */
+            margin-bottom: 1rem; /* Espace sous le titre */
+            color: var(--dark); /* Couleur de texte principale */
+        }
+
+        /* Style du texte descriptif */
+        .timeline-description {
+            color: #666; /* Couleur de texte secondaire */
+            line-height: 1.6; /* Espacement des lignes */
+        }
+
+        /* Media queries */
+        @media (max-width: 767px) {
+            .timeline::before {
+                left: 30px; /* Déplace la ligne vers la gauche */
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px); /* Largeur complète moins l'espace pour la ligne */
+                margin-left: 60px !important; /* Force l'alignement à droite */
+            }
+            
+            .timeline-content::before {
+                left: -40px !important; /* Point toujours à gauche */
+            }
+        }
+
+        /* Carte fonctionnalité */
+        .feature-card {
+            background: linear-gradient(rgba(132, 4, 4, 0.95), rgba(132, 4, 4, 0.8));
+            color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        /* Hover carte */
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Icône */
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        /* Texte carte */
+        .feature-card h3,
+        .feature-card p {
+            color: #fff;
+        }
+
+        /* Étapes */
+        .format-steps {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        /* Ligne étapes */
+        .format-steps::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-red);
+        }
+
+        /* Étape */
+        .step {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        /* Point étape */
+        .step::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary-red);
+            border-radius: 50%;
+        }
+
+        /* Numéro */
+        .step-number {
+            position: absolute;
+            left: -2.5rem;
+            top: -0.5rem;
+            width: 2rem;
+            height: 2rem;
+            background: white;
+            border: 2px solid var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+
+        /* Contenu étape */
+        .step-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Titre étape */
+        .step-content h3 {
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Liste héritage */
+        .legacy-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        /* Élément liste */
+        .legacy-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Icône liste */
+        .legacy-list i {
+            color: var(--secondary-green);
+            margin-right: 1rem;
+            font-size: 1.25rem;
+        }
+
+        /* Image */
+        .legacy-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image conteneur */
+        .legacy-image img {
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover image */
+        .legacy-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Media queries mobile */
+        @media (max-width: 768px) {
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .format-steps {
+                padding-left: 1.5rem;
+            }
+            
+            .step::before {
+                left: -2rem;
+            }
+            
+            .step-number {
+                left: -2rem;
+            }
+        }
+
+        /* Bouton accordéon */
+        .accordion-button {
+            background-color: white !important;
+            color: var(--dark) !important;
+        }
+
+        /* Accordéon ouvert */
+        .accordion-button:not(.collapsed) {
+            background-color: #c1272d !important;
+            color: white !important;
+        }
+
+        /* Focus accordéon */
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(193, 39, 45, 0.25) !important;
+        }
+
+        /* Badge */
+        .badge.bg-secondary {
+            background-color: var(--secondary-green) !important;
+            color: #fff !important;
+        }
+
+        /* Section intro */
+        .about-intro {
+            position: relative;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+
+        /* Image intro */
+        .about-intro-image {
+            position: relative;
+            height: 100%;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        /* Image conteneur */
+        .about-intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover image */
+        .about-intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay */
+        .about-intro-image .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        /* Contenu intro */
+        .about-intro-content {
+            padding: 5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7));
+            color: white;
+        }
+
+        /* Titre intro */
+        .about-intro-content h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Texte intro */
+        .about-intro-content .lead {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Stats */
+        .about-stats {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: none;
+            border-radius: 10px;
+        }
+
+        /* Élément stat */
+        .about-stats .stat-item {
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        /* Chiffre stat */
+        .about-stats .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-green);
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Label stat */
+        .about-stats .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Bouton */
+        .about-intro-content .btn-primary {
+            align-self: flex-start;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+        }
+
+        /* Hover bouton */
+        .about-intro-content .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: var(--secondary-green-dark);
+            border-color: var(--secondary-green-dark);
+        }
+
+        /* Media queries tablette */
+        @media (max-width: 991.98px) {
+            .about-intro-image {
+                min-height: 400px;
+            }
+            
+            .about-intro-content {
+                padding: 3rem;
+            }
+            
+            .about-stats {
+                flex-wrap: wrap;
+            }
+            
+            .about-stats .stat-item {
+                width: 50%;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Media queries mobile */
+        @media (max-width: 767.98px) {
+            .about-intro-image {
+                min-height: 300px;
+            }
+            
+            .about-intro-content {
+                padding: 2rem;
+            }
+            
+            .about-stats .stat-item {
+                width: 100%;
+            }
+        }
+
+        /* Section galerie(Conteneur principal avec fond dégradé et image) */
+        .about-gallery {
+            background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg'); /* Superposition rouge sur image */
+            background-size: cover; /* L'image couvre toute la zone */
+            background-position: center; /* Centrage de l'image */
+            color: white; /* Texte en blanc */
+            padding: 5rem 0; /* Espacement vertical important */
+        }
+
+        /* Titres et textes de la galerie */
+        .about-gallery .section-title,
+        .about-gallery .gallery-overlay h4,
+        .about-gallery .gallery-overlay p {
+            color: white; /* Texte en blanc */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Ombre légère pour lisibilité */
+        }
+
+        /* Élément de galerie - Style de chaque carte */
+        .gallery-item {
+            position: relative; /* Pour le positionnement des éléments enfants */
+            overflow: hidden; /* Cache les débordements */
+            border-radius: 10px; /* Coins arrondis */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombre portée */
+            cursor: pointer; /* Curseur pointer au survol */
+            margin-bottom: 2rem; /* Espacement entre les éléments */
+        }
+
+        /* Image de la galerie */
+        .gallery-item img {
+            width: 100%; /* Largeur complète */
+            height: 300px; /* Hauteur fixe */
+            object-fit: cover; /* Ajuste l'image pour couvrir l'espace */
+            transition: transform 0.5s ease; /* Animation de zoom fluide */
+        }
+
+        /* Effet de zoom au survol */
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Zoom de 10% */
+        }
+
+        /* Superposition d'image */
+        .gallery-overlay {
+            position: absolute; /* Position absolue */
+            bottom: 0; /* Aligné en bas */
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); /* Dégradé sombre */
+            padding: 2rem; /* Espacement interne */
+            color: white; /* Texte en blanc */
+            transform: translateY(100%); /* Caché par défaut */
+            transition: transform 0.3s ease; /* Animation de glissement */
+        }
+
+        /* Affichage de l'overlay au survol */
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0); /* Visible */
+        }
+
+        /* Titre de l'overlay */
+        .gallery-overlay h4 {
+            font-size: 1.5rem; /* Taille de police */
+            margin-bottom: 0.5rem; /* Espacement sous le titre */
+            font-weight: 600; /* Police en semi-gras */
+        }
+
+        /* Texte de l'overlay */
+        .gallery-overlay p {
+            font-size: 1rem; /* Taille de police */
+            margin: 0;
+            opacity: 0.9; /* Légère transparence */
+        }
+
+        /* Media queries pour tablettes */
+        @media (max-width: 991.98px) {
+            .gallery-item img {
+                height: 250px; /* Hauteur réduite sur tablette */
+            }
+        }
+
+        /* Media queries pour mobiles */
+        @media (max-width: 767.98px) {
+            .gallery-item img {
+                height: 200px; /* Hauteur encore plus réduite sur mobile */
+            }
+            
+            .gallery-overlay {
+                padding: 1.5rem; /* Espacement réduit */
+            }
+            
+            .gallery-overlay h4 {
+                font-size: 1.2rem; /* Taille de titre réduite */
+            }
+        }
+
+        /* Sections */
+        .afcon-story-section,
+        .morocco-afcon-section,
+        .afcon-moments-section,
+        .afcon-2025-section {
+            background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* Titres sections */
+        .afcon-story-section .section-title,
+        .afcon-story-section .lead,
+        .morocco-afcon-section .section-title,
+        .morocco-afcon-section .lead,
+        .afcon-moments-section .section-title,
+        .afcon-moments-section .lead,
+        .afcon-2025-section .section-title,
+        .afcon-2025-section .lead {
+            color: white;
+        }
+
+        /* Cadre vidéo */
+        .afcon-video-frame,
+        .morocco-video-frame,
+        .afcon-moments-video-frame,
+        .afcon-2025-video-frame {
+            border: 4px solid #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            overflow: hidden;
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Boutons */
+        .afcon-discover-btn,
+        .morocco-discover-btn,
+        .afcon-moments-btn,
+        .afcon-2025-btn {
+            font-weight: 700;
+            color: #840404 !important;
+            background: #fff !important;
+            border-radius: 30px;
+            padding: 0.75rem 2.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            border: none;
+            transition: all 0.2s;
+        }
+
+        /* Hover boutons */
+        .afcon-discover-btn:hover,
+        .afcon-discover-btn:focus,
+        .morocco-discover-btn:hover,
+        .morocco-discover-btn:focus,
+        .afcon-moments-btn:hover,
+        .afcon-moments-btn:focus,
+        .afcon-2025-btn:hover,
+        .afcon-2025-btn:focus {
+            background: #fff !important;
+            color: #5a0303 !important;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        }
+
+        /* Paragraphe */
+        .creative-paragraph {
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.18rem;
+            line-height: 1.85;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            letter-spacing: 0.01em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+        }
+
+        /* Texte vert */
+        .highlight-green {
+            color: #06d672;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        /* Sections */
+        .team-hero,
+        .about-content,
+        .stats-section,
+        .timeline-section {
+            background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* Titres sections */
+        .team-hero .display-4,
+        .team-hero .lead,
+        .about-content .feature-card h3,
+        .about-content .feature-card p,
+        .stats-section .stat-item,
+        .timeline-section .section-title,
+        .timeline-section .timeline-item h4,
+        .timeline-section .timeline-item p {
+            color: white;
+        }
+
+        /* Carte stats */
+        .team-stats-card {
+            background: #840404;
+            border-radius: 18px;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem auto 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+            color: #fff;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        /* Élément stat */
+        .team-stats-card .stat-item {
+            flex: 1 1 180px;
+            text-align: center;
+        }
+
+        /* Chiffre */
+        .team-stats-card .stat-number {
+            color: #06d672;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Label */
+        .team-stats-card .stat-label {
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        /* Media queries mobile */
+        @media (max-width: 768px) {
+            .team-stats-card {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 0.5rem;
+            }
+        }
+
+        /* Section Timeline*/
+        .timeline-section {
+            background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg'); /* Superposition rouge sur image */
+            background-size: cover; /* L'image couvre toute la zone */
+            background-position: center; /* Centrage de l'image */
+            color: white; /* Texte en blanc */
+            padding: 5rem 0; /* Espacement vertical important */
+            position: relative; /* Pour le positionnement des éléments enfants */
+        }
+
+        /* Titre de la section */
+        .timeline-section .section-title {
+            color: white; /* Texte en blanc */
+            text-align: center; /* Centrage du titre */
+            margin-bottom: 3rem; /* Espacement sous le titre */
+            font-size: 2.5rem; /* Taille de police importante */
+            font-weight: 700; /* Police en gras */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Ombre pour lisibilité */
+        }
+
+        /* Conteneur de la timeline */
+        .timeline {
+            position: relative; /* Pour le positionnement des éléments enfants */
+            padding: 2rem 0; /* Espacement vertical */
+            max-width: 800px; /* Largeur maximale */
+            margin: 0 auto; /* Centrage horizontal */
+        }
+
+        /* Ligne centrale de la timeline */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%; /* Centre horizontalement */
+            transform: translateX(-50%); /* Ajustement précis du centrage */
+            width: 2px; /* Épaisseur de la ligne */
+            height: 100%; /* Hauteur complète */
+            background: var(--secondary-green); /* Ligne verte */
+        }
+
+        /* Élément de la timeline */
+        .timeline-item {
+            margin-bottom: 3rem; /* Espace entre les événements */
+            position: relative; /* Pour le positionnement des éléments enfants */
+            width: 50%; /* Largeur de 50% */
+        }
+
+        /* Positionnement alterné des éléments */
+        .timeline-item:nth-child(odd) {
+            left: 0; /* Aligné à gauche */
+            padding-right: 3rem; /* Espace pour la ligne */
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%; /* Aligné à droite */
+            padding-left: 3rem; /* Espace pour la ligne */
+        }
+
+        /* Contenu de l'événement */
+        .timeline-content {
+            background: white; /* Fond blanc */
+            padding: 1.5rem; /* Espacement interne */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombre portée */
+            position: relative; /* Pour le positionnement des éléments enfants */
+        }
+
+        /* Point central sur la ligne */
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px; /* Taille du point */
+            height: 20px; /* Taille du point */
+            background: var(--secondary-green); /* Point vert */
+            border-radius: 50%; /* Forme circulaire */
+            top: 50%; /* Centre verticalement */
+            transform: translateY(-50%); /* Ajustement précis du centrage */
+        }
+
+        /* Position du point selon le côté */
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -40px; /* Point à droite pour les éléments pairs */
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -40px; /* Point à gauche pour les éléments impairs */
+        }
+
+        /* Titre de l'événement */
+        .timeline-content h4 {
+            color: var(--primary-red); /* Titre en rouge */
+            font-size: 1.5rem; /* Taille de police */
+            margin-bottom: 1rem; /* Espacement sous le titre */
+            font-weight: 600; /* Police en semi-gras */
+        }
+
+        /* Description de l'événement */
+        .timeline-content p {
+            color: var(--dark); /* Texte en gris foncé */
+            line-height: 1.6; /* Espacement des lignes */
+            margin: 0; /* Supprime les marges */
+        }
+
+        /* Media queries pour tablettes */
+        @media (max-width: 991.98px) {
+            .timeline-section .section-title {
+                font-size: 2rem; /* Taille de titre réduite */
+            }
+            
+            .timeline::before {
+                left: 30px; /* Déplace la ligne vers la gauche */
+            }
+            
+            .timeline-item {
+                width: 100%; /* Pleine largeur */
+                left: 0 !important; /* Force l'alignement à gauche */
+                padding-left: 60px !important; /* Espace pour la ligne */
+                padding-right: 0 !important; /* Supprime l'espace à droite */
+            }
+            
+            .timeline-content::before {
+                left: -40px !important; /* Point toujours à gauche */
+                right: auto !important; /* Supprime la position à droite */
+            }
+        }
+
+        /* Media queries pour mobiles */
+        @media (max-width: 767.98px) {
+            .timeline-section {
+                padding: 3rem 0; /* Espacement vertical réduit */
+            }
+            
+            .timeline-section .section-title {
+                font-size: 1.8rem; /* Taille de titre encore plus réduite */
+                margin-bottom: 2rem; /* Espacement réduit */
+            }
+            
+            .timeline-content {
+                padding: 1rem; /* Espacement interne réduit */
+            }
+            
+            .timeline-content h4 {
+                font-size: 1.2rem; /* Taille de titre réduite */
+            }
+        }
+
+        /* Section About AFCON 2025 (En-tête principal de la page) */
+        .team-hero {
+            background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Titre principal de la section */
+        .team-hero .display-4 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .team-hero .highlight-green {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Texte descriptif sous le titre */
+        .team-hero .lead {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+
+        /* Section du contenu */
+        .about-content {
+            padding-top: 1rem !important; /* Espacement réduit en haut */
+        }
+
+        /* Grille des cartes */
+        .about-content .row {
+            margin-top: 0; /* Supprime la marge du haut */
+        }
+
+        /* Colonnes des cartes */
+        .about-content .col-md-4 {
+            margin-bottom: 1rem; /* Espacement entre les cartes */
+        }
+
+        /* Style de mise en évidence du texte en vert */
+        .highlight-green {
+            color: var(--secondary-green); /* Couleur verte définie dans les variables */
+            font-weight: 700; /* Police en gras */
+            letter-spacing: 0.02em; /* Espacement des lettres */
+            position: relative; /* Pour le positionnement de l'effet de soulignement */
+        }
+
+        /* Effet de soulignement au survol */
+        .highlight-green::after {
+            content: ''; /* Crée un élément vide */
+            position: absolute; /* Position absolue par rapport au texte */
+            bottom: -2px; /* Position sous le texte */
+            left: 0; /* Aligné à gauche */
+            width: 0; /* Largeur initiale nulle */
+            height: 2px; /* Épaisseur de la ligne */
+            background: var(--secondary-green); /* Couleur de la ligne */
+            transition: width 0.3s ease; /* Animation de la largeur */
+        }
+
+        /* Animation du soulignement au survol */
+        .highlight-green:hover::after {
+            width: 100%; /* Largeur complète au survol */
+        }
+
+        /* Media queries pour tablettes */
+        @media (max-width: 991.98px) {
+            .team-hero {
+                padding: 4rem 0; /* Espacement vertical sur tablette */
+            }
+            
+            .team-hero .display-4 {
+                font-size: 2.8rem; /* Taille de titre sur tablette */
+            }
+            
+            .team-hero .lead {
+                font-size: 1.3rem; /* Taille de texte sur tablette */
+            }
+        }
+
+        /* Media queries pour mobiles */
+        @media (max-width: 767.98px) {
+            .team-hero {
+                padding: 3rem 0; /* Espacement vertical sur mobile */
+            }
+            
+            .team-hero .display-4 {
+                font-size: 2.2rem; /* Taille de titre sur mobile */
+            }
+            
+            .team-hero .lead {
+                font-size: 1.1rem; /* Taille de texte sur mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Corps de la page contenant tout le contenu visible -->
+     <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Logo du site redirigeant vers la page d'accueil -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
+                </a>
+                <!-- Bouton pour ouvrir/fermer le menu sur mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Liens de navigation principaux du site -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Lien vers la page d'accueil -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <!-- Lien vers la page des équipes -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                        </li>
+                        <!-- Lien vers la page des stades (page active) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="stadiums.html">Stadiums</a>
+                        </li>
+                        <!-- Lien vers la page du calendrier -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="schedule.html">Schedule</a>
+                        </li>
+                        <!-- Lien vers la page des actualités -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <!-- Lien vers la page à propos -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                          <li class="nav-item"><a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673"  target="_blank">Buy Tickets</a></li>
+                        <!-- Élément de navigation pour l achat des billets  -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Début de la section d'introduction About -->
+    <section class="about-intro">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <!-- Colonne image -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-intro-image">
+                        <!-- Image d'introduction -->
+                        <img src="img/about-intro.jpg" alt="AFCON 2025 Introduction" class="img-fluid">
+                        <div class="overlay"></div> <!-- Overlay sombre sur l'image -->
+                    </div>
+                </div>
+                <!-- Colonne texte -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-intro-content">
+                        <!-- Titre principal -->
+                        <h2 class="display-4 fw-bold mb-4">Welcome to AFCON 2025</h2>
+                        <!-- Paragraphe d'accroche -->
+                        <p class="lead mb-4">The Africa Cup of Nations 2025 in Morocco represents a historic moment in African football. As the continent's most prestigious tournament, it brings together the finest talents and passionate fans from across Africa.</p>
+                        <!-- Statistiques principales -->
+                        <div class="about-stats d-flex justify-content-between mb-4">
+                            <div class="stat-item">
+                                <span class="stat-number">33</span> <!-- Nombre d'éditions précédentes -->
+                                <span class="stat-label">Previous Editions</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24</span> <!-- Nombre d'équipes participantes -->
+                                <span class="stat-label">Participating Teams</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">6</span> <!-- Nombre de villes hôtes -->
+                                <span class="stat-label">Host Cities</span>
+                            </div>
+                        </div>
+                        <!-- Paragraphe complémentaire -->
+                        <p class="mb-4">Morocco, with its rich football heritage and modern infrastructure, is proud to host this prestigious event. The tournament will showcase the best of African football while celebrating the continent's diverse cultures and traditions.</p>
+                        <!-- Bouton d'information supplémentaire -->
+                        <a href="https://en.m.wikipedia.org/wiki/2025_Africa_Cup_of_Nations" class="btn btn-primary btn-lg">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la section d'introduction About -->
+
+    <!-- Début de la galerie dynamique Maroc & Football Africain -->
+    <section class="about-gallery py-5">
+        <div class="container">
+            <!-- Titre de la galerie -->
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Discover Morocco & African Football</h2>
+            <div class="row g-4">
+                <!-- Carte 1 : Villes hôtes -->
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="gallery-item">
+                        <img src="img/gallery/cities.jpg" alt="Host Cities" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>Host Cities</h4>
+                            <p>Discover the Moroccan cities that will host the competition.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte 2 : Paysages marocains -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="img/gallery/landscape.jpg" alt="Moroccan Landscapes" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>Moroccan Landscapes</h4>
+                            <p>From the Atlas Mountains to the Atlantic beaches, explore Morocco's diverse scenery.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte 3 : Passion du football africain -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="img/gallery/football.jpg" alt="African Football Passion" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>African Football Passion</h4>
+                            <p>The excitement of fans and the love for football across the continent.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte 4 : Cuisine marocaine -->
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="gallery-item">
+                        <img src="img/gallery/cuisine.jpg" alt="Moroccan Cuisine" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>Moroccan Cuisine</h4>
+                            <p>Enjoy Morocco's culinary specialties, a delight for the senses.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte 5 : Héritage africain -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="img/gallery/heritage.jpg" alt="African Heritage" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>African Heritage</h4>
+                            <p>A continent rich in traditions, music, and vibrant colors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la galerie dynamique Maroc & Football Africain -->
+
+    <!-- Début de la section vidéo AFCON 2025 au Maroc -->
+    <section class="afcon-2025-section py-5">
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 class="section-title text-center mb-4" data-aos="fade-up">Africa Cup of Nations 2025 in Morocco: A Historic Event</h2>
+            <!-- Paragraphe introductif -->
+            <p class="creative-paragraph text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+                The <span class="highlight-green">2025 Africa Cup of Nations</span> in <span class="highlight-green">Morocco</span> promises to be a landmark event in African football history. As the continent gathers in Morocco, fans and teams alike are set to experience world-class stadiums, vibrant culture, and unforgettable moments on and off the pitch.
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Vidéo YouTube intégrée -->
+                    <div class="ratio ratio-16x9 afcon-2025-video-frame mb-4">
+                        <iframe src="https://www.youtube.com/embed/_3S1JolO-Zg" title="Africa Cup of Nations 2025 in Morocco: A Historic Event" allowfullscreen></iframe>
+                    </div>
+                    <!-- Bouton vers plus d'infos sur Olympics.com -->
+                    <div class="text-center mt-3">
+                        <a href="https://www.olympics.com/en/news/football-afcon-2025-draw-teams-groups-schedule" target="_blank" class="btn btn-light btn-lg afcon-2025-btn">
+                            Discover more about AFCON 2025
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la section vidéo AFCON 2025 au Maroc -->
+
+    <!-- Début de la section histoire de la CAN -->
+    <section class="afcon-story-section py-5">
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 class="section-title text-center mb-4" data-aos="fade-up">The story of the Africa Cup of Nations (AFCON)</h2>
+            <!-- Paragraphe historique -->
+            <p class="creative-paragraph text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+                Since its inception in <span class="highlight-green">1957</span>, the <span class="highlight-green">Africa Cup of Nations (AFCON)</span> has grown into the continent's most prestigious football tournament, uniting nations and celebrating African talent. The competition began with just three teams—<span class="highlight-green">Egypt</span>, <span class="highlight-green">Sudan</span>, and <span class="highlight-green">Ethiopia</span>—but has expanded over the decades to include <span class="highlight-green">24 nations</span>, reflecting the growth and passion for football across Africa.<br><br>
+                AFCON has witnessed legendary moments, unforgettable matches, and the rise of football icons who have inspired generations. The tournament has not only crowned champions but also fostered unity, pride, and hope throughout the continent. From the early days to the modern era, AFCON continues to be a stage where African football shines on the world scene, showcasing the continent's diversity, resilience, and love for the beautiful game.
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Vidéo YouTube intégrée -->
+                    <div class="ratio ratio-16x9 afcon-video-frame mb-4">
+                        <iframe src="https://www.youtube.com/embed/tH5ohIFonl8" title="The story of the Africa Cup of Nations (AFCON)" allowfullscreen></iframe>
+                    </div>
+                    <!-- Bouton vers plus d'infos sur Olympics.com -->
+                    <div class="text-center mt-3">
+                        <a href="https://www.olympics.com/en/news/evolution-caf-africa-cup-of-nations-mens-football-tournament" target="_blank" class="btn btn-light btn-lg afcon-discover-btn">
+                            Discover more about the Africa Cup of Nations
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la section histoire de la CAN -->
+
+    <!-- Début de la section Maroc à la CAN -->
+    <section class="morocco-afcon-section py-5">
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 class="section-title text-center mb-4" data-aos="fade-up">Morocco at the Africa Cup of Nations</h2>
+            <!-- Paragraphe historique sur le Maroc -->
+            <p class="creative-paragraph text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+                The <span class="highlight-green">Moroccan national team</span>, nicknamed the <span class="highlight-green">Atlas Lions</span>, has been a formidable force in African football. They made history in the <span class="highlight-green">2022 FIFA World Cup</span> by becoming the first <span class="highlight-green">African and Arab</span> nation to reach the <span class="highlight-green">semi-finals</span>, showcasing their tactical prowess and resilience. Morocco's only <span class="highlight-green">AFCON</span> title came in <span class="highlight-green">1976</span>, but they have consistently been strong contenders in the tournament. The team has produced legendary players like <span class="highlight-green">Ahmed Faras</span> and <span class="highlight-green">Noureddine Naybet</span>, and currently boasts stars such as <span class="highlight-green">Achraf Hakimi</span> and <span class="highlight-green">Hakim Ziyech</span>. Hosting the <span class="highlight-green">2025 AFCON</span>, Morocco aims to leverage home advantage to clinch their second continental title.
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Vidéo YouTube intégrée -->
+                    <div class="ratio ratio-16x9 morocco-video-frame mb-4">
+                        <iframe src="https://www.youtube.com/embed/7c0tzJATnE0" title="Morocco at the Africa Cup of Nations" allowfullscreen></iframe>
+                    </div>
+                    <!-- Bouton vers Wikipedia Maroc à la CAN -->
+                    <div class="text-center mt-3">
+                        <a href="https://en.m.wikipedia.org/wiki/Morocco_at_the_Africa_Cup_of_Nations#:~:text=Historically%2C%20Morocco%20participated%20in%20the,win%20the%20AFCON%20at%201976." target="_blank" class="btn btn-light btn-lg morocco-discover-btn">
+                            Discover more about Morocco at AFCON
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la section Maroc à la CAN -->
+    <!-- Début de la section grands moments et matchs légendaires -->
+    <section class="afcon-moments-section py-5">
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 class="section-title text-center mb-4" data-aos="fade-up">Great Moments and Legendary Matches in AFCON History</h2>
+            <!-- Paragraphe introductif -->
+            <p class="creative-paragraph text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+                The <span class="highlight-green">Africa Cup of Nations</span> has delivered some of the most unforgettable moments and legendary matches in football history. From dramatic finals to underdog triumphs, AFCON has been the stage for passion, rivalry, and pure football magic that has captivated fans across the continent and the world.
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Vidéo YouTube intégrée -->
+                    <div class="ratio ratio-16x9 afcon-moments-video-frame mb-4">
+                        <iframe src="https://www.youtube.com/embed/-Dkqe0ft6Jk" title="Great Moments and Legendary Matches in AFCON History" allowfullscreen></iframe>
+                    </div>
+                    <!-- Bouton vers OkayAfrica -->
+                    <div class="text-center mt-3">
+                        <a href="https://www.okayafrica.com/the-best-matches-in-afcon-history/" target="_blank" class="btn btn-light btn-lg afcon-moments-btn">
+                            Discover the best matches in AFCON history
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la section grands moments et matchs légendaires -->
+
+    <!-- Section principale "About AFCON 2025" avec fond dégradé et image -->
+    <section class="team-hero">
+        <div class="container">
+            <!-- Titre principal de la section -->
+            <h1 class="display-4 fw-bold highlight-green">About AFCON 2025</h1>
+            <!-- Texte descriptif centré -->
+            <p class="creative-paragraph text-center">Discover the story behind Africa's most prestigious football tournament</p>
+        </div>
+    </section>
+
+    <!-- Section des cartes de fonctionnalités avec espacement vertical -->
+    <section class="about-content py-5">
+        <div class="container">
+            <!-- Grille des cartes avec espacement -->
+            <div class="row g-4">
+                <!-- Première carte : Le Tournoi -->
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="feature-card">
+                        <!-- Icône du trophée -->
+                        <div class="icon-box">
+                            <i class="fas fa-trophy highlight-green"></i>
+                        </div>
+                        <!-- Titre de la carte -->
+                        <h3 class="highlight-green">The Tournament</h3>
+                        <!-- Description avec texte mis en évidence -->
+                        <p class="creative-paragraph">The <span class="highlight-green">Africa Cup of Nations 2025</span> in <span class="highlight-green">Morocco</span> represents the pinnacle of African football, bringing together the continent's finest teams for a prestigious competition.</p>
+                    </div>
+                </div>
+
+                <!-- Deuxième carte : Le Maroc -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <!-- Icône de localisation -->
+                        <div class="icon-box">
+                            <i class="fas fa-map-marker-alt highlight-green"></i>
+                        </div>
+                        <!-- Titre de la carte -->
+                        <h3 class="highlight-green">Morocco</h3>
+                        <!-- Description avec texte mis en évidence -->
+                        <p class="creative-paragraph">With its modern stadiums and world-class infrastructure, <span class="highlight-green">Morocco</span> is ready to host this major African football event.</p>
+                    </div>
+                </div>
+
+                <!-- Troisième carte : Les Participants -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <!-- Icône des utilisateurs -->
+                        <div class="icon-box">
+                            <i class="fas fa-users highlight-green"></i>
+                        </div>
+                        <!-- Titre de la carte -->
+                        <h3 class="highlight-green">Participants</h3>
+                        <!-- Description avec texte mis en évidence -->
+                        <p class="creative-paragraph"><span class="highlight-green">24</span> African national teams will compete for the prestigious title of African champions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section des statistiques avec fond dégradé -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <!-- Grille des statistiques avec espacement -->
+            <div class="row g-4">
+                <!-- Statistique : Nombre d'équipes -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="stat-item">
+                        <div class="stat-number highlight-green">24</div>
+                        <p class="creative-paragraph">Participating Teams</p>
+                    </div>
+                </div>
+
+                <!-- Statistique : Nombre total de matchs -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item">
+                        <div class="stat-number highlight-green">52</div>
+                        <p class="creative-paragraph">Total Matches</p>
+                    </div>
+                </div>
+
+                <!-- Statistique : Nombre de villes hôtes -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item">
+                        <div class="stat-number highlight-green">6</div>
+                        <p class="creative-paragraph">Host Cities</p>
+                    </div>
+                </div>
+
+                <!-- Statistique : Nombre de champions -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <div class="stat-number highlight-green">1</div>
+                        <p class="creative-paragraph">Champion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section de la timeline du tournoi -->
+    <section class="timeline-section py-5">
+        <div class="container">
+            <!-- Titre de la section avec animation -->
+            <h2 class="section-title text-center mb-5 highlight-green" data-aos="fade-up">Tournament Timeline</h2>
+            
+            <!-- Conteneur de la timeline -->
+            <div class="timeline">
+                <!-- Étape 1 : Phase de groupes -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <h4 class="highlight-green">Group Stage</h4>
+                    <p class="creative-paragraph">The <span class="highlight-green">24 teams</span> divided into <span class="highlight-green">6 groups</span> will compete to qualify for the next stage.</p>
+                </div>
+
+                <!-- Étape 2 : Huitièmes de finale -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <h4 class="highlight-green">Round of 16</h4>
+                    <p class="creative-paragraph">The <span class="highlight-green">16 best teams</span> will compete for a place in the quarter-finals.</p>
+                </div>
+
+                <!-- Étape 3 : Quarts de finale -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <h4 class="highlight-green">Quarter Finals</h4>
+                    <p class="creative-paragraph">The <span class="highlight-green">8 remaining teams</span> will battle for a place in the semi-finals.</p>
+                </div>
+
+                <!-- Étape 4 : Demi-finales -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <h4 class="highlight-green">Semi Finals</h4>
+                    <p class="creative-paragraph">The <span class="highlight-green">4 best teams</span> will compete for a place in the final.</p>
+                </div>
+
+                <!-- Étape 5 : Finale -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <h4 class="highlight-green">Final</h4>
+                    <p class="creative-paragraph">The decisive match that will crown the new <span class="highlight-green">African champion</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section newsletter pour les mises à jour -->
+    <section class="py-5 newsletter-section">
+        <div class="container">
+            <!-- Conteneur centré pour le contenu de la newsletter -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <!-- Titre de la section -->
+                    <h2 class="section-title text-white">Stay Updated</h2>
+                    <!-- Texte descriptif -->
+                    <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
+                    <!-- Formulaire d'inscription -->
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <!-- Champ de saisie email -->
+                            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Enter your email address">
+                            <!-- Bouton de soumission -->
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page du site -->
+    <footer class="footer py-5">
+        <div class="container">
+            <!-- Grille principale du footer -->
+            <div class="row g-4">
+                <!-- Colonne du logo et description -->
+                <div class="col-lg-4">
+                    <!-- Logo AFCON -->
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60" class="mb-3">
+                    <!-- Description du tournoi -->
+                    <p class="text-white-50">The Africa Cup of Nations (AFCON) is the main international men's association football competition in Africa. It is sanctioned by the Confederation of African Football (CAF) and Morocco is proud to host the 2025 edition.</p>
+                    <!-- Icônes des réseaux sociaux -->
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Colonne des liens rapides -->
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <!-- Liste des liens de navigation -->
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="stadiums.html">Stadiums</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne des informations du tournoi -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="text-white mb-3">Tournament Info</h5>
+                    <!-- Liste des liens d'information -->
+                    <ul class="footer-links">
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-announce-match-schedule-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Competition Format</a></li>
+                        <li><a target="_blank" href="https://tickets.cafonline.com/">Ticketing Information</a></li>
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-and-morocco-loc-announce-host-cities-and-venues-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Host Cities</a></li>
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/totalenergies-caf-africa-cup-of-nations-afcon-finals-records/">Past Winners</a></li>
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-confirms-totalenergies-caf-africa-cup-of-nations-morocco-2025-qualifiers-draw-procedures/">Qualification Process</a></li>
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/frequently-asked-questions-on-fan-id-and-afcon">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne des informations de contact -->
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="text-white mb-3">Contact</h5>
+                    <!-- Liste des informations de contact -->
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> CAF Headquarters, 6th of October City, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> +212 5XX XXX XXX</li>
+                        <li><i class="fas fa-envelope"></i> info@afcon2025.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Séparateur horizontal -->
+            <hr class="mt-4 mb-3 border-secondary">
+
+            <!-- Section du copyright et liens légaux -->
+            <div class="row">
+                <!-- Copyright -->
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-md-0">&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+                </div>
+                <!-- Liens légaux -->
+                <div class="col-md-6 text-md-end">
+                    <ul class="footer-bottom-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton de retour en haut de page -->
+    <button id="back-to-top" class="btn btn-primary back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation de défilement -->
+    <div class="scroll-nav">
+        <!-- Bouton de retour en haut -->
+        <button id="backToTopBtn" class="scroll-btn" title="Back to top" aria-label="Back to top">
+            ↑
+        </button>
+        <!-- Bouton de défilement vers le bas -->
+        <button id="scrollToBottomBtn" class="scroll-btn" title="Scroll to bottom" aria-label="Scroll to bottom">
+            ↓
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

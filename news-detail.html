@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- Déclaration du type de document HTML5 qui informe le navigateur de la version HTML utilisée -->
+<html lang="en">
+<!-- Élément racine du document HTML avec l'attribut lang spécifiant que le contenu est en anglais -->
+<head>
+    <!-- Section contenant les métadonnées, les liens vers les ressources externes et les informations sur le document -->
+    <meta charset="UTF-8">
+    <!-- Définit l'encodage des caractères du document comme UTF-8, permettant l'affichage correct des caractères spéciaux -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configure la fenêtre d'affichage pour les appareils mobiles, avec une largeur égale à celle de l'appareil et un niveau de zoom initial de 1.0 -->
+    <title>AFCON 2025 News | Article </title>
+    <!-- Définit le titre de la page qui apparaît dans l'onglet du navigateur -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Spécifie l'icône du site (favicon) qui apparaît dans l'onglet du navigateur -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Importe le framework CSS Bootstrap depuis un CDN pour la mise en page responsive et les composants UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Importe la bibliothèque Font Awesome pour l'utilisation d'icônes vectorielles -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Importe la police Montserrat depuis Google Fonts avec trois variantes de poids (400, 600 et 700) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lie la feuille de style personnalisée du site -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Importe la bibliothèque AOS (Animate On Scroll) pour les animations au défilement -->
+</head>
+<!-- Fin de la section head, début de la section body -->
+<body>
+    <!-- Corps du document contenant tout le contenu visible de la page -->
+     <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Logo du site redirigeant vers la page d'accueil -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
+                </a>
+                <!-- Bouton pour ouvrir/fermer le menu sur mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Liens de navigation principaux du site -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Lien vers la page d'accueil -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <!-- Lien vers la page des équipes -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                        </li>
+                        <!-- Lien vers la page des stades (page active) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="stadiums.html">Stadiums</a>
+                        </li>
+                        <!-- Lien vers la page du calendrier -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="schedule.html">Schedule</a>
+                        </li>
+                        <!-- Lien vers la page des actualités -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="news.html">News</a>
+                        </li>
+                        <!-- Lien vers la page à propos -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                          <li class="nav-item"><a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673"  target="_blank">Buy Tickets</a></li>
+                        <!-- Élément de navigation pour l achat des billets  -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Fil d'Ariane (breadcrumb) pour indiquer le chemin de navigation actuel -->
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <!-- Navigation secondaire avec un fond clair et un padding vertical de 2 unités -->
+        <div class="container">
+            <!-- Conteneur Bootstrap pour centrer le contenu -->
+            <ol class="breadcrumb mb-0">
+                <!-- Liste ordonnée pour le fil d'Ariane sans marge en bas -->
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <!-- Premier niveau du fil d'Ariane (accueil) -->
+                <li class="breadcrumb-item"><a href="news.html">News</a></li>
+                <!-- Deuxième niveau du fil d'Ariane (actualités) -->
+                <li class="breadcrumb-item active" aria-current="page">Article</li>
+                <!-- Niveau actuel du fil d'Ariane (article), marqué comme actif -->
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Section héros de l'article contenant le titre et les méta-informations -->
+    <section class="article-hero py-5">
+        <!-- Section avec un padding vertical de 5 unités -->
+        <div class="container">
+            <!-- Conteneur Bootstrap pour centrer le contenu -->
+            <div class="row">
+                <!-- Ligne Bootstrap -->
+                <div class="col-lg-8 mx-auto">
+                    <!-- Colonne prenant 8/12 de la largeur sur les grands écrans et centrée horizontalement -->
+                    <span class="badge bg-primary mb-3" id="article-category">Category</span>
+                    <!-- Badge indiquant la catégorie de l'article avec une marge en bas et un identifiant pour JavaScript -->
+                    <h1 class="article-title mb-4" id="article-title">Article Title</h1>
+                    <!-- Titre principal de l'article avec une marge en bas et un identifiant pour JavaScript -->
+                    <div class="article-meta mb-4">
+                        <!-- Conteneur des métadonnées de l'article avec une marge en bas -->
+                        <span class="me-3"><i class="fas fa-user me-2"></i><span id="article-author">Author</span></span>
+                        <!-- Nom de l'auteur avec icône utilisateur et identifiant pour JavaScript -->
+                        <span class="me-3"><i class="fas fa-calendar me-2"></i><span id="article-date">Date</span></span>
+                        <!-- Date de publication avec icône calendrier et identifiant pour JavaScript -->
+                        <span><i class="fas fa-folder me-2"></i><span id="article-category-text">Category</span></span>
+                        <!-- Catégorie textuelle avec icône dossier et identifiant pour JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section du contenu détaillé de l'article -->
+    <section class="article-content py-5">
+        <!-- Section avec un padding vertical de 5 unités -->
+        <div class="container">
+            <!-- Conteneur Bootstrap pour centrer le contenu -->
+            <div class="row">
+                <!-- Ligne Bootstrap -->
+                <div class="col-lg-8 mx-auto">
+                    <!-- Colonne prenant 8/12 de la largeur sur les grands écrans et centrée horizontalement -->
+                    <div class="article-body" id="article-content">
+                        <!-- Conteneur du corps de l'article avec un identifiant pour JavaScript -->
+                        <!-- Le contenu de l'article est généré dynamiquement par JavaScript -->
+                    </div>
+
+                    <!-- Boutons de partage sur les réseaux sociaux -->
+                    <div class="social-share mt-5">
+                        <!-- Conteneur des boutons de partage avec une marge supérieure de 5 unités -->
+                        <h4>Share this article</h4>
+                        <!-- Titre de la section de partage -->
+                        <div class="share-buttons">
+                            <!-- Conteneur des boutons individuels -->
+                            <a href="#" class="btn btn-outline-primary me-2" aria-label="Share on Facebook">
+                                <!-- Bouton de partage Facebook avec style contour et marge à droite -->
+                                <i class="fab fa-facebook-f"></i>
+                                <!-- Icône Facebook -->
+                            </a>
+                            <a href="#" class="btn btn-outline-info me-2" aria-label="Share on Twitter">
+                                <!-- Bouton de partage Twitter avec style contour et marge à droite -->
+                                <i class="fab fa-twitter"></i>
+                                <!-- Icône Twitter -->
+                            </a>
+                            <a href="#" class="btn btn-outline-primary me-2" aria-label="Share on LinkedIn">
+                                <!-- Bouton de partage LinkedIn avec style contour et marge à droite -->
+                                <i class="fab fa-linkedin-in"></i>
+                                <!-- Icône LinkedIn -->
+                            </a>
+                            <a href="#" class="btn btn-outline-danger" aria-label="Share on WhatsApp">
+                                <!-- Bouton de partage WhatsApp avec style contour danger (rouge) -->
+                                <i class="fab fa-whatsapp"></i>
+                                <!-- Icône WhatsApp -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles connexes -->
+    <section class="related-articles py-5">
+        <div class="container">
+            <h3 class="mb-4">Articles connexes</h3>
+            <div class="row">
+                <!-- Les articles connexes seront injectés ici par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page du site -->
+    <footer class="footer py-5">
+        <!-- Section de pied de page avec un padding vertical de 5 unités -->
+        <div class="container">
+            <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
+            <div class="row g-4">
+                <!-- Ligne avec espacement entre les colonnes -->
+                <div class="col-lg-4">
+                    <!-- Première colonne prenant 4/12 de la largeur sur grands écrans -->
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60" class="mb-3">
+                    <!-- Logo avec texte alternatif, hauteur définie et marge basse -->
+                    <p class="text-white-50">The Africa Cup of Nations (AFCON) is the main international men's association football competition in Africa. It is sanctioned by the Confederation of African Football (CAF) and Morocco is proud to host the 2025 edition.</p>
+                    <!-- Texte descriptif semi-transparent -->
+                    <div class="social-icons">
+                        <!-- Conteneur des icônes de réseaux sociaux -->
+                        <a href="https://www.facebook.com/CAFOnline" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <!-- Lien Facebook officiel de la CAF -->
+                        <a href="https://twitter.com/CAF_Online" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <!-- Lien Twitter officiel de la CAF -->
+                        <a href="https://www.instagram.com/caf_online/" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <!-- Lien Instagram officiel de la CAF -->
+                        <a href="https://www.youtube.com/user/CAFtv" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                        <!-- Lien YouTube officiel de la CAF -->
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <!-- Deuxième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-links">
+                        <!-- Liste des liens rapides -->
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Lien vers la page d'accueil -->
+                        <li><a href="teams.html">Teams</a></li>
+                        <!-- Lien vers la page des équipes -->
+                        <li><a href="stadiums.html">Stadiums</a></li>
+                        <!-- Lien vers la page des stades -->
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <!-- Lien vers la page du calendrier -->
+                        <li><a href="news.html">News</a></li>
+                        <!-- Lien vers la page d'actualités -->
+                        <li><a href="about.html">About</a></li>
+                        <!-- Lien vers la page À propos -->
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <!-- Troisième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Tournament Info</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-links">
+                        <!-- Liste des liens d'information -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-announce-match-schedule-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Competition Format</a></li>
+                        <!-- Lien vers la page du format de compétition -->
+                        <li><a target="_blank" href="https://tickets.cafonline.com/">Ticketing Information</a></li>
+                        <!-- Lien vers la page d'information sur la billetterie -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-and-morocco-loc-announce-host-cities-and-venues-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Host Cities</a></li>
+                        <!-- Lien vers la page des villes hôtes -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/totalenergies-caf-africa-cup-of-nations-afcon-finals-records/">Past Winners</a></li>
+                        <!-- Lien vers la page des anciens vainqueurs -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-confirms-totalenergies-caf-africa-cup-of-nations-morocco-2025-qualifiers-draw-procedures/">Qualification Process</a></li>
+                        <!-- Lien vers la page du processus de qualification -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/frequently-asked-questions-on-fan-id-and-afcon">FAQs</a></li>
+                        <!-- Lien vers la page des questions fréquentes -->
+                    </ul>
+                </div>                
+                <div class="col-md-4 col-lg-3">
+                    <!-- Quatrième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Contact</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-contact">
+                        <!-- Liste des informations de contact -->
+                        <li><i class="fas fa-map-marker-alt"></i> CAF Headquarters, 6th of October City, Cairo, Egypt</li>
+                        <!-- Adresse avec icône de localisation -->
+                        <li><i class="fas fa-phone"></i> +212 5XX XXX XXX</li>
+                        <!-- Numéro de téléphone avec icône -->
+                        <li><i class="fas fa-envelope"></i> info@cafonline2025.com</li>
+                        <!-- Email avec icône d'enveloppe -->
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-secondary">
+            <!-- Ligne horizontale de séparation avec marges et couleur secondaire -->
+            <div class="row">
+                <!-- Ligne pour le bas du pied de page -->
+                <div class="col-md-6">
+                    <!-- Première colonne prenant la moitié de la largeur sur écrans moyens et grands -->
+                    <p class="text-white-50 mb-md-0">&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+                    <!-- Texte de copyright semi-transparent sans marge basse sur écrans moyens et grands -->
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <!-- Seconde colonne avec texte aligné à droite sur écrans moyens et grands -->
+                    <ul class="footer-bottom-links">
+                        <!-- Liste des liens légaux -->
+                        <li><a target="_blank" href="https://www.cafonline.com/privacy-policy/">Privacy Policy</a></li>
+                        <!-- Lien vers la politique de confidentialité -->
+                        <li><a target="_blank" href="https://www.cafonline.com/terms-of-service">Terms of Service</a></li>
+                        <!-- Lien vers les conditions d'utilisation -->
+                        <li><a target="_blank" href="https://www.cafonline.com/cookie-policy/">Cookie Policy</a></li>
+                        <!-- Lien vers la politique des cookies -->
+                    </ul>
+                </div>                
+            </div>
+        </div>
+    </footer>
+   
+    <!-- Scripts JavaScript chargés à la fin pour optimiser le chargement de la page -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script Bootstrap qui inclut Popper.js pour les fonctionnalités interactives comme les menus déroulants -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script de la bibliothèque AOS (Animate On Scroll) pour les animations au défilement -->
+    <script src="js/news-detail.js"></script>
+    <!-- Script personnalisé pour la page de détail d'actualité -->
+    <script src="js/share-links.js"></script>
+    <!-- Script pour rendre les boutons de partage dynamiques -->
+
+    <!-- Boutons de navigation de défilement rapide -->
+    <div class="scroll-nav">
+        <!-- Conteneur des boutons de défilement -->
+        <button id="backToTopBtn" class="scroll-btn" title="Back to top" aria-label="Back to top">
+        ↑      <!-- Flèche pointant vers le haut pour remonter en haut de page -->
+        </button>
+        <button id="scrollToBottomBtn" class="scroll-btn" title="Scroll to bottom" aria-label="Scroll to bottom">
+        ↓      <!-- Flèche pointant vers le bas pour descendre en bas de page -->
+        </button>
+    </div>
+
+</body>
+</html>
