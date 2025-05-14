@@ -1057,39 +1057,45 @@
 </head>
 <body>
     <!-- Corps de la page contenant tout le contenu visible -->
-    <header class="sticky-top">
-        <!-- En-tête du site avec classe sticky-top pour qu'il reste collé en haut lors du défilement -->
+     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <!-- Barre de navigation sombre avec expansion sur grand écran (lg) -->
             <div class="container">
-                <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
+                <!-- Logo du site redirigeant vers la page d'accueil -->
                 <a class="navbar-brand" href="index.html">
-                    <!-- Logo du site avec lien vers la page d'accueil -->
                     <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
-                    <!-- Image du logo avec texte alternatif pour l'accessibilité et hauteur définie -->
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <!-- Bouton hamburger qui apparaît sur les écrans mobiles pour afficher/masquer le menu -->
+                <!-- Bouton pour ouvrir/fermer le menu sur mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                    <!-- Icône du bouton hamburger (trois lignes horizontales) -->
                 </button>
+                <!-- Liens de navigation principaux du site -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <!-- Conteneur pour les éléments de navigation qui se réduisent en mode mobile -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Liste des liens de navigation alignés à droite (ms-auto) -->
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <!-- Élément de navigation pour la page d'accueil -->
-                        <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
-                        <!-- Élément de navigation pour la page des équipes -->
-                        <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
-                        <!-- Élément de navigation pour la page des stades -->
-                        <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
-                        <!-- Élément de navigation pour la page du calendrier -->
-                        <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
-                        <!-- Élément de navigation pour la page d'actualités (active = page actuelle) -->
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <!-- Élément de navigation pour la page À propos -->
-                                                 <li class="nav-item"><a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673"  target="_blank">Buy Tickets</a></li>
+                        <!-- Lien vers la page d'accueil -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <!-- Lien vers la page des équipes -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                        </li>
+                        <!-- Lien vers la page des stades (page active) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="stadiums.html">Stadiums</a>
+                        </li>
+                        <!-- Lien vers la page du calendrier -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="schedule.html">Schedule</a>
+                        </li>
+                        <!-- Lien vers la page des actualités -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <!-- Lien vers la page à propos -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                          <li class="nav-item"><a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673"  target="_blank">Buy Tickets</a></li>
                         <!-- Élément de navigation pour l achat des billets  -->
                     </ul>
                 </div>

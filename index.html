@@ -21,40 +21,45 @@
 </head>
 <body>
     <!-- Header section with navigation -->
-   <!-- Header section with navigation -->
-    <header class="sticky-top">
-        <!-- En-tête du site avec classe sticky-top pour qu'il reste collé en haut lors du défilement -->
+ <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <!-- Barre de navigation sombre avec expansion sur grand écran (lg) -->
             <div class="container">
-                <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
+                <!-- Logo du site redirigeant vers la page d'accueil -->
                 <a class="navbar-brand" href="index.html">
-                    <!-- Logo du site avec lien vers la page d'accueil -->
                     <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
-                    <!-- Image du logo avec texte alternatif pour l'accessibilité et hauteur définie -->
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <!-- Bouton hamburger qui apparaît sur les écrans mobiles pour afficher/masquer le menu -->
+                <!-- Bouton pour ouvrir/fermer le menu sur mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                    <!-- Icône du bouton hamburger (trois lignes horizontales) -->
                 </button>
+                <!-- Liens de navigation principaux du site -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <!-- Conteneur pour les éléments de navigation qui se réduisent en mode mobile -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Liste des liens de navigation alignés à droite (ms-auto) -->
-                        <li class="nav-item"><a class="nav-link active " href="index.html">Home</a></li>
-                        <!-- Élément de navigation pour la page d'accueil -->
-                        <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
-                        <!-- Élément de navigation pour la page des équipes -->
-                        <li class="nav-item"><a class="nav-link" href="stadiums.html">Stadiums</a></li>
-                        <!-- Élément de navigation pour la page des stades -->
-                        <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
-                        <!-- Élément de navigation pour la page du calendrier -->
-                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                        <!-- Élément de navigation pour la page d'actualités (active = page actuelle) -->
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <!-- Élément de navigation pour la page À propos -->
-                                                 <li class="nav-item"><a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673"  target="_blank">Buy Tickets</a></li>
+                        <!-- Lien vers la page d'accueil -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <!-- Lien vers la page des équipes -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                        </li>
+                        <!-- Lien vers la page des stades (page active) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="stadiums.html">Stadiums</a>
+                        </li>
+                        <!-- Lien vers la page du calendrier -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="schedule.html">Schedule</a>
+                        </li>
+                        <!-- Lien vers la page des actualités -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <!-- Lien vers la page à propos -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                          <li class="nav-item"><a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673"  target="_blank">Buy Tickets</a></li>
                         <!-- Élément de navigation pour l achat des billets  -->
                     </ul>
                 </div>
@@ -195,50 +200,19 @@
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title text-center mb-5" data-aos="fade-up">Latest News</h2>
-            <div class="row g-4">
-                <!-- News card 1 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card news-card h-100">
-                        <img src="img/news/stadium-preparation.jpg" class="card-img-top" alt="Stadium Preparation">
+                        <img src="img/news/img9.webp" class="card-img-top" alt="Stadium Preparation">
                         <div class="card-body">
                             <h5 class="card-title">Stadium Renovations On Track for AFCON 2025</h5>
                             <p class="card-text">Morocco's preparations for hosting the 2025 Africa Cup of Nations are proceeding smoothly with stadium renovations on schedule.</p>
-                            <a href="news-detail.html" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                            <a href="news.html#stadiums-update" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                         <div class="card-footer text-muted">
                             <small>May 10, 2024</small>
                         </div>
                     </div>
                 </div>
-                <!-- News card 2 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card news-card h-100">
-                        <img src="img/news/qualifying-rounds.jpg" class="card-img-top" alt="Qualifying Rounds">
-                        <div class="card-body">
-                            <h5 class="card-title">AFCON 2025 Qualifying Rounds to Begin in September</h5>
-                            <p class="card-text">The Confederation of African Football has announced that qualifying matches for AFCON 2025 will commence in September 2024.</p>
-                            <a href="news-detail.html" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <small>May 5, 2024</small>
-                        </div>
-                    </div>
-                </div>
-                <!-- News card 3 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card news-card h-100">
-                        <img src="img/news/sponsorship-announcement.jpg" class="card-img-top" alt="Sponsorship Announcement">
-                        <div class="card-body">
-                            <h5 class="card-title">Major Sponsors Announced for AFCON Morocco 2025</h5>
-                            <p class="card-text">CAF has unveiled the official sponsorship lineup for the upcoming Africa Cup of Nations to be held in Morocco.</p>
-                            <a href="news-detail.html" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <small>April 28, 2024</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
             <div class="text-center mt-4">
                 <a href="news.html" class="btn btn-outline-primary">More News</a>
             </div>
