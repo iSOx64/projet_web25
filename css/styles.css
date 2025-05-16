@@ -1,15 +1,4 @@
-/* 
-=================================================
-  AFCON Morocco 2025 - Custom Styles
-  Author: [Your Name]
-  Version: 1.1
-================================================= 
-*/
 
-/* 
- * Base styles and variables
- * Setting up color variables based on Morocco's flag colors
- */
 :root {
     --primary-red: #840404;
     --primary-red-dark: #5a0303;
@@ -730,756 +719,429 @@ header {
     background-color: transparent;
 }
 
-/* 
- * Champions Table Styles 
- */
-.champions-table {
-    box-shadow: var(--shadow);
-    border-radius: var(--radius);
-    overflow: hidden;
-    background-color: white;
-}
 
-.champions-table th, .champions-table td {
-    vertical-align: middle;
-    background-color: transparent;
-}
 
-.champions-table th {
-    background-color: var(--primary-red);
-    color: white;
-    font-weight: 600;
-}
-
-.country-record {
-    padding: 1rem;
-    background-color: transparent;
-}
-
-.record-flag {
-    width: 60px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-    background-color: transparent;
-}
-
-/* 
- * Team Member Card Styles 
- */
-.team-member-card {
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: var(--transition);
-    margin-bottom: 2rem;
-}
-
-.team-member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.team-member-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background-color: transparent;
-}
-
-.team-member-info {
-    padding: 1.5rem;
-    background-color: transparent;
-}
-
-.team-member-info h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.position {
-    color: var(--primary-red);
-    font-weight: 600;
-    margin: 0.5rem 0;
-}
-
-.member-details {
-    margin: 1rem 0;
-    font-size: 0.9rem;
-}
-
-.member-details p {
-    margin-bottom: 0.5rem;
-}
-
-.member-social {
-    margin-top: 1rem;
-}
-
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background: var(--gray-light);
-    border-radius: 50%;
-    color: var(--dark);
-    margin-right: 0.5rem;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background: var(--primary-red);
-    color: white;
-}
-
-/* 
- * Organization Chart Styles 
- */
-.org-chart-container {
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: var(--radius);
-}
-
-/* 
- * Achievement Timeline Styles 
- */
-.achievement-timeline {
-    position: relative;
-    padding-left: 2rem;
-    background-color: transparent;
-}
-
-.achievement-item {
-    position: relative;
-    padding-bottom: 1.5rem;
-    border-left: 2px solid var(--primary-red);
-    padding-left: 1.5rem;
-    background-color: transparent;
-}
-
-.achievement-item:last-child {
-    padding-bottom: 0;
-}
-
-.achievement-item::before {
-    content: '';
-    position: absolute;
-    left: -0.5rem;
-    top: 0;
-    width: 1rem;
-    height: 1rem;
-    background: var(--primary-red);
-    border-radius: 50%;
-}
-
-.achievement-date {
-    font-weight: 700;
-    color: var(--primary-red);
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-/* 
- * Team Hero Section
- */
+/* Team Hero Section */
 .team-hero {
+    /* Fond dégradé rouge avec image en arrière-plan */
     background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/teams-hero-bg.jpg');
+    /* L'image de fond couvre toute la zone */
     background-size: cover;
+    /* Centre l'image de fond */
     background-position: center;
-    padding: 100px 0 20px 0;
+    /* Espacement intérieur haut/bas */
+    padding: 100px 0;
+    /* Couleur du texte en blanc */
     color: white;
+    /* Alignement du texte au centre */
     text-align: center;
+    /* Position relative pour les éléments enfants positionnés absolument */
     position: relative;
+    /* Supprime les marges par défaut */
     margin: 0;
-}
-
-.team-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-red);
-    opacity: 0.7;
-    z-index: 0;
 }
 
 .team-hero .container {
+    /* Position relative pour le contexte d'empilement */
     position: relative;
+    /* Met le conteneur au-dessus de l'overlay */
     z-index: 1;
 }
 
-.team-hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.team-hero .lead {
-    font-size: 1.5rem;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-/* 
- * Team Slideshow
- */
+/* Slideshow Section */
 .team-slideshow {
+    /* Position relative pour les enfants positionnés absolument */
     position: relative;
+    /* Supprime la marge inférieure (important pour override) */
     margin-bottom: 0 !important;
+    /* Prend toute la largeur */
     width: 100%;
+    /* Hauteur à 70% de la hauteur de la fenêtre */
     height: 70vh;
+    /* Hauteur minimale de 500px */
     min-height: 500px;
+    /* Cache le contenu qui dépasse */
     overflow: hidden;
+    /* Marge en bas */
     margin-bottom: 50px;
-    background-color: var(--primary-red);
+    /* Couleur de fond rouge */
+    background-color: #840404;
 }
 
 .team-slide {
+    /* Position absolue par rapport au parent */
     position: absolute;
+    /* Prend toute la largeur */
     width: 100%;
+    /* Prend toute la hauteur */
     height: 100%;
+    /* Initialement invisible */
     opacity: 0;
+    /* Transition douce pour l'opacité */
     transition: opacity 1.5s ease-in-out;
+    /* Disposition en flex */
     display: flex;
+    /* Centre verticalement */
     align-items: center;
+    /* Centre horizontalement */
     justify-content: center;
-    background-color: var(--primary-red);
+    /* Couleur de fond rouge */
+    background-color: #840404;
 }
-
 .team-slide.active {
     opacity: 1;
 }
-
 .team-slide-image {
+    /* Ajuste l'image sans la déformer */
     object-fit: contain;
+    /* Prend toute la largeur */
     width: 100%;
+    /* Prend toute la hauteur */
     height: 100%;
+    /* Largeur minimale */
     min-width: 100%;
+    /* Hauteur minimale */
     min-height: 100%;
-    background-color: var(--primary-red);
+    /* Couleur de fond rouge */
+    background-color: #840404;
 }
 
 .slide-overlay {
+    /* Position absolue en bas */
     position: absolute;
+    /* Aligné en bas */
     bottom: 0;
+    /* Aligné à gauche */
     left: 0;
+    /* Aligné à droite */
     right: 0;
+    /* Dégradé pour améliorer la lisibilité du texte */
     background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    /* Espacement intérieur */
     padding: 30px;
+    /* Texte en blanc */
     color: white;
+    /* Met l'overlay au-dessus de l'image */
     z-index: 2;
 }
 
 .slide-title {
+    /* Taille de police importante */
     font-size: 3rem;
+    /* Texte en gras */
     font-weight: 700;
+    /* Marge en bas */
     margin-bottom: 10px;
+    /* Ombre portée pour meilleure lisibilité */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .slide-nav {
+    /* Position absolue en bas à droite */
     position: absolute;
+    /* 20px du bas */
     bottom: 20px;
+    /* 20px de la droite */
     right: 20px;
+    /* Disposition en flex */
     display: flex;
+    /* Espace entre les boutons */
     gap: 10px;
+    /* Met la navigation au-dessus du contenu */
     z-index: 10;
 }
 
 .slide-nav-btn {
+    /* Boutons ronds de 12x12px */
     width: 12px;
     height: 12px;
+    /* Forme circulaire */
     border-radius: 50%;
+    /* Pas de bordure */
     border: none;
+    /* Couleur semi-transparente */
     background-color: rgba(255,255,255,0.5);
+    /* Curseur en forme de main */
     cursor: pointer;
+    /* Transition douce pour les changements */
     transition: all 0.3s ease;
 }
 
 .slide-nav-btn.active {
+    /* Couleur blanche pour le bouton actif */
     background-color: white;
+    /* Légère augmentation de taille */
     transform: scale(1.3);
 }
 
-/* 
- * Team Section
- */
+/* Team Sections */
 .team-section {
+    /* Espacement intérieur haut/bas */
     padding: 80px 0;
+    /* Marge pour la navigation ancrée */
     scroll-margin-top: 100px;
-    background-color: var(--primary-red);
+    /* Couleur de fond rouge */
+    background-color: #840404;
+    /* Texte en blanc */
     color: white;
+    /* Position relative pour contexte */
     position: relative;
+    /* Supprime un trait blanc entre sections */
     margin-top: -1px;
 }
 
 .team-header {
+    /* Marge en bas */
     margin-bottom: 40px;
+    /* Texte centré */
     text-align: center;
 }
 
+.team-name {
+    /* Taille de police importante */
+    font-size: 2.5rem;
+    /* Texte en gras */
+    font-weight: 700;
+    /* Texte en blanc */
+    color: white;
+    /* Marge en bas */
+    margin-bottom: 15px;
+    /* Ombre portée pour lisibilité */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.team-subtitle {
+    /* Taille de police moyenne */
+    font-size: 1.2rem;
+    /* Texte blanc semi-transparent */
+    color: rgba(255,255,255,0.8);
+    /* Marge en bas */
+    margin-bottom: 30px;
+}
+
+.team-flag {
+    /* Largeur maximale */
+    max-width: 200px;
+    /* Hauteur automatique pour garder les proportions */
+    height: auto;
+    /* Marge en bas */
+    margin-bottom: 20px;
+    /* Fond transparent */
+    background-color: transparent;
+}
+
 .team-content {
+    /* Largeur maximale */
     max-width: 800px;
+    /* Centrage horizontal */
     margin: 0 auto;
+    /* Fond semi-transparent */
     background-color: rgba(255,255,255,0.1);
+    /* Espacement intérieur */
     padding: 30px;
-    border-radius: var(--radius);
+    /* Coins arrondis */
+    border-radius: 8px;
+    /* Effet de flou derrière */
     backdrop-filter: blur(5px);
 }
 
 .team-history {
+    /* Marge en bas */
     margin-bottom: 30px;
+    /* Hauteur de ligne confortable */
     line-height: 1.8;
+    /* Texte en blanc */
     color: white;
 }
 
 .team-stats {
+    /* Disposition en flex */
     display: flex;
+    /* Espace égal entre les éléments */
     justify-content: space-around;
+    /* Passage à la ligne si nécessaire */
     flex-wrap: wrap;
+    /* Marges haut/bas */
     margin: 30px 0;
+    /* Fond semi-transparent */
     background-color: rgba(0,0,0,0.2);
+    /* Espacement intérieur */
     padding: 20px;
-    border-radius: var(--radius);
+    /* Coins arrondis */
+    border-radius: 8px;
 }
 
 .stat-item {
+    /* Texte centré */
     text-align: center;
+    /* Espacement intérieur */
     padding: 15px;
+    /* Largeur minimale */
     min-width: 150px;
 }
 
 .stat-number {
+    /* Taille de police importante */
     font-size: 2rem;
+    /* Texte en gras */
     font-weight: 700;
-    color: var(--secondary-green);
+    /* Couleur verte */
+    color: #05b360;
 }
 
 .stat-label {
+    /* Petite taille de police */
     font-size: 0.9rem;
+    /* Texte semi-transparent */
     color: rgba(255,255,255,0.7);
+    /* Texte en majuscules */
     text-transform: uppercase;
 }
 
 .video-container {
+    /* Position relative pour l'iframe */
     position: relative;
+    /* Ratio 16:9 (hauteur calculée à partir de la largeur) */
     padding-bottom: 56.25%;
+    /* Hauteur à 0 (gérée par le padding) */
     height: 0;
+    /* Cache le débordement */
     overflow: hidden;
+    /* Marges haut/bas */
     margin: 40px 0;
-    border-radius: var(--radius);
+    /* Coins arrondis */
+    border-radius: 8px;
+    /* Ombre portée */
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .video-container iframe {
+    /* Position absolue pour remplir le conteneur */
     position: absolute;
+    /* Aligné en haut */
     top: 0;
+    /* Aligné à gauche */
     left: 0;
+    /* Prend toute la largeur */
     width: 100%;
+    /* Prend toute la hauteur */
     height: 100%;
+    /* Pas de bordure */
     border: none;
 }
 
 .discover-more {
+    /* Texte centré */
     text-align: center;
+    /* Marge en haut */
     margin-top: 30px;
 }
 
-/* 
- * Scroll Navigation
- */
+/* Scroll Navigation */
 .scroll-nav {
+    /* Position fixe pour rester visible au défilement */
     position: fixed;
+    /* 20px de la droite */
     right: 20px;
+    /* 20px du bas */
     bottom: 20px;
+    /* Au-dessus de tout */
     z-index: 1000;
+    /* Disposition en colonne */
     display: flex;
     flex-direction: column;
+    /* Espace entre boutons */
     gap: 15px;
 }
 
 .scroll-btn {
+    /* Boutons ronds de 50x50px */
     width: 50px;
     height: 50px;
+    /* Forme circulaire */
     border-radius: 50%;
-    background-color: var(--secondary-green);
+    /* Couleur de fond verte */
+    background-color: #05b360;
+    /* Texte en blanc */
     color: white;
+    /* Centrage du contenu */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Taille de police */
     font-size: 1.5rem;
+    /* Curseur en main */
     cursor: pointer;
+    /* Ombre portée */
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    /* Transition douce */
     transition: all 0.3s ease;
+    /* Pas de bordure */
     border: none;
+    /* Légère transparence */
     opacity: 0.8;
+    /* Taille normale */
     transform: scale(1);
 }
 
 .scroll-btn:hover {
-    background-color: var(--secondary-green-dark);
+    /* Couleur de fond plus foncée au survol */
+    background-color: #048a4a;
+    /* Opacité totale */
     opacity: 1;
+    /* Légère augmentation de taille */
     transform: scale(1.1);
+    /* Ombre plus prononcée */
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
-/* 
- * Stadium List
- */
-.stadium-list-item {
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    margin-bottom: 20px;
-    display: flex;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Ajustements pour petits écrans */
+    .team-slideshow {
+        height: 50vh;
+        min-height: 400px;
+    }
+    
+    .slide-title {
+        font-size: 2rem;
+    }
+    
+    .team-name {
+        font-size: 2rem;
+    }
+    
+    .team-stats {
+        /* Passage en colonne */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        margin-bottom: 15px;
+    }
+    
+    .scroll-nav {
+        /* Plus proche des bords */
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .scroll-btn {
+        /* Boutons légèrement plus petits */
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
 }
 
-.stadium-list-image {
-    width: 200px;
-    height: 150px;
-    overflow: hidden;
-    flex-shrink: 0;
+/* Comportement de défilement doux */
+html {
+    scroll-behavior: smooth;
 }
 
-.stadium-list-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.stadium-list-content {
-    padding: 15px;
-    flex-grow: 1;
-}
 
-.stadium-list-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.stadium-location, .stadium-capacity {
-    color: #666;
-    margin-bottom: 5px;
-}
-
-/* 
- * Testimonials
- */
-.testimonial-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-red);
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.testimonial-item {
-    padding: 30px;
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin: 20px;
-    text-align: center;
-}
-
-.testimonial-item h4 {
-    color: #333;
-    font-size: 1.25rem;
-    margin-bottom: 5px;
-}
-
-.testimonial-position {
-    color: var(--primary-red);
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.testimonial-text {
-    color: #666;
-    font-style: italic;
-    line-height: 1.6;
-}
-
-/* 
- * Gallery
- */
-.gallery-item {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-    height: 200px;
-    margin-bottom: 20px;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-/* 
- * Map Container
- */
-.map-container {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.map-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 4px;
-}
-
-/* 
- * About Hero Section
- */
-.about-hero {
-    background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 100px 0;
-    margin: 0;
-}
-
-.about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-red);
-    opacity: 0.7;
-    z-index: 0;
-}
-
-.about-hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-stats {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.history-timeline {
-    margin-top: 2rem;
-    position: relative;
-    padding-left: 2rem;
-}
-
-.history-timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--primary-red);
-}
-
-.timeline-item {
-    position: relative;
-    padding-bottom: 1.5rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -2.5rem;
-    top: 0;
-    width: 1rem;
-    height: 1rem;
-    background: var(--primary-red);
-    border-radius: 50%;
-}
-
-.year {
-    display: block;
-    font-weight: 700;
-    color: var(--primary-red);
-    margin-bottom: 0.5rem;
-}
-
-.event {
-    color: var(--dark);
-}
-
-.feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: transform 0.3s ease;
-    height: 100%;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.feature-card i {
-    font-size: 2.5rem;
-    color: var(--primary-red);
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--dark);
-}
-
-.format-steps {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.format-steps::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--primary-red);
-}
-
-.step {
-    position: relative;
-    padding-bottom: 2rem;
-}
-
-.step::before {
-    content: '';
-    position: absolute;
-    left: -2.5rem;
-    top: 0;
-    width: 1rem;
-    height: 1rem;
-    background: var(--primary-red);
-    border-radius: 50%;
-}
-
-.step-number {
-    position: absolute;
-    left: -2.5rem;
-    top: -0.5rem;
-    width: 2rem;
-    height: 2rem;
-    background: white;
-    border: 2px solid var(--primary-red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: var(--primary-red);
-}
-
-.step-content {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.step-content h3 {
-    color: var(--primary-red);
-    margin-bottom: 0.5rem;
-}
-
-.legacy-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-.legacy-list li {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.legacy-list i {
-    color: var(--secondary-green);
-    margin-right: 1rem;
-    font-size: 1.25rem;
-}
-
-.legacy-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.legacy-image img {
-    transition: transform 0.3s ease;
-}
-
-.legacy-image:hover img {
-    transform: scale(1.05);
-}
-
-.accordion-button {
-    background-color: white !important;
-    color: var(--dark) !important;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: var(--primary-red) !important;
-    color: white !important;
-}
-
-.accordion-button:focus {
-    box-shadow: 0 0 0 0.25rem rgba(132, 4, 4, 0.25) !important;
-}
-
-.badge.bg-secondary {
-    background-color: var(--secondary-green) !important;
-    color: #fff !important;
-}
 
 /* 
  * Animation Classes 
@@ -1735,13 +1397,7 @@ html {
   color: var(--primary-red-dark) !important;
 }
 
-/* Font Awesome arrows */
-.page-link[aria-label^="Next"]::after,
-.page-link[aria-label^="Previous"]::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  color: inherit;
-}
+
 
 .page-link[aria-label^="Next"]::after {
   content: "\f054"; /* arrow-right */

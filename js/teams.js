@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all slideshows
     initSlideshows();
     
-    // Initialize countdown
-    initCountdown();
+ 
     
     // Smooth scrolling for navigation
     initSmoothScrolling();
@@ -87,43 +86,6 @@ function initSlideshows() {
         container.addEventListener('mouseenter', () => clearInterval(slideInterval));
         container.addEventListener('mouseleave', startSlideshow);
     });
-}
-
-function initCountdown() {
-    const tournamentDate = new Date('December 21, 2025 00:00:00').getTime();
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-    
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = tournamentDate - now;
-        
-        // Time calculations
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        // Update DOM
-        if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
-        if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
-        if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
-        if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
-        
-        // If countdown is finished
-        if (distance < 0) {
-            clearInterval(countdownInterval);
-            document.querySelector('.countdown-timer').innerHTML = '<div class="tournament-begun">The tournament has begun!</div>';
-        }
-    }
-    
-    // Initial update
-    updateCountdown();
-    
-    // Update every second
-    const countdownInterval = setInterval(updateCountdown, 1000);
 }
 
 function initSmoothScrolling() {
@@ -554,30 +516,35 @@ const teams = [
 // Initialisation quand le DOM est chargé
 document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.team-slideshow')) {
+         // Initialise le diaporama principal
         initSlideshow();
+          // Initialise les sections pour chaque equipe
         initTeamSections();
     }
-    
+        // Initialise le bouton "retour en haut"
     initBackToTop();
+        // Initialise les boutons de defilement
     initScrollButtons();
 });
-
-// Initialisation du diaporama
+// Fonction pour initialiser le diaporama principal
 function initSlideshow() {
+        // Selectionne le conteneur du diaporama
     const slideshow = document.querySelector('.team-slideshow');
+      // Cree un conteneur pour la navigation
     const navContainer = document.createElement('div');
     navContainer.className = 'slide-nav';
     
     teams.forEach((team, index) => {
+           // Pour chaque equipe dans la liste des equipes
         const slide = document.createElement('div');
         slide.className = `team-slide ${index === 0 ? 'active' : ''}`;
-        
+           // Cree l'image de fond du slide
         const img = document.createElement('img');
         img.className = 'team-slide-image';
         img.src = team.background;
         img.alt = `${team.name} Team`;
-        img.loading = 'lazy';
-        
+        img.loading = 'lazy'; // Optimisation du chargement
+        // Cree l'overlay avec le contenu
         const overlay = document.createElement('div');
         overlay.className = 'slide-overlay';
         overlay.innerHTML = `
@@ -585,51 +552,56 @@ function initSlideshow() {
             <p>${team.subtitle}</p>
             <a href="#${team.id}" class="btn btn-primary mt-3">Read More</a>
         `;
-        
+          // Ajoute l'image et l'overlay au slide
         slide.appendChild(img);
         slide.appendChild(overlay);
+            // Ajoute le slide au diaporama
         slideshow.appendChild(slide);
-        
+          // Cree un bouton de navigation
         const navBtn = document.createElement('button');
         navBtn.className = `slide-nav-btn ${index === 0 ? 'active' : ''}`;
         navBtn.dataset.slide = index;
         navContainer.appendChild(navBtn);
     });
-    
+       // Ajoute la navigation au diaporama
     slideshow.appendChild(navContainer);
-    
+     // Selectionne tous les slides et boutons de nav
     const slides = document.querySelectorAll('.team-slide');
     const navButtons = document.querySelectorAll('.slide-nav-btn');
     let currentSlide = 0;
-    
+        // Fonction pour afficher un slide specifique
     function showSlide(index) {
+        // Retire la classe active de tous les slides et boutons
         slides.forEach(slide => slide.classList.remove('active'));
         navButtons.forEach(btn => btn.classList.remove('active'));
-        
+          // Ajoute la classe active au slide et bouton correspondants
         slides[index].classList.add('active');
         navButtons[index].classList.add('active');
         currentSlide = index;
     }
-    
+     // Ajoute un ecouteur d'evenement aux boutons de nav
     navButtons.forEach((button, index) => {
         button.addEventListener('click', () => showSlide(index));
     });
-    
+    // Definit un intervalle pour le defilement automatique
+
     setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
-    }, 5000);
+    }, 5000);  // Change de slide toutes les 5 secondes
 }
 
 // Initialisation des sections d'équipe
 function initTeamSections() {
+      // Selectionne le conteneur des equipes
     const container = document.getElementById('teams-container');
     
     teams.forEach(team => {
-        const section = document.createElement('section');
+        // Pour chaque equipe dans la liste
+        const section = document.createElement('section');  // Cree une section pour l'equipe
         section.className = 'team-section';
-        section.id = team.id;
-        
+        section.id = team.id; // ID correspondant a l'ancre
+         // HTML de la section equipe
         section.innerHTML = `
             <div class="container">
                 <div class="team-header">
