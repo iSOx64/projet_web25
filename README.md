@@ -1,122 +1,142 @@
 # AFCON Morocco 2025 – Official Portal
 
-Welcome to the official portal of the 2025 Africa Cup of Nations (AFCON) in Morocco. This web project aims to provide an immersive and comprehensive experience around Africa's biggest football event, with a modern, responsive, and feature-rich interface.
+Welcome to the official portal of the 2025 Africa Cup of Nations (AFCON) in Morocco. This comprehensive web platform provides an immersive experience for Africa's premier football tournament, featuring a modern, responsive, and user-friendly interface.
 
----
+## Project Overview
 
-## Table of Contents
+The AFCON Morocco 2025 portal is a full-featured web application designed to provide comprehensive information about the tournament, including team profiles, match schedules, stadium information, and latest news updates.
 
-- [Overview](#overview)
-- [Features](#features)
-- [Project Preview](#project-preview)
-- [Project Structure](#project-structure)
-- [Technologies Used](#technologies-used)
-- [Image Organization](#image-organization)
-- [Authors](#authors)
+## Key Features
 
----
+### Core Functionality
+- Interactive Homepage with dynamic countdown and tournament highlights
+- Detailed Team Profiles for all 24 participating nations
+- Comprehensive Stadium Showcase with venue details
+- Real-time Match Schedule with advanced filtering options
+- News Center with latest updates and in-depth articles
+- Statistics Dashboard with tournament analytics
 
-## Overview
-
-This portal centralizes all information related to AFCON 2025: news, teams, stadiums, schedule, results, statistics, and more.
-
----
-
-## Features
-
-- **Home**: Tournament presentation, countdown, highlights, featured teams, latest news.
-- **Teams**: Interactive list of the 24 participating teams, with flags, squads, statistics, and history.
-- **Stadiums**: Detailed profiles of the 6 host stadiums (photos, capacity, location, scheduled matches).
-- **Schedule**: Dynamic match schedule, filterable by group, date, stadium, or team.
-- **News**: News feed, detailed articles, images, social media sharing.
-- **Statistics**: Interactive charts (Chart.js) for scores, rankings, and performances.
-- **About**: Information about the organization, partners, and the site's mission.
-- **Responsive**: Optimal experience on mobile, tablet, and desktop.
-- **Accessibility**: Keyboard navigation, contrast, alternative text for images.
-- **SEO**: Optimized meta tags, sitemap, semantic structure.
-- **Performance**: Asynchronous resource loading, image optimization.
-
----
-
-## Project Preview
-
-![Site Preview](img/afcon-logo.png)
-
----
+### Technical Features
+- Responsive Design for all devices
+- Performance Optimized for fast loading
+- SEO Friendly structure
+- WCAG 2.1 compliant accessibility
+- Social Media Integration
+- Cross-browser compatibility
 
 ## Project Structure
 
-```text
+```
 projet_web25/
-│
-├── index.html             # Home page
-├── teams.html             # Teams page
-├── stadiums.html          # Stadiums page
-├── schedule.html          # Match schedule
-├── news.html              # News
-├── news-detail.html       # News detail
-├── about.html             # About
+├── index.html             # Landing page
+├── teams.html            # Team profiles and information
+├── stadiums.html         # Venue details and information
+├── schedule.html         # Match schedule and results
+├── news.html            # News articles and updates
+├── about.html           # Tournament information
 │
 ├── css/
-│   └── styles.css         # Custom styles
+│   ├── styles.css       # Global styles 
+│   ├── news.css         # News-specific styles 
+│   └── stadiums.css     # Stadium-specific styles 
 │
 ├── js/
-│   ├── main.js            # General logic
-│   ├── news.js            # News management
-│   ├── news-detail.js     # News detail logic
-│   └── share-links.js     # Social sharing
+│   ├── main.js          # Core functionality 
+│   ├── news.js          # News handling 
+│   └── teams.js         # Team data management 
 │
 ├── img/
-│   ├── afcon-logo.png     # Tournament logo
-│   ├── favicon.ico        # Favicon
-│   ├── flags/             # Team flags
-│   ├── news/              # News images
-│   ├── teams/             # Team photos
-│   └── partners/          # Partner logos
-│
-├── public/
-│   └── vite.svg           # Static resources
-│
-├── .bolt/
-│   └── config.json        # Vite configuration
-│
-├── package.json           # npm dependencies and scripts
-├── package-lock.json      # Dependency lock file
-├── .gitignore             # Version control exclusions
-└── README.md              # Project documentation
+│   ├── flags/           # Team flags
+│   ├── stadiums/        # Venue images
+│   ├── teams/           # Team photos
+│   ├── news/            # Article images
+│   ├── gallery/         # Photo gallery
+│   ├── cities/          # Host city images
+│   ├── people/          # Team/player photos
+│   └── sponsors/        # Partner logos
 ```
-
----
 
 ## Technologies Used
 
-- **HTML5 / CSS3**: Page structure and styling
-- **JavaScript (ES6+)**: Dynamic logic, per-page modules
-- **Vite**: Ultra-fast development server and build tool
-- **Chart.js**: Data/statistics visualization
-- **Bootstrap 5**: Responsive layout and UI components
-- **Font Awesome**: Vector icons
-- **AOS**: Scroll animations
+### Frontend
+- HTML5 & CSS3
+- JavaScript (ES6+)
+- Bootstrap 5
+- Chart.js for data visualization
 
----
+### Development Tools
+- Git for version control
+- Modern development practices
+- Responsive design principles
 
-## Image Organization
+## Responsive Design
 
-- **img/flags/**: 24 official flags (PNG, 120x80px), used in lists, tables, and team profiles.
-- **img/teams/**: National team photos.
-- **img/news/**: Illustrations for news articles.
-- **img/partners/**: Official sponsor and partner logos.
+The portal is optimized for:
+- Mobile devices (320px and up)
+- Tablets (768px and up)
+- Desktop (1024px and up)
+- Large screens (1440px and up)
 
-All images are royalty-free or from the public domain.
+## Design Features
 
----
+- Modern and clean interface
+- Consistent color scheme
+- High-quality imagery
+- Intuitive navigation
+- Interactive elements
+- Smooth animations
 
-## Authors
+## File Organization
+
+### HTML Files
+- `index.html`: Main landing page with tournament overview
+- `teams.html`: Detailed team information and statistics
+- `stadiums.html`: Venue information and facilities
+- `schedule.html`: Match schedule and results
+- `news.html`: Latest news and updates
+- `about.html`: Tournament information and history
+
+### CSS Files
+- `styles.css`: Global styles and common components
+- `news.css`: News page specific styles
+- `stadiums.css`: Stadium page specific styles
+
+### JavaScript Files
+- `main.js`: Core functionality and common features
+- `news.js`: News handling and article management
+- `teams.js`: Team data and statistics management
+
+### Image Assets
+- Organized in thematic directories
+- Optimized for web use
+- Responsive image handling
+
+## Development Team
 
 - Tafraouti Sanae
 - Essebaiy Aya
 - Elmessaoudi Fatima
 - Chouhe Jihane
 - Sadiki Abderrahim
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Opera (latest)
+
+## Performance Optimization
+
+- Minified CSS and JavaScript
+- Optimized images
+- Lazy loading implementation
+- Caching strategies
+- CDN integration
+
+---
+
+
 
 
