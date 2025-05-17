@@ -1,109 +1,135 @@
+// Ecouteur d'evenement qui se declenche quand le DOM est completement charge
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all slideshows
+    // Initialise tous les diaporamas
     initSlideshows();
     
- 
-    
-    // Smooth scrolling for navigation
+    // Initialise le defilement fluide pour la navigation
     initSmoothScrolling();
 });
 
+// Fonction pour initialiser les diaporamas
 function initSlideshows() {
+    // Selectionne tous les conteneurs de diaporama (principaux et sponsors)
     const slideshowContainers = document.querySelectorAll('.slideshow-container, .sponsors-slideshow');
     
+    // Pour chaque conteneur de diaporama
     slideshowContainers.forEach(container => {
+        // Selectionne la piste du diaporama
         const track = container.querySelector('.slideshow-track, .sponsors-track');
+        // Selectionne tous les slides
         const slides = container.querySelectorAll('.slide, .sponsor-slide');
+        // Selectionne les boutons precedent/suivant
         const prevBtn = container.querySelector('.prev');
         const nextBtn = container.querySelector('.next');
+        // Selectionne le conteneur des points indicateurs
         const dotsContainer = container.querySelector('.dots');
+        // Index courant initialise a 0
         let currentIndex = 0;
+        // Variable pour stocker l'intervalle
         let slideInterval;
         
-        // Create dots if container exists
+        // Cree les points indicateurs si le conteneur existe
         if (dotsContainer) {
             slides.forEach((_, index) => {
+                // Cree un point indicateur
                 const dot = document.createElement('div');
                 dot.classList.add('dot');
+                // Active le premier point
                 if (index === 0) dot.classList.add('active');
+                // Ajoute un ecouteur de clic
                 dot.addEventListener('click', () => goToSlide(index));
+                // Ajoute le point au conteneur
                 dotsContainer.appendChild(dot);
             });
         }
         
+        // Selectionne tous les points indicateurs
         const dots = container.querySelectorAll('.dot');
         
-        // Start auto-scrolling
+        // Demarre le diaporama automatique
         startSlideshow();
         
-        // Function to go to specific slide
+        // Fonction pour aller a un slide specifique
         function goToSlide(index) {
-            // Reset all slides and dots
+            // Desactive tous les slides et points
             slides.forEach(slide => slide.classList.remove('active'));
             if (dots.length > 0) {
                 dots.forEach(dot => dot.classList.remove('active'));
             }
             
-            // Set new active slide and dot
+            // Definit le nouveau slide actif
             currentSlide = index;
             slides[currentSlide].classList.add('active');
+            // Active le point correspondant
             if (dots.length > 0) {
                 dots[currentSlide].classList.add('active');
             }
             
-            // Update track position
+            // Deplace la piste pour afficher le bon slide
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
             
-            // Reset timer
+            // Reinitialise le timer
             resetSlideshow();
         }
         
-        // Function to go to next slide
+        // Fonction pour passer au slide suivant
         function nextSlide() {
+            // Calcule l'index suivant (avec boucle)
             const nextIndex = (currentSlide + 1) % slides.length;
             goToSlide(nextIndex);
         }
         
-        // Function to start auto-scrolling
+        // Fonction pour demarrer le diaporama automatique
         function startSlideshow() {
-            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            // Change de slide toutes les 5 secondes
+            slideInterval = setInterval(nextSlide, 5000);
         }
         
-        // Function to reset timer
+        // Fonction pour reinitialiser le timer
         function resetSlideshow() {
+            // Annule l'intervalle actuel
             clearInterval(slideInterval);
+            // Redemarre le diaporama
             startSlideshow();
         }
         
-        // Event listeners for buttons
+        // Ecouteurs d'evenements pour les boutons
         if (nextBtn) nextBtn.addEventListener('click', nextSlide);
         if (prevBtn) prevBtn.addEventListener('click', () => {
+            // Calcule l'index precedent (avec boucle)
             const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
             goToSlide(prevIndex);
         });
         
-        // Pause on hover (optional)
+        // Mise en pause au survol (optionnel)
         container.addEventListener('mouseenter', () => clearInterval(slideInterval));
         container.addEventListener('mouseleave', startSlideshow);
     });
 }
 
+// Fonction pour le defilement fluide
 function initSmoothScrolling() {
+    // Selectionne tous les liens d'ancrage
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            // Empeche le comportement par defaut
             e.preventDefault();
             
+            // Recupere l'ID de la cible
             const targetId = this.getAttribute('href');
+            // Ignore si c'est juste #
             if (targetId === '#') return;
             
+            // Selectionne l'element cible
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Calculate header height for offset
+                // Calcule la hauteur du header pour l'ajustement
                 const headerHeight = document.querySelector('.main-header').offsetHeight;
                 
+                // Defile jusqu'a la cible avec un decalage
                 window.scrollTo({
                     top: targetElement.offsetTop - headerHeight,
-                    behavior: 'smooth'
+                    behavior: 'smooth' // Animation fluide
                 });
             }
         });
