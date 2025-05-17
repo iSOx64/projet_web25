@@ -74,24 +74,40 @@
         <!-- Le contenu sera ajouté via JavaScript -->
     </main>
 
-    <section class="py-5 newsletter-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title text-white">Stay Updated</h2>
-                    <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
-                    <form class="newsletter-form">
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Enter your email address">
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
+   <!-- Section d'inscription à la newsletter -->
+<section class="py-5 newsletter-section">
+    <!-- Conteneur principal -->
+    <div class="container">
+        <!-- Rangée centrée horizontalement -->
+        <div class="row justify-content-center">
+            <!-- Colonne centrée prenant 8/12 de largeur sur grand écran -->
+            <div class="col-lg-8 text-center">
+                <!-- Titre de section en blanc -->
+                <h2 class="section-title text-white">Stay Updated</h2>
+                <!-- Texte d'introduction en blanc avec marge en bas -->
+                <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
+                <!-- Formulaire d'inscription -->
+                <form class="newsletter-form">
+                    <!-- Groupe d'input avec marge en bas -->
+                    <div class="input-group mb-3">
+                        <!-- Champ email :
+                             - type email pour validation
+                             - placeholder pour l'indication
+                             - aria-label pour l'accessibilité -->
+                        <input type="email" class="form-control" 
+                               placeholder="Enter your email address" 
+                               aria-label="Enter your email address">
+                        <!-- Bouton de soumission primaire -->
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- Fin de la section newsletter -->
 
-       <!-- Pied de page du site -->
+     <!-- Pied de page du site -->
     <footer class="footer py-5">
         <!-- Section de pied de page avec un padding vertical de 5 unités -->
         <div class="container">
@@ -106,13 +122,21 @@
                     <!-- Texte descriptif semi-transparent -->
                     <div class="social-icons">
                         <!-- Conteneur des icônes de réseaux sociaux -->
-                        <a href="https://www.facebook.com/CAFOnline" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/CAFOnline" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3b5998"/><path d="M15.117 8.667h-1.367V7.667c0-.333.333-.333.667-.333h.667V5.333h-1.333c-1.333 0-2 .667-2 2v1.334H9.333v2h1.417V18h2.333v-7.333h1.333l.2-2z" fill="#fff"/></svg>
+                        </a>  
                         <!-- Lien Facebook officiel de la CAF -->
-                        <a href="https://twitter.com/CAF_Online" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/CAF_Online" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1da1f2"/><path d="M19.633 7.997c-.508.225-1.054.377-1.626.446a2.825 2.825 0 0 0 1.24-1.555 5.657 5.657 0 0 1-1.793.685 2.822 2.822 0 0 0-4.805 2.572A8.012 8.012 0 0 1 5.67 6.149a2.822 2.822 0 0 0 .873 3.77 2.8 2.8 0 0 1-1.278-.353v.036a2.825 2.825 0 0 0 2.263 2.767 2.82 2.82 0 0 1-1.276.048 2.825 2.825 0 0 0 2.637 1.96A5.66 5.66 0 0 1 4 17.542a8.002 8.002 0 0 0 12.29-6.708c0-.122-.003-.243-.009-.364a5.72 5.72 0 0 0 1.352-1.473z" fill="#fff"/></svg>
+                        </a>                        
                         <!-- Lien Twitter officiel de la CAF -->
-                        <a href="https://www.instagram.com/caf_online/" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/caf_online/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#e4405f"/><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.2-7.8a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zm2.4 1.2c-.053-1.13-.31-2.13-1.13-2.95C17.13 4.31 16.13 4.053 15 4c-1.13-.053-4.52-.053-5.65 0-1.13.053-2.13.31-2.95 1.13C4.31 6.87 4.053 7.87 4 9c-.053 1.13-.053 4.52 0 5.65.053 1.13.31 2.13 1.13 2.95.82.82 1.82 1.077 2.95 1.13 1.13.053 4.52.053 5.65 0 1.13-.053 2.13-.31 2.95-1.13.82-.82 1.077-1.82 1.13-2.95.053-1.13.053-4.52 0-5.65zm-2.16 7.2a3.6 3.6 0 0 1-3.6 3.6h-2.8a3.6 3.6 0 0 1-3.6-3.6v-2.8a3.6 3.6 0 0 1 3.6-3.6h2.8a3.6 3.6 0 0 1 3.6 3.6v2.8z" fill="#fff"/></svg>
+                        </a>                        
                         <!-- Lien Instagram officiel de la CAF -->
-                        <a href="https://www.youtube.com/user/CAFtv" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/user/CAFtv" class="social-icon" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff0000"/><path d="M17.5 9.5s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C12.1 6.5 12 6.5 12 6.5h0s-.1 0-2.8.1c-.4 0-1.2.1-1.9.9-.6.6-.8 2-.8 2S6 11.1 6 12.5v.9c0 1.4.2 2.9.2 2.9s.2 1.4.8 2c.7.8 1.6.8 2 .9 1.4.1 2.8.1 2.8.1s1.4 0 2.8-.1c.4 0 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.4.2-2.9v-.9c0-1.4-.2-2.9-.2-2.9zM10.5 14.5v-4l4 2-4 2z" fill="#fff"/></svg>
+                        </a>                        
                         <!-- Lien YouTube officiel de la CAF -->
                     </div>
                 </div>
@@ -164,7 +188,7 @@
                         <!-- Liste des informations de contact -->
                         <li><i class="fas fa-map-marker-alt"></i> Avenue de la Palestine Mhanech I, TÉTOUAN</li>
                         <!-- Adresse avec icône de localisation -->
-                        <li><i class="fas fa-phone"></i> +212 500000000</li>
+                        <li><i class="fas fa-phone"></i> +212 5XX XXX XXX</li>
                         <!-- Numéro de téléphone avec icône -->
                         <li><i class="fas fa-envelope"></i> info@cafonline2025.com</li>
                         <!-- Email avec icône d'enveloppe -->
