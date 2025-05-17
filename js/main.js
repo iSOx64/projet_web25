@@ -162,13 +162,6 @@ function initSmoothScrolling() {
 
 // Initialize slideshow and team sections when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-    });
-    
     // Team page specific initializations
     if (document.querySelector('.team-slideshow')) {
         initSlideshow();
@@ -257,7 +250,6 @@ function initTeamSections() {
         const section = document.createElement('section');
         section.className = 'team-section';
         section.id = team.id;
-        section.setAttribute('data-aos', 'fade-up');
         
         section.innerHTML = `
             <div class="container">
