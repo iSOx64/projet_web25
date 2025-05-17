@@ -1,226 +1,406 @@
 <!DOCTYPE html>
 <!-- Déclaration du type de document HTML5 qui indique au navigateur la version HTML utilisée -->
 <html lang="en">
-<!-- Élément racine du document HTML avec attribut de langue défini sur anglais -->
+<!-- Élément racine du document HTML avec attribut de langue défini sur anglais pour améliorer l'accessibilité et le référencement -->
 <head>
-    <!-- Section d'en-tête contenant les métadonnées, liens vers les fichiers CSS et informations sur la page -->
+    <!-- Section d'en-tête contenant les métadonnées, liens vers les fichiers CSS et informations sur la page qui ne sont pas visibles directement -->
     <meta charset="UTF-8">
-    <!-- Définit l'encodage des caractères du document en UTF-8 pour prendre en charge les caractères internationaux -->
+    <!-- Définit l'encodage des caractères du document en UTF-8 pour prendre en charge les caractères internationaux et spéciaux -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configure la vue mobile pour rendre le site responsive (s'adapte à la taille de l'écran) -->
+    <!-- Configure la vue mobile pour rendre le site responsive (s'adapte à la taille de l'écran) et définit le niveau de zoom initial -->
     <title>AFCON 2025 News | Official Portal</title>
-    <!-- Définit le titre de la page qui apparaît dans l'onglet du navigateur -->
+    <!-- Définit le titre de la page qui apparaît dans l'onglet du navigateur et dans les résultats des moteurs de recherche -->
     <link rel="icon" href="img/favicon.ico">
-    <!-- Lien vers l'icône du site (favicon) qui apparaît dans l'onglet du navigateur -->
+    <!-- Lien vers l'icône du site (favicon) qui apparaît dans l'onglet du navigateur, les favoris et les raccourcis -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Importe le framework CSS Bootstrap depuis un CDN pour la mise en page et les composants responsive -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Importe la bibliothèque Font Awesome pour utiliser des icônes vectorielles dans le site -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Importe la police Montserrat depuis Google Fonts en trois variantes de graisse (400, 600, 700) -->
+    <!-- Importe le framework CSS Bootstrap depuis un CDN (Content Delivery Network) pour la mise en page et les composants responsive -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Lien vers la feuille de styles personnalisée du site pour les règles CSS spécifiques -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Importe la bibliothèque AOS (Animate On Scroll) pour ajouter des animations lors du défilement -->
+    <!-- Lien vers la feuille de styles personnalisée du site pour les règles CSS spécifiques communes à toutes les pages -->
+    <link rel="stylesheet" href="css/news.css">
+    <!-- Lien vers la feuille de styles spécifique aux actualités pour les styles particuliers à cette page -->
 </head>
 <!-- Fin de la section d'en-tête -->
 <body>
-    <!-- Corps de la page contenant tout le contenu visible -->
+    <!-- Corps de la page contenant tout le contenu visible pour l'utilisateur -->
      <header class="sticky-top">
+        <!-- En-tête du site avec la classe sticky-top de Bootstrap pour qu'il reste collé en haut lors du défilement -->
         <nav class="navbar navbar-expand-lg navbar-dark">
+            <!-- Barre de navigation sombre qui s'étend sur les grands écrans (lg = large) -->
             <div class="container">
+                <!-- Conteneur Bootstrap centré avec des marges automatiques -->
                 <!-- Logo du site redirigeant vers la page d'accueil -->
                 <a class="navbar-brand" href="index.html">
+                    <!-- Lien avec classe navbar-brand pour styliser le logo -->
                     <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
+                    <!-- Image du logo avec texte alternatif pour l'accessibilité et hauteur définie à 60 pixels -->
                 </a>
-                <!-- Bouton pour ouvrir/fermer le menu sur mobile -->
+                <!-- Bouton pour ouvrir/fermer le menu sur mobile (hamburger) -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Bouton qui apparaît sur les petits écrans avec des attributs pour l'accessibilité et le contrôle du menu -->
                     <span class="navbar-toggler-icon"></span>
+                    <!-- Icône de hamburger (trois lignes) pour le menu mobile -->
                 </button>
                 <!-- Liens de navigation principaux du site -->
                 <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Conteneur qui se replie sur petit écran et s'étend sur grand écran -->
                     <ul class="navbar-nav ms-auto">
+                        <!-- Liste non ordonnée des liens de navigation, alignée à droite (ms-auto = margin-start auto) -->
                         <!-- Lien vers la page d'accueil -->
                         <li class="nav-item">
+                            <!-- Élément de liste pour la navigation -->
                             <a class="nav-link" href="index.html">Home</a>
+                            <!-- Lien vers la page d'accueil stylisé avec la classe nav-link -->
                         </li>
                         <!-- Lien vers la page des équipes -->
                         <li class="nav-item">
+                            <!-- Élément de liste pour la navigation -->
                             <a class="nav-link" href="teams.html">Teams</a>
+                            <!-- Lien vers la page des équipes stylisé avec la classe nav-link -->
                         </li>
-                        <!-- Lien vers la page des stades (page active) -->
+                        <!-- Lien vers la page des stades -->
                         <li class="nav-item">
+                            <!-- Élément de liste pour la navigation -->
                             <a class="nav-link" href="stadiums.html">Stadiums</a>
+                            <!-- Lien vers la page des stades stylisé avec la classe nav-link -->
                         </li>
                         <!-- Lien vers la page du calendrier -->
                         <li class="nav-item">
+                            <!-- Élément de liste pour la navigation -->
                             <a class="nav-link" href="schedule.html">Schedule</a>
+                            <!-- Lien vers la page du calendrier stylisé avec la classe nav-link -->
                         </li>
-                        <!-- Lien vers la page des actualités -->
+                        <!-- Lien vers la page des actualités (page active) -->
                         <li class="nav-item">
+                            <!-- Élément de liste pour la navigation -->
                             <a class="nav-link active" href="news.html">News</a>
+                            <!-- Lien vers la page actuelle (news) avec la classe active pour le mettre en évidence -->
                         </li>
                         <!-- Lien vers la page à propos -->
                         <li class="nav-item">
+                            <!-- Élément de liste pour la navigation -->
                             <a class="nav-link" href="about.html">About</a>
+                            <!-- Lien vers la page à propos stylisé avec la classe nav-link -->
                         </li>
-                          <li class="nav-item"><a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673"  target="_blank">Buy Tickets</a></li>
-                        <!-- Élément de navigation pour l achat des billets  -->
+                        <li class="nav-item">
+                            <!-- Élément de liste pour la navigation vers l'achat de billets -->
+                            <a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673" target="_blank">Buy Tickets</a>
+                            <!-- Lien externe vers la page d'achat de billets qui s'ouvre dans un nouvel onglet (target="_blank") -->
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <section class="team-hero">
-        <!-- Section d'en-tête de la page avec un titre principal et une description -->
-        <div class="container">
-            <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
-            <h1 class="page-title" data-aos="fade-up">AFCON 2025 News</h1>
-            <!-- Titre principal de la page avec animation "fade-up" au défilement (AOS) -->
-            <p class="lead">Stay updated with the latest news, updates, and developments about Africa's biggest football tournament</p>
-            <!-- Sous-titre descriptif avec classe "lead" de Bootstrap pour mise en forme -->
+    
+    <section class="about-intro" style="background: #8B1818;">
+    <!-- Section d’introduction avec fond bordeaux pour présenter la page des actualités -->
+    <div class="container-fluid p-0">
+        <!-- Conteneur Bootstrap pleine largeur sans padding -->
+        <div class="row g-0">
+            <!-- Ligne Bootstrap sans espacement entre les colonnes -->
+            <!-- Colonne image -->
+            <div class="col-lg-6">
+                <!-- Colonne prenant 6/12 de la largeur sur grands écrans pour l’image -->
+                <div class="about-intro-image">
+                    <!-- Conteneur pour l’image d’introduction -->
+                    <img src="img/news/caf25.jpg" alt="AFCON 2025 Introduction" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                    <!-- Image responsive couvrant tout l’espace, avec texte alternatif pour l’accessibilité -->
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                <!-- Colonne prenant 6/12 de la largeur, centrée verticalement et horizontalement -->
+                <div class="w-100 text-center" style="color: #fff; padding: 2.5rem 1.5rem;">
+                    <!-- Conteneur centré, texte blanc, avec padding interne -->
+                    <h1 class="page-title fw-bold mb-4" style="font-size: 2.8rem; letter-spacing: 1px; font-family: 'Montserrat', Arial, sans-serif;">AFCON 2025 News</h1>
+                    <!-- Titre principal en gras, grande taille, police personnalisée -->
+                    <p class="lead mb-4" style="font-size: 1.35rem; font-family: 'Montserrat', Arial, sans-serif; font-weight: 500;">
+                        Stay updated with the latest news, updates, and developments about Africa's biggest football tournament.
+                    </p>
+                    <!-- Slogan ou phrase d’accroche, police et taille personnalisées, marge basse -->
+                    <p class="mb-0" style="font-size: 1.12rem; opacity: 0.92; font-family: 'Montserrat', Arial, sans-serif;">
+                        Find exclusive stories, match previews, interviews, and all the buzz around the Africa Cup of Nations 2025 in Morocco.
+                    </p>
+                    <!-- Texte complémentaire, police personnalisée, taille réduite, légère transparence -->
+                </div>
+            </div>
         </div>
+    </div>
     </section>
 
     <section class="py-5">
-        <!-- Section principale de contenu avec espacement vertical (padding-y) de 5 unités -->
+        <!-- Section principale de contenu avec espacement vertical (padding-y) de 5 unités Bootstrap -->
         <div class="container">
             <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
             <div class="row g-4">
                 <!-- Ligne avec espacement (gap) de 4 unités entre les colonnes -->
-                <div class="col-lg-8" data-aos="fade-up">
-                    <!-- Colonne principale prenant 8/12 de la largeur sur grands écrans avec animation au défilement -->
-                    <div class="card news-card">
-                        <!-- Carte Bootstrap pour l'article principal -->
-                        <img src="img/news/img0.jpg" alt="Stadium Preparation" >
-                        <!-- Image de l'article principal avec texte alternatif -->
+                <div class="col-lg-8">
+                    <!-- Colonne principale prenant 8/12 de la largeur sur grands écrans (lg = large) -->
+                    <div class="card news-card hero">
+                        <!-- Carte Bootstrap pour l'article principal avec classes personnalisées pour le style -->
+                        <img src="img/news/img0.jpg" alt="Stadium Preparation">
+                        <!-- Image de l'article principal avec texte alternatif pour l'accessibilité -->
                         <div class="card-body">
                             <!-- Corps de la carte contenant le contenu textuel -->
                             <span class="badge bg-primary mb-2">Tournament Preparation</span>
-                            <!-- Badge de catégorie avec fond bleu et marge basse -->
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
                             <h2 class="card-title">Morocco's Stadiums Ready for AFCON 2025</h2>
-                            <!-- Titre de l'article principal -->
+                            <!-- Titre de l'article principal avec classe card-title pour le styliser -->
                             <p class="text-muted">May 15, 2025</p>
-                            <!-- Date de publication en gris -->
+                            <!-- Date de publication en gris (text-muted) -->
                             <p class="card-text">The Royal Moroccan Football Federation has announced that all six stadiums for AFCON 2025 are ahead of schedule in their preparation. The tournament, which will run from December 2025 to January 2026, will feature matches in Casablanca, Rabat, Marrakech, Agadir, Fez, and Tangier.</p>
-                            <!-- Premier paragraphe du contenu de l'article -->
+                            <!-- Premier paragraphe du contenu de l'article avec classe card-text pour le style -->
                             <p class="card-text">The Stade Mohammed V in Casablanca and Stade Moulay Abdallah in Rabat have undergone extensive renovations to meet CAF's standards, while the newly constructed Grand Stade de Casablanca is set to be the crown jewel venue for the final match with a capacity of 93,000 spectators.</p>
-                            <!-- Second paragraphe du contenu de l'article -->
-                            <a href="news-detail.html?id=1&title=Morocco's Stadiums Ready for AFCON 2025&category=Tournament Preparation&date=May 15, 2024&author=CAF Media&image=stadium-preparation.jpg" class="btn btn-primary">Read More</a>
-                            <!-- Bouton "Lire plus" avec URL contenant des paramètres pour la page de détail -->
+                            <!-- Second paragraphe du contenu de l'article avec classe card-text pour le style -->
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <!-- Colonne latérale prenant 4/12 de la largeur sur grands écrans avec animation retardée -->
-                    <div class="card mb-4">
-                        <!-- Première carte de la barre latérale avec marge basse -->
+                <div class="col-lg-4">
+                    <!-- Colonne latérale prenant 4/12 de la largeur sur grands écrans (lg = large) -->
+                    <div class="card mb-4 shadow-sm rounded-4">
+                        <!-- Carte Bootstrap avec marge basse, ombre légère et coins arrondis -->
                         <div class="card-body">
                             <!-- Corps de la carte contenant le contenu textuel -->
-                            <h3 class="card-title">Latest Updates</h3>
-                            <!-- Titre de la section des dernières actualités -->
+                            <h3 class="card-title mb-3">Latest Updates</h3>
+                            <!-- Titre de la section des dernières actualités avec marge basse -->
                             <ul class="list-unstyled">
-                                <!-- Liste sans puces (non stylisée) -->
-                                <li class="mb-3">
-                                    <!-- Premier élément de liste avec marge basse -->
-                                    <a href="news-detail.html?id=10&title=CAF%20Unveils%20Full%20Match%20Schedule%20for%20Morocco%202025%20Africa%20Cup%20of%20Nations&category=Organisation&date=31%20January%202025&author=CAF%20Media&image=img10.jpg" class="text-decoration-none">
-                                        <!-- Lien sans soulignement vers l'article complet -->
-                                        <small class="text-muted">31 January 2025</small>
-                                        <!-- Date en petit texte grisé -->
-                                        <h5 class="mb-0">CAF Unveils Full Match Schedule for Morocco 2025 Africa Cup of Nations</h5>
-                                        <!-- Titre de l'actualité sans marge basse -->
-                                    </a>
+                                <!-- Liste non ordonnée sans puces pour afficher les mises à jour -->
+                                <li class="mb-3 d-flex align-items-center">
+                                    <!-- Élément de liste avec marge basse, affichage flexible et alignement vertical centré -->
+                                    <img src="img/news/img1.webp" alt="Tunisia vs Morocco" class="me-2 rounded-3" style="width:48px;height:48px;object-fit:cover;">
+                                    <!-- Image miniature de l'article avec marge à droite, coins arrondis et taille fixe -->
+                                    <div>
+                                        <!-- Conteneur pour le lien et le texte associé -->
+                                        <a href="https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/match-facts-winner-takes-all-battle-between-tunisia-and-morocco-in-group-b/" target="_blank" class="text-decoration-none latest-link">
+                                            <!-- Lien vers l'article externe, sans soulignement, ouvrant dans un nouvel onglet -->
+                                            <small class="text-muted">06 May 2025</small>
+                                            <!-- Date de l'actualité en petit et en gris -->
+                                            <div class="fw-semibold">MATCH FACTS: Winner-takes-all battle between Tunisia and Morocco in Group B</div>
+                                            <!-- Titre de l'actualité en gras -->
+                                        </a>
+                                    </div>
                                 </li>
-                                <li class="mb-3">
-                                    <!-- Deuxième élément de liste avec marge basse -->
-                                    <a href="news-detail.html?id=1&title=MATCH%20FACTS%3A%20Winner-takes-all%20battle%20between%20Tunisia%20and%20Morocco%20in%20Group%20B&category=U20%20AFCON%20Group%20B&date=May%206%2C%202025&author=CAF%20Media&image=img1.webp" class="text-decoration-none">
-                                        <!-- Lien sans soulignement vers l'article complet -->
-                                        <small class="text-muted">01 May 2025</small>
-                                        <!-- Date en petit texte grisé -->
-                                        <h5 class="mb-0">MATCH FACTS: Winner-takes-all battle between Tunisia and Morocco in Group B</h5>
-                                        <!-- Titre de l'actualité sans marge basse -->
-                                    </a>
-                                </li>
-                                <li class="mb-3">
-                                    <!-- Troisième élément de liste avec marge basse -->
-                                    <a href="news-detail.html?id=8&title=Morocco%20fight%20back%20to%20claim%20dramatic%20victory%20over%20Kenya&category=U20%20AFCON%20Group%20B&date=May%201%2C%202025&author=CAF%20Media&image=img8.webp" class="text-decoration-none">
-                                        <!-- Lien sans soulignement vers l'article complet -->
-                                        <small class="text-muted">01 May 2025</small>
-                                        <!-- Date en petit texte grisé -->
-                                        <h5 class="mb-0">Morocco fight back to claim dramatic victory over Kenya</h5>
-                                        <!-- Titre de l'actualité sans marge basse -->
-                                    </a>
-                                </li>
-                                <li class="mb-3">
-                                    <!-- Quatrième élément de liste avec marge basse -->
-                                    <a href="news-detail.html?id=9&title=Infrastructures%20et%20Villes%20H%C3%B4tes&category=Organisation&date=May%201%2C%202025&author=CAF%20Media&image=img9.webp" class="text-decoration-none">
-                                        <!-- Lien sans soulignement vers l'article complet -->
-                                        <small class="text-muted">01 May 2025</small>
-                                        <!-- Date en petit texte grisé -->
-                                        <h5 class="mb-0">Infrastructures et Villes Hôtes</h5>
-                                        <!-- Titre de l'actualité sans marge basse -->
-                                    </a>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <!-- Deuxième élément de la liste, même structure que le précédent -->
+                                    <img src="img/news/img10.jpg" alt="CAF Schedule" class="me-2 rounded-3" style="width:48px;height:48px;object-fit:cover;">
+                                    <!-- Image miniature de l'article -->
+                                    <div>
+                                        <!-- Conteneur pour le lien et le texte associé -->
+                                        <a href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-announce-match-schedule-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/" target="_blank" class="text-decoration-none latest-link">
+                                            <!-- Lien vers l'article externe, sans soulignement, ouvrant dans un nouvel onglet -->
+                                            <small class="text-muted">31 January 2025</small>
+                                            <!-- Date de l'actualité en petit et en gris -->
+                                            <div class="fw-semibold">CAF Unveils Full Match Schedule for Morocco 2025 Africa Cup of Nations</div>
+                                            <!-- Titre de l'actualité en gras -->
+                                        </a>
+                                    </div>
                                 </li>
                             </ul>
+                            <!-- Fin de la liste des dernières actualités -->
                         </div>
+                        <!-- Fin du corps de la carte -->
                     </div>
-                    
-                    <div class="card">
-                        <!-- Seconde carte de la barre latérale -->
-                        <div class="card-body">
-                            <!-- Corps de la carte contenant le contenu textuel -->
-                            <h3 class="card-title">Subscribe to Updates</h3>
-                            <!-- Titre de la section d'abonnement -->
-                            <p class="card-text">Stay updated with the latest news about AFCON 2025.</p>
-                            <!-- Texte descriptif pour l'abonnement -->
-                            <form class="newsletter-form" aria-label="Newsletter subscription">
-                                <!-- Formulaire d'abonnement avec label d'accessibilité -->
-                                <div class="mb-3">
-                                    <!-- Div avec marge basse -->
-                                    <input type="email" class="form-control" placeholder="Your Email" aria-label="Email address" required>
-                                    <!-- Champ de saisie pour l'email avec placeholder et validation requise -->
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
-                                <!-- Bouton d'envoi occupant 100% de la largeur -->
-                            </form>
-                        </div>
-                    </div>
+                    <!-- Fin de la carte -->
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-5 bg-light">
-        <!-- Section avec fond clair et espacement vertical -->
+        <!-- Section avec espacement vertical (padding-y) de 5 unités et fond clair (bg-light) -->
         <div class="container">
             <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
-            <h2 class="section-title text-center mb-5" data-aos="fade-up">All News</h2>
-            <!-- Titre de section centré avec animation au défilement et marge basse -->
-            <div class="row g-4" id="news-grid">
-                <!-- Grille d'actualités avec ID pour JavaScript et espacement entre éléments -->
+            <h2 class="section-title text-center mb-5">All News</h2>
+            <!-- Titre de section centré avec marge basse de 5 unités -->
+            
+            <div class="row g-4">
+                <!-- Ligne avec espacement (gap) de 4 unités entre les colonnes -->
+                <!-- Article 1 -->
+                <div class="col-md-6 col-lg-4 all-news-article">
+                    <!-- Colonne prenant 6/12 sur écrans moyens et 4/12 sur grands écrans avec classe personnalisée -->
+                    <div class="card news-card h-100">
+                        <!-- Carte avec classe personnalisée et hauteur 100% pour aligner tous les articles -->
+                        <img src="img/news/img1.webp" class="card-img-top" alt="Tunisia vs Morocco">
+                        <!-- Image en haut de la carte avec texte alternatif pour l'accessibilité -->
+                        <div class="card-body">
+                            <!-- Corps de la carte contenant le contenu textuel -->
+                            <span class="badge bg-primary mb-2">U20 AFCON Group B</span>
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
+                            <small class="text-muted">May 6, 2025</small>
+                            <!-- Date en petit texte grisé (small et text-muted) -->
+                            <h5 class="card-title">MATCH FACTS: Winner-takes-all battle between Tunisia and Morocco in Group B</h5>
+                            <!-- Titre de l'article avec classe card-title pour le style -->
+                            <p class="card-text">Tunisia and Morocco face off at the Suez Canal Stadium in a decisive Group B clash. The outcome could determine the group winner and qualification for the knockout stages.</p>
+                            <!-- Paragraphe de résumé avec classe card-text pour le style -->
+                            <a href="https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/match-facts-winner-takes-all-battle-between-tunisia-and-morocco-in-group-b/" target="_blank" class="btn btn-link p-0">Read More</a>
+                            <!-- Lien "Lire plus" en forme de bouton avec icône flèche externe et marge gauche de 1 unité, ouvrant dans un nouvel onglet -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="col-md-6 col-lg-4 all-news-article">
+                    <!-- Colonne prenant 6/12 sur écrans moyens et 4/12 sur grands écrans avec classe personnalisée -->
+                    <div class="card news-card h-100">
+                        <!-- Carte avec classe personnalisée et hauteur 100% pour aligner tous les articles -->
+                        <img src="img/news/img2.webp" class="card-img-top" alt="Zambia vs Tanzania">
+                        <!-- Image en haut de la carte avec texte alternatif pour l'accessibilité -->
+                        <div class="card-body">
+                            <!-- Corps de la carte contenant le contenu textuel -->
+                            <span class="badge bg-primary mb-2">U20 AFCON Group A</span>
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
+                            <small class="text-muted">May 6, 2025</small>
+                            <!-- Date en petit texte grisé (small et text-muted) -->
+                            <h5 class="card-title">Last gasp penalty sends Zambia past Tanzania in dramatic Group A Clash</h5>
+                            <!-- Titre de l'article avec classe card-title pour le style -->
+                            <p class="card-text">Zambia snatched a dramatic 1-0 victory over Tanzania in Ismailia thanks to a last-minute penalty by Joseph Sabobo.</p>
+                            <!-- Paragraphe de résumé avec classe card-text pour le style -->
+                            <a href="https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/last-gasp-penalty-sends-zambia-past-tanzania-in-dramatic-group-a-clash/" target="_blank" class="btn btn-link p-0">Read More</a>
+                            <!-- Lien "Lire plus" en forme de bouton avec icône flèche externe et marge gauche de 1 unité, ouvrant dans un nouvel onglet -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="col-md-6 col-lg-4 all-news-article">
+                    <!-- Colonne prenant 6/12 sur écrans moyens et 4/12 sur grands écrans avec classe personnalisée -->
+                    <div class="card news-card h-100">
+                        <!-- Carte avec classe personnalisée et hauteur 100% pour aligner tous les articles -->
+                        <img src="img/news/img3.webp" class="card-img-top" alt="Nigeria vs Kenya">
+                        <!-- Image en haut de la carte avec texte alternatif pour l'accessibilité -->
+                        <div class="card-body">
+                            <!-- Corps de la carte contenant le contenu textuel -->
+                            <span class="badge bg-primary mb-2">U20 AFCON Group B</span>
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
+                            <small class="text-muted">May 5, 2025</small>
+                            <!-- Date en petit texte grisé (small et text-muted) -->
+                            <h5 class="card-title">MATCH FACTS: Nigeria face eliminated Kenya in final Group B game</h5>
+                            <!-- Titre de l'article avec classe card-title pour le style -->
+                            <p class="card-text">Nigeria and Kenya meet in Cairo for their final Group B match. Nigeria need a point to progress, while Kenya look to end on a high after two defeats.</p>
+                            <!-- Paragraphe de résumé avec classe card-text pour le style -->
+                            <a href="https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/match-facts-nigeria-face-eliminated-kenya-in-final-group-b-game-at-totalenergies-caf-u20-afcon/" target="_blank" class="btn btn-link p-0">Read More</a>
+                            <!-- Lien "Lire plus" en forme de bouton avec icône flèche externe et marge gauche de 1 unité, ouvrant dans un nouvel onglet -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="col-md-6 col-lg-4 all-news-article">
+                    <!-- Colonne prenant 6/12 sur écrans moyens et 4/12 sur grands écrans avec classe personnalisée -->
+                    <div class="card news-card h-100">
+                        <!-- Carte avec classe personnalisée et hauteur 100% pour aligner tous les articles -->
+                        <img src="img/news/img4.webp" class="card-img-top" alt="DR Congo vs CAR">
+                        <!-- Image en haut de la carte avec texte alternatif pour l'accessibilité -->
+                        <div class="card-body">
+                            <!-- Corps de la carte contenant le contenu textuel -->
+                            <span class="badge bg-primary mb-2">U20 AFCON Group C</span>
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
+                            <small class="text-muted">May 5, 2025</small>
+                            <!-- Date en petit texte grisé (small et text-muted) -->
+                            <h5 class="card-title">Makanza brace fires DR Congo to 3-1 triumph over Central African Republic</h5>
+                            <!-- Titre de l'article avec classe card-title pour le style -->
+                            <p class="card-text">Noah Makanza scored twice as DR Congo came from behind to beat Central African Republic 3-1 in Suez, boosting their hopes of reaching the knockout stage.</p>
+                            <!-- Paragraphe de résumé avec classe card-text pour le style -->
+                            <a href="https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/makanza-brace-fires-dr-congo-to-3-1-triumph-over-central-african-republic/" target="_blank" class="btn btn-link p-0">Read More</a>
+                            <!-- Lien "Lire plus" en forme de bouton avec icône flèche externe et marge gauche de 1 unité, ouvrant dans un nouvel onglet -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="col-md-6 col-lg-4 all-news-article">
+                    <!-- Colonne prenant 6/12 sur écrans moyens et 4/12 sur grands écrans avec classe personnalisée -->
+                    <div class="card news-card h-100">
+                        <!-- Carte avec classe personnalisée et hauteur 100% pour aligner tous les articles -->
+                        <img src="img/news/img5.webp" class="card-img-top" alt="Ghana vs Senegal">
+                        <!-- Image en haut de la carte avec texte alternatif pour l'accessibilité -->
+                        <div class="card-body">
+                            <!-- Corps de la carte contenant le contenu textuel -->
+                            <span class="badge bg-primary mb-2">U20 AFCON Group C</span>
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
+                            <small class="text-muted">May 5, 2025</small>
+                            <!-- Date en petit texte grisé (small et text-muted) -->
+                            <h5 class="card-title">Ghana edge Senegal in tightly contested duel</h5>
+                            <!-- Titre de l'article avec classe card-title pour le style -->
+                            <p class="card-text">Ghana moved into second place in Group C after a crucial 1-0 win over reigning champions Senegal, thanks to an early goal from Emmanuel Mensah.</p>
+                            <!-- Paragraphe de résumé avec classe card-text pour le style -->
+                            <a href="https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/match-facts-car-and-ghana-clash-in-crucial-final-group-c-game-at-totalenergies-caf-u20-afcon/" target="_blank" class="btn btn-link p-0">Read More</a>
+                            <!-- Lien "Lire plus" en forme de bouton avec icône flèche externe et marge gauche de 1 unité, ouvrant dans un nouvel onglet -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="col-md-6 col-lg-4 all-news-article">
+                    <!-- Colonne prenant 6/12 sur écrans moyens et 4/12 sur grands écrans avec classe personnalisée -->
+                    <div class="card news-card h-100">
+                        <!-- Carte avec classe personnalisée et hauteur 100% pour aligner tous les articles -->
+                        <img src="img/news/img6.webp" class="card-img-top" alt="Morocco vs Nigeria">
+                        <!-- Image en haut de la carte avec texte alternatif pour l'accessibilité -->
+                        <div class="card-body">
+                            <!-- Corps de la carte contenant le contenu textuel -->
+                            <span class="badge bg-primary mb-2">U20 AFCON Group C</span>
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
+                            <small class="text-muted">May 4, 2025</small>
+                            <!-- Date en petit texte grisé (small et text-muted) -->
+                            <h5 class="card-title">Tightly contested Morocco Nigeria duel ends goalless</h5>
+                            <!-- Titre de l'article avec classe card-title pour le style -->
+                            <p class="card-text">Morocco and Nigeria played out a goalless draw in a physical and tactical Group C encounter, leaving both teams' qualification hopes to be decided in the final round.</p>
+                            <!-- Paragraphe de résumé avec classe card-text pour le style -->
+                            <a href="https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/tightly-contested-morocco-nigeria-duel-ends-goalless/" target="_blank" class="btn btn-link p-0">Read More</a>
+                            <!-- Lien "Lire plus" en forme de bouton avec icône flèche externe et marge gauche de 1 unité, ouvrant dans un nouvel onglet -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 7 -->
+                <div class="col-md-6 col-lg-4 all-news-article">
+                    <!-- Colonne prenant 6/12 sur écrans moyens et 4/12 sur grands écrans avec classe personnalisée -->
+                    <div class="card news-card h-100">
+                        <!-- Carte avec classe personnalisée et hauteur 100% pour aligner tous les articles -->
+                        <img src="img/news/img10.jpg" class="card-img-top" alt="Morocco vs Nigeria">
+                        <!-- Image en haut de la carte avec texte alternatif pour l'accessibilité -->
+                        <div class="card-body">
+                            <!-- Corps de la carte contenant le contenu textuel -->
+                            <span class="badge bg-primary mb-2">Organisation</span>
+                            <!-- Badge de catégorie avec fond bleu (primary) et marge basse de 2 unités -->
+                            <small class="text-muted">January 31, 2025</small>
+                            <!-- Date en petit texte grisé (small et text-muted) -->
+                            <h5 class="card-title">CAF announce match schedule for TotalEnergies CAF Africa Cup of Nations, Morocco 2025</h5>
+                            <!-- Titre de l'article avec classe card-title pour le style -->
+                            <p class="card-text">CAF has released the full match schedule for the 2025 Africa Cup of Nations in Morocco, with 52 matches across six cities from December 21, 2025, to January 18, 2026. The tournament opens with Morocco vs Comoros in Rabat and concludes with the final at the Prince Moulay Abdellah Sports Complex.</p>
+                            <!-- Paragraphe de résumé avec classe card-text pour le style -->
+                            <a href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-announce-match-schedule-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/" target="_blank" class="btn btn-link p-0">Read More</a>
+                            <!-- Lien "Lire plus" en forme de bouton avec icône flèche externe et marge gauche de 1 unité, ouvrant dans un nouvel onglet -->
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- Pagination -->
+            <!-- Début de la section de pagination pour naviguer entre les pages d'actualités -->
             <nav class="mt-5" aria-label="News pagination">
-                <!-- Navigation pour la pagination avec marge haute et label d'accessibilité -->
+                <!-- Élément de navigation avec une marge supérieure (mt-5) et un label d'accessibilité -->
                 <ul class="pagination justify-content-center">
-                    <!-- Liste de pagination centrée horizontalement -->
-                    <li class="page-item active"><a class="page-link" href="#" aria-current="page">1</a></li>
-                    <!-- Premier élément de pagination (actif = page courante) -->
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <!-- Deuxième élément de pagination -->
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <!-- Troisième élément de pagination -->
+                    <!-- Liste non ordonnée stylisée avec Bootstrap pour centrer la pagination -->
+                    <li class="page-item active">
+                        <!-- Élément de page actif (page courante) -->
+                        <a class="page-link" href="#" aria-current="page">1</a>
+                        <!-- Lien vers la page 1, marqué comme page courante pour l'accessibilité -->
+                    </li>
                     <li class="page-item">
-                        <!-- Élément de pagination pour la page suivante -->
-                        <a class="page-link" href="#" aria-label="Next page">
-                            <!-- Lien avec label d'accessibilité -->
-                            <span aria-hidden="true">&raquo;</span>
-                            <!-- Symbole double flèche vers la droite masqué aux lecteurs d'écran -->
-                        </a>
+                        <!-- Élément de page pour la page 2 -->
+                        <a class="page-link" href="#">2</a>
+                        <!-- Lien vers la page 2 -->
+                    </li>
+                    <li class="page-item">
+                        <!-- Élément de page pour la page 3 -->
+                        <a class="page-link" href="#">3</a>
+                        <!-- Lien vers la page 3 -->
                     </li>
                 </ul>
+                <!-- Fin de la liste de pagination -->
             </nav>
+            <!-- Fin de la section de pagination -->
         </div>
     </section>
 
@@ -230,8 +410,8 @@
             <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
             <div class="row justify-content-center">
                 <!-- Ligne centrée horizontalement -->
-                <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <!-- Colonne centrée prenant 8/12 de la largeur sur grands écrans avec animation -->
+                <div class="col-lg-8 text-center">
+                    <!-- Colonne centrée prenant 8/12 de la largeur sur grands écrans -->
                     <h3 class="text-white">Stay Updated with AFCON 2025</h3>
                     <!-- Titre en blanc -->
                     <p class="text-white-50 mb-4">Subscribe to our newsletter to receive the latest news and updates about Africa Cup of Nations 2025.</p>
@@ -266,13 +446,21 @@
                     <!-- Texte descriptif semi-transparent -->
                     <div class="social-icons">
                         <!-- Conteneur des icônes de réseaux sociaux -->
-                        <a href="https://www.facebook.com/CAFOnline" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/CAFOnline" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3b5998"/><path d="M15.117 8.667h-1.367V7.667c0-.333.333-.333.667-.333h.667V5.333h-1.333c-1.333 0-2 .667-2 2v1.334H9.333v2h1.417V18h2.333v-7.333h1.333l.2-2z" fill="#fff"/></svg>
+                        </a>  
                         <!-- Lien Facebook officiel de la CAF -->
-                        <a href="https://twitter.com/CAF_Online" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/CAF_Online" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1da1f2"/><path d="M19.633 7.997c-.508.225-1.054.377-1.626.446a2.825 2.825 0 0 0 1.24-1.555 5.657 5.657 0 0 1-1.793.685 2.822 2.822 0 0 0-4.805 2.572A8.012 8.012 0 0 1 5.67 6.149a2.822 2.822 0 0 0 .873 3.77 2.8 2.8 0 0 1-1.278-.353v.036a2.825 2.825 0 0 0 2.263 2.767 2.82 2.82 0 0 1-1.276.048 2.825 2.825 0 0 0 2.637 1.96A5.66 5.66 0 0 1 4 17.542a8.002 8.002 0 0 0 12.29-6.708c0-.122-.003-.243-.009-.364a5.72 5.72 0 0 0 1.352-1.473z" fill="#fff"/></svg>
+                        </a>                        
                         <!-- Lien Twitter officiel de la CAF -->
-                        <a href="https://www.instagram.com/caf_online/" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/caf_online/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#e4405f"/><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.2-7.8a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zm2.4 1.2c-.053-1.13-.31-2.13-1.13-2.95C17.13 4.31 16.13 4.053 15 4c-1.13-.053-4.52-.053-5.65 0-1.13.053-2.13.31-2.95 1.13C4.31 6.87 4.053 7.87 4 9c-.053 1.13-.053 4.52 0 5.65.053 1.13.31 2.13 1.13 2.95.82.82 1.82 1.077 2.95 1.13 1.13.053 4.52.053 5.65 0 1.13-.053 2.13-.31 2.95-1.13.82-.82 1.077-1.82 1.13-2.95.053-1.13.053-4.52 0-5.65zm-2.16 7.2a3.6 3.6 0 0 1-3.6 3.6h-2.8a3.6 3.6 0 0 1-3.6-3.6v-2.8a3.6 3.6 0 0 1 3.6-3.6h2.8a3.6 3.6 0 0 1 3.6 3.6v2.8z" fill="#fff"/></svg>
+                        </a>                        
                         <!-- Lien Instagram officiel de la CAF -->
-                        <a href="https://www.youtube.com/user/CAFtv" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/user/CAFtv" class="social-icon" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff0000"/><path d="M17.5 9.5s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C12.1 6.5 12 6.5 12 6.5h0s-.1 0-2.8.1c-.4 0-1.2.1-1.9.9-.6.6-.8 2-.8 2S6 11.1 6 12.5v.9c0 1.4.2 2.9.2 2.9s.2 1.4.8 2c.7.8 1.6.8 2 .9 1.4.1 2.8.1 2.8.1s1.4 0 2.8-.1c.4 0 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.4.2-2.9v-.9c0-1.4-.2-2.9-.2-2.9zM10.5 14.5v-4l4 2-4 2z" fill="#fff"/></svg>
+                        </a>                        
                         <!-- Lien YouTube officiel de la CAF -->
                     </div>
                 </div>
@@ -356,22 +544,10 @@
         </div>
     </footer>
 
-    <button id="back-to-top" class="btn btn-primary back-to-top">
-        <!-- Bouton de retour en haut de page avec style Bootstrap -->
-        <i class="fas fa-arrow-up"></i>
-        <!-- Icône de flèche vers le haut de Font Awesome -->
-    </button>
-
     <!-- Scripts JavaScript chargés à la fin pour optimiser le chargement de la page -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Importation du JavaScript de Bootstrap depuis un CDN pour les fonctionnalités interactives -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Importation du JavaScript de la bibliothèque AOS pour les animations au défilement -->
-    <script src="js/main.js"></script>
-    <!-- Importation du fichier JavaScript principal personnalisé -->
     <script src="js/news.js"></script>
-    <!-- Importation du fichier JavaScript spécifique à la page d'actualités -->
-
     <!-- Boutons de navigation de défilement rapide -->
     <div class="scroll-nav">
         <!-- Conteneur des boutons de défilement -->
