@@ -181,8 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initStickyHeader();
     initTeamSearch();
 });
-<<<<<<< HEAD
-=======
 
 // Initialize the team slideshow
 function initSlideshow() {
@@ -361,4 +359,3 @@ function extractYouTubeId(url) {
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
 }
->>>>>>> d317c5be0e9065d33607d5f76bb29083d9f74a4e
