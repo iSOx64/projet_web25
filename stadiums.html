@@ -1,82 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Spécifie l'encodage des caractères utilisé par la page (UTF-8 permet d'afficher correctement les caractères spéciaux et internationaux) -->
     <meta charset="UTF-8">
+    <!-- Permet un affichage responsive : ajuste la mise en page selon la taille de l’écran, surtout sur mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de l'onglet  -->
     <title>Stadiums | AFCON Morocco 2025</title>
+    <!-- Titre de l'onglet  -->
     <link rel="icon" href="img/favicon.ico">
+    <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Feuille de style  CSS -->
     <link rel="stylesheet" href="css/stadiums.css">
     <style>
         /* Animations personnalisées */
+         /* Classe de base pour l'animation au scroll  */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+        /* Classes utilitaires pour ajouter un délai à l'animation (effet de décalage progressif entre les éléments animés) */
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
         .delay-500 { transition-delay: 500ms; }
         .delay-600 { transition-delay: 600ms; }
-        
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- En-tête du site -->
     <header class="sticky-top">
+        <!-- Barre de navigation principale -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
+                <!-- Logo du site redirigeant vers la page d'accueil -->
                 <a class="navbar-brand" href="index.html">
                     <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
                 </a>
+                <!-- Bouton pour ouvrir/fermer le menu sur mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- Liens de navigation principaux du site -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <!-- Lien vers la page d'accueil -->
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <!-- Lien vers la page des équipes -->
                         <li class="nav-item"><a class="nav-link" href="teams.html">Teams</a></li>
+                        <!-- Lien vers la page des stades  -->
                         <li class="nav-item"><a class="nav-link active" href="stadiums.html">Stadiums</a></li>
+                        <!-- Lien vers la page du calendrier -->
                         <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                        <!-- Lien vers la page des actualités -->
                         <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                        <!-- Lien vers la page à propos -->
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <!-- Élément de navigation pour l achat des billets  -->
                         <li class="nav-item"><a class="nav-link" href="#" target="_blank">Buy Tickets</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
-    <!-- Page Title -->
+    <!-- Titre de la page -->
     <section class="page-title-section">
         <div class="container">
             <h1 class="page-title animate-on-scroll" align="center">Host Stadiums</h1>
             <p class="page-subtitle text-center animate-on-scroll delay-100">Explore the 8 world-class stadiums set to host Africa's finest football moments</p>
         </div>
     </section>
-
-    <!-- Stadium Info -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
+    <!-- Section pour les informations sur les stades -->
+    <section class="py-5"> <!-- Ajoute un espacement vertical (padding) -->
+        <div class="container"> <!-- Conteneur Bootstrap pour centrer le contenu -->
+            <div class="row"> <!-- Début de la ligne de la grille Bootstrap -->
                 <div class="col-md-8 animate-on-scroll">
-                    <h2 class="section-title">World-Class Venues</h2>
+                    <h2 class="section-title">World-Class Venues</h2> <!-- Titre de la section -->
+                    <!-- Paragraphes de description des infrastructures marocaines et les rénovations et l'expérience offerte -->
                     <p>Morocco boasts some of Africa's most impressive football stadiums, with state-of-the-art facilities that will provide the perfect stage for the continent's most prestigious football tournament. The AFCON 2025 will be held across six cities, featuring stadiums that combine architectural beauty with modern functionality.</p>
                     <p>All stadiums have undergone extensive renovations to meet international standards, ensuring an unforgettable experience for both players and fans. From the iconic Stade Mohammed V in Casablanca to the majestic Grand Stade de Marrakech, these venues reflect Morocco's deep passion for football.</p>
                 </div>
                 <div class="col-md-4 animate-on-scroll delay-100">
                     <div class="info-card">
                         <h3>Stadiums Facts</h3>
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled"> <!-- Liste sans puces -->
                             <li> 6 host cities</li>
                             <li>8 stadiums</li>
                             <li>Combined capacity: 350,000+</li>
@@ -87,18 +101,16 @@
             </div>
         </div>
     </section>
-
-    <!-- Featured Stadiums -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center mb-5 animate-on-scroll">Featured Stadiums</h2>
-            
-            <div class="row g-4">
-                <!-- Stadium 1 -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll delay-100">
-                    <div class="card stadium-card h-100">
+    <!-- Section des principaux stades -->
+    <section class="py-5 bg-light"> <!-- Section avec espacement vertical et fond clair -->
+        <div class="container"> <!-- Conteneur Bootstrap centré -->
+            <h2 class="section-title text-center mb-5 animate-on-scroll">Featured Stadiums</h2> <!-- Titre principal de la section, centré avec une animation lors du défilement -->
+            <div class="row g-4"> <!-- Grille Bootstrap avec espacement (gap) entre les colonnes -->
+                <!-- Stade 1 -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll delay-100"> <!-- Colonne responsive avec animation différée -->
+                    <div class="card stadium-card h-100"> <!-- Carte avec hauteur 100% pour uniformité -->
                         <img src="img/stadiums/stade-mohammed-v.jpg" class="card-img-top" alt="Stade Mohammed V">
-                        <div class="card-body">
+                        <div class="card-body"> <!-- Corps de la carte -->
                             <h3 class="card-title">Stade Mohammed V</h3>
                             <p class="card-subtitle mb-3">Casablanca</p>
                             <div class="stadium-features mb-3">
@@ -109,9 +121,8 @@
                             <a href="https://fr.wikipedia.org/wiki/Stade_Mohammed-V" target="_blank" class="btn btn-outline-primary">View Details</a>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Stadium 2 -->
+                </div>               
+                <!-- Stade 2 -->
                 <div class="col-md-6 col-lg-4 animate-on-scroll delay-200">
                     <div class="card stadium-card h-100">
                         <img src="img/stadiums/stade-adrar.jpg" class="card-img-top" alt="Stade Adrar">
@@ -126,9 +137,8 @@
                             <a href="https://fr.wikipedia.org/wiki/Stade_Adrar" target="_blank" class="btn btn-outline-primary">View Details</a>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Stadium 3 -->
+                </div>               
+                <!-- Stade 3 -->
                 <div class="col-md-6 col-lg-4 animate-on-scroll delay-300">
                     <div class="card stadium-card h-100">
                         <img src="img/stadiums/grand-stade-marrakech.jpg" class="card-img-top" alt="Grand Stade de Marrakech">
@@ -144,19 +154,17 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- Fin de la grille -->
+        </div> <!-- Fin du conteneur -->
     </section>
-
-    <!-- All Venues Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5 animate-on-scroll">All Tournament Venues</h2>
-            
-            <div class="row g-4">
-                <!-- Venue 1 -->
-                <div class="col-md-6 animate-on-scroll delay-100">
-                    <div class="stadium-list-item d-flex">
+    <!-- Section listant tous les stades du tournoi -->
+    <section class="py-5"> <!-- Section avec padding vertical -->
+        <div class="container"> <!-- Conteneur Bootstrap centré -->
+            <h2 class="section-title text-center mb-5 animate-on-scroll">All Tournament Venues</h2> <!-- Titre principal de la section avec animation au scroll -->
+            <div class="row g-4"> <!-- Grille responsive avec un espace entre les éléments -->
+                <!-- Stadium row 1-->
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/stade-mohammed-v.jpg" alt="Stade Mohammed V" class="img-fluid">
                         </div>
@@ -167,11 +175,9 @@
                             <a href="https://fr.wikipedia.org/wiki/Stade_Mohammed-V" target="_blank" class="btn btn-sm btn-outline-primary">Details</a>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Venue 2 -->
-                <div class="col-md-6 animate-on-scroll delay-150">
-                    <div class="stadium-list-item d-flex">
+                </div>              
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/stade-adrar.jpg" alt="Stade Adrar">
                         </div>
@@ -184,8 +190,8 @@
                     </div>
                 </div>
              <!-- Stadium row 2 -->
-                <div class="col-md-6 animate-on-scroll delay-150">
-                    <div class="stadium-list-item d-flex">
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/grand-stade-marrakech.jpg" alt="Grand Stade de Marrakech">
                         </div>
@@ -196,10 +202,9 @@
                             <a href="https://sonarges.ma/grand-stade-marrakech/" target="_blank" class="btn btn-sm btn-outline-primary">Details</a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-6 animate-on-scroll delay-150">
-                    <div class="stadium-list-item d-flex">
+                </div>                
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/Stade Moulay Abdallah.jpg" alt="Stade Moulay Abdallah">
                         </div>
@@ -210,11 +215,10 @@
                             <a href="https://fr.wikipedia.org/wiki/Complexe_sportif_Moulay-Abdallah" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Details</a>
                         </div>
                     </div>
-                </div>
-                
+                </div>               
                 <!-- Stadium row 3 -->
-                <div class="col-md-6 animate-on-scroll delay-150">
-                    <div class="stadium-list-item d-flex">
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/Ibn-Batouta-tanger.jpg" alt="Stade Ibn Batouta">
                         </div>
@@ -225,10 +229,9 @@
                             <a href="https://fr.wikipedia.org/wiki/Stade_Ibn-Batouta" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Details</a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-6 animate-on-scroll delay-150">
-                    <div class="stadium-list-item d-flex">
+                </div>               
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/FES-STADE.jpg" alt="Complexe Sportif de Fès">
                         </div>
@@ -239,11 +242,10 @@
                             <a href="https://fr.wikipedia.org/wiki/Complexe_sportif_de_F%C3%A8s" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Details</a>
                         </div>
                     </div>
-                </div>
-                
+                </div>                
                 <!-- Stadium row 4 -->
-                <div class="col-md-6 animate-on-scroll delay-150">
-                    <div class="stadium-list-item d-flex">
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/Stade Moulay Hassan.jpg" alt="Stade d'Honneur d'Oujda">
                         </div>
@@ -255,9 +257,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-6 animate-on-scroll delay-150">
-                    <div class="stadium-list-item d-flex">
+                <div class="col-md-6 animate-on-scroll delay-100"> <!-- Colonne sur 6 colonnes (donc 2 par ligne sur écran md) -->
+                    <div class="stadium-list-item d-flex"> <!-- Élément de liste avec disposition en ligne (image + contenu) -->
                         <div class="stadium-list-image">
                             <img src="img/stadiums/Stade Al Barid.jpg" alt="Stade Larbi Zaouli">
                         </div>
@@ -269,17 +270,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- Fin de la grille -->
+        </div> <!-- Fin du conteneur -->
     </section>
-
-    <!-- Host Cities Section -->
-    <div class="container py-5">
-        <h3 class="section-title text-center mb-4 animate-on-scroll">Explore Our Host Cities</h3>
-        <div class="row">
-            <!-- City 1 -->
-            <div class="col-md-4 animate-on-scroll delay-100">
-                <div class="city-card mb-4">
+    <!-- Section des villes hôtes -->
+    <div class="container py-5"> <!-- Conteneur Bootstrap avec un padding vertical -->
+        <h3 class="section-title text-center mb-4 animate-on-scroll">Explore Our Host Cities</h3> <!-- Titre de la section avec animation au scroll -->
+        <div class="row"> <!-- Début de la grille Bootstrap -->
+            <!-- Ville 1 -->
+            <div class="col-md-4 animate-on-scroll delay-100"> <!-- Une colonne sur 3 (4/12) avec animation différée -->
+                <div class="city-card mb-4"> <!-- Carte de ville avec marge en bas -->
                     <img src="img/cities/casablanca.jpg" alt="Casablanca" class="img-fluid rounded">
                     <div class="city-info p-3">
                         <h4>Casablanca</h4>
@@ -290,11 +290,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- City 2 -->
-            <div class="col-md-4 animate-on-scroll delay-200">
-                <div class="city-card mb-4">
+            </div>           
+            <!-- Ville 2 -->
+            <div class="col-md-4 animate-on-scroll delay-100"> <!-- Une colonne sur 3 (4/12) avec animation différée -->
+                <div class="city-card mb-4"> <!-- Carte de ville avec marge en bas -->
                     <img src="img/cities/marrakech.jpg" alt="Marrakech" class="img-fluid rounded">
                     <div class="city-info p-3">
                         <h4>Marrakech</h4>
@@ -306,10 +305,9 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- City 3 -->
-            <div class="col-md-4 animate-on-scroll delay-300">
-                <div class="city-card mb-4">
+            <!-- Ville 3 -->
+            <div class="col-md-4 animate-on-scroll delay-100"> <!-- Une colonne sur 3 (4/12) avec animation différée -->
+                <div class="city-card mb-4"> <!-- Carte de ville avec marge en bas -->
                     <img src="img/cities/rabat.jpg" alt="Rabat" class="img-fluid rounded">
                     <div class="city-info p-3">
                         <h4>Rabat</h4>
@@ -321,9 +319,9 @@
                     </div>
                 </div>
             </div>
-            <!-- City 4-->
-            <div class="col-md-4 animate-on-scroll delay-100">
-                <div class="city-card mb-4">
+            <!-- Ville 4-->
+            <div class="col-md-4 animate-on-scroll delay-100"> <!-- Une colonne sur 3 (4/12) avec animation différée -->
+                <div class="city-card mb-4"> <!-- Carte de ville avec marge en bas -->
                     <img src="img/cities/agadir.jpg" alt="Agadir" class="img-fluid rounded">
                     <div class="city-info p-3">
                         <h4>Agadir</h4>
@@ -335,9 +333,9 @@
                     </div>
                 </div>
             </div>
-            <!-- City 5 -->
-            <div class="col-md-4 animate-on-scroll delay-100">
-                <div class="city-card mb-4">
+            <!-- Ville 5 -->
+            <div class="col-md-4 animate-on-scroll delay-100"> <!-- Une colonne sur 3 (4/12) avec animation différée -->
+                <div class="city-card mb-4"> <!-- Carte de ville avec marge en bas -->
                     <img src="img/cities/tangier.jpg" alt="Casablanca" class="img-fluid rounded">
                     <div class="city-info p-3">
                         <h4>Tangier</h4>
@@ -349,9 +347,9 @@
                     </div>
                 </div>
             </div>
-            <!-- City 6 -->
-            <div class="col-md-4 animate-on-scroll delay-100">
-                <div class="city-card mb-4">
+            <!-- Ville 6 -->
+            <div class="col-md-4 animate-on-scroll delay-100"> <!-- Une colonne sur 3 (4/12) avec animation différée -->
+                <div class="city-card mb-4"> <!-- Carte de ville avec marge en bas -->
                     <img src="img/cities/fez.jpg" alt="Casablanca" class="img-fluid rounded">
                     <div class="city-info p-3">
                         <h4>Fez</h4>
@@ -363,15 +361,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Section sur le développement et la rénovation des stades -->
-<section class="py-5">
+        </div> <!-- Fin de la grille -->
+</div> <!-- Fin du conteneur -->
+<!-- Section sur le développement et la rénovation des stades -->
+<section class="py-5"> <!-- Section avec un padding vertical -->
     <div class="container">
-        <h2 class="section-title text-center mb-5 scroll-animate">Stadium Development</h2>
-        
-        <div class="row align-items-center">
+        <h2 class="section-title text-center mb-5 scroll-animate">Stadium Development</h2> <!-- Titre principal de la section, centré avec animation -->
+        <div class="row align-items-center"> <!-- Grille alignée verticalement -->
             <div class="col-lg-6 scroll-animate delay-1">
                 <h3 class="mb-4">Renovations and Improvements</h3>
                 <p>Morocco has invested significantly in upgrading its football infrastructure for AFCON 2025. All stadiums have undergone extensive renovations to ensure they meet international standards for this prestigious tournament.</p>
@@ -382,7 +378,6 @@
                             <p>All stadiums have received new, comfortable seating with improved sightlines for an enhanced spectator experience.</p>
                         </div>
                     </div>
-                    
                     <div class="improvement-item d-flex align-items-start mb-3">
                         <div class="improvement-content">
                             <h4>Connectivity</h4>
@@ -398,8 +393,7 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="col-lg-6 scroll-animate delay-2">
+            <div class="col-lg-6 scroll-animate delay-2"> <!-- Colonne droite : barre de progression des rénovations -->
                 <div class="development-progress">
                     <h3 class="mb-4">Renovation Progress</h3>
                     <div class="progress-item mb-4">
@@ -466,57 +460,10 @@
         </div>
     </div>
 </section>
-
-<style>
-    /* Styles d'animation personnalisés */
-    .scroll-animate {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .scroll-animate.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-    .delay-5 { transition-delay: 0.5s; }
-    .delay-6 { transition-delay: 0.6s; }
-</style>
-
-<script>
-    // Script d'animation au défilement
-    document.addEventListener('DOMContentLoaded', function() {
-        const animateElements = document.querySelectorAll('.scroll-animate');
-        
-        function checkScroll() {
-            animateElements.forEach(el => {
-                const elTop = el.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elTop < windowHeight - 100) {
-                    el.classList.add('animated');
-                }
-            });
-        }
-        
-        // Vérifie au chargement
-        checkScroll();
-        
-        // Vérifie lors du défilement
-        window.addEventListener('scroll', checkScroll);
-    });
-</script>
-
-<!-- Galerie photos des stades -->
+<!-- Section Galerie des Stades -->
 <section class="py-5 bg-light">
     <div class="container">
-        <h2 class="section-title text-center mb-5 fade-in">Stadium Gallery</h2>
-        
+        <h2 class="section-title text-center mb-5 fade-in">Stadium Gallery</h2> <!-- Titre principal avec effet d'apparition -->
         <div class="row g-4">
             <div class="col-6 col-md-4 col-lg-3 gallery-item-wrapper">
                 <a href="img/stadiums/gallery/stadium1.jpg" class="gallery-item">
@@ -561,61 +508,11 @@
         </div>
     </div>
 </section>
-
-<style>
-    /* Animation fade-in */
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    /* Classe ajoutée par JavaScript lorsque l'élément est visible */
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-
-<script>
-    // Fonction pour détecter quand les éléments sont dans le viewport
-    function checkVisibility() {
-        const elements = document.querySelectorAll('.fade-in');
-        
-        elements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            const isVisible = (rect.top <= window.innerHeight * 0.8);
-            
-            if (isVisible) {
-                element.classList.add('visible');
-            }
-        });
-    }
-    
-    // Vérifier la visibilité au chargement et au scroll
-    window.addEventListener('load', checkVisibility);
-    window.addEventListener('scroll', checkVisibility);
-    
-    // Initialiser les délais pour chaque élément
-    document.addEventListener('DOMContentLoaded', function() {
-        const items = document.querySelectorAll('.gallery-item-wrapper');
-        
-        items.forEach((item, index) => {
-            const img = item.querySelector('img');
-            if (img) {
-                // Ajouter un délai progressif (100ms, 150ms, 200ms, etc.)
-                img.style.transitionDelay = `${(index + 1) * 50}ms`;
-            }
-        });
-    });
-</script>
-
 <!-- Section des témoignages sur les stades -->
 <section class="py-5">
     <div class="container">
         <h2 class="section-title text-center mb-5 fade-in">What People Say</h2>
-        
-        <div class="row">
+        <div class="row"> <!-- Carousel Bootstrap contenant plusieurs témoignages -->
             <div class="col-lg-8 offset-lg-2">
                 <div id="testimonialCarousel" class="carousel slide fade-in" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -644,6 +541,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Contrôles de navigation du carousel -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -657,54 +555,14 @@
         </div>
     </div>
 </section>
-
-<style>
-    /* Animation fade-in pour la section témoignages */
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* Animation spécifique pour le carousel */
-    #testimonialCarousel {
-        transition-delay: 0.2s; /* Délai légèrement plus long pour le carousel */
-    }
-</style>
-
-<script>
-    // Utilisez la même fonction checkVisibility() que dans le code précédent
-    function checkVisibility() {
-        const elements = document.querySelectorAll('.fade-in');
-        
-        elements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            const isVisible = (rect.top <= window.innerHeight * 0.8);
-            
-            if (isVisible) {
-                element.classList.add('visible');
-            }
-        });
-    }
-    
-    window.addEventListener('load', checkVisibility);
-    window.addEventListener('scroll', checkVisibility);
-</script>
-
 <!-- Section FAQ sur les stades -->
 <section class="py-5 bg-light">
     <div class="container">
-        <h2 class="section-title text-center mb-5 fade-in">Frequently Asked Questions</h2>
-        
+        <h2 class="section-title text-center mb-5 fade-in">Frequently Asked Questions</h2> <!-- Titre avec animation -->
         <div class="row">
             <div class="col-lg-8 offset-lg-2 fade-in" style="transition-delay: 0.1s">
-                <div class="accordion" id="stadiumFAQs">
-                    <div class="accordion-item fade-in-item">
+                <div class="accordion" id="stadiumFAQs"> <!-- Accordéon Bootstrap pour les questions -->
+                    <div class="accordion-item fade-in-item"> <!-- Question 1 : Nombre de stades -->
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 How many stadiums will be used for AFCON 2025?
@@ -716,8 +574,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="accordion-item fade-in-item">
+                    <div class="accordion-item fade-in-item"> <!-- Question 2 : Stade de la finale -->
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Which stadium will host the final match?
@@ -729,8 +586,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="accordion-item fade-in-item">
+                    <div class="accordion-item fade-in-item"> <!-- Question 3 : Rénovations -->
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 Are all stadium renovations completed?
@@ -742,8 +598,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="accordion-item fade-in-item">
+                    <div class="accordion-item fade-in-item"> <!-- Question 4 : Équipements -->
                         <h2 class="accordion-header" id="headingFour">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 What special features do the stadiums have?
@@ -755,8 +610,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="accordion-item fade-in-item">
+                    <div class="accordion-item fade-in-item"> <!-- Question 5 : Accès -->
                         <h2 class="accordion-header" id="headingFive">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                 How can I get to the different stadiums?
@@ -773,63 +627,15 @@
         </div>
     </div>
 </section>
-
-<style>
-    /* Animation fade-in */
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* Animation spécifique pour les items de l'accordéon */
-    .fade-in-item {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    }
-    
-    .fade-in-item.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-
-<script>
-    // Fonction pour détecter quand les éléments sont dans le viewport
-    function checkVisibility() {
-        const elements = document.querySelectorAll('.fade-in, .fade-in-item');
-        
-        elements.forEach((element, index) => {
-            const rect = element.getBoundingClientRect();
-            const isVisible = (rect.top <= window.innerHeight * 0.8);
-            
-            if (isVisible) {
-                // Ajout d'un délai progressif pour chaque item
-                if (element.classList.contains('fade-in-item')) {
-                    element.style.transitionDelay = `${index * 0.05}s`;
-                }
-                element.classList.add('visible');
-            }
-        });
-    }
-    
-    // Vérifier la visibilité au chargement et au scroll
-    window.addEventListener('load', checkVisibility);
-    window.addEventListener('scroll', checkVisibility);
-</script>
-
+<!-- Section d'inscription à la newsletter -->
 <section class="py-5 newsletter-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
+                    <!-- Titre et sous-titre -->
                     <h2 class="section-title text-white">Stay Updated</h2>
                     <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
+                    <!--  Formulaire d'inscription -->
                     <form class="newsletter-form">
                         <div class="input-group mb-3">
                             <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Enter your email address">
@@ -840,108 +646,172 @@
             </div>
         </div>
     </section>
-
-<<<<<<< HEAD
-    <!-- Pied de page du site -->
-<footer class="footer py-5">  <!-- padding vertical de 5 unités -->
-    <div class="container">  <!-- Conteneur pour centrer le contenu -->
-        <div class="row g-4">  <!-- Grille avec espacement de 4 unités entre colonnes --> 
-            <!-- Colonne 1 : Logo et réseaux sociaux -->
-            <div class="col-lg-4"> 
-                <!-- Logo AFCON -->
-                <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60" class="mb-3"> 
-                <!-- Description du tournoi -->
-                <p class="text-white-50">
-                    The Africa Cup of Nations (AFCON) is the main international men's 
-                    association football competition in Africa.
-                </p>
-                <!-- Icônes des réseaux sociaux -->
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/CAFOnline" class="social-icon">FB</a>  <!-- Facebook -->
-                    <a href="https://twitter.com/CAF_Online" class="social-icon">TW</a>     <!-- Twitter -->
-                    <a href="https://www.instagram.com/caf_online/" class="social-icon">IG</a>  <!-- Instagram -->
-                    <a href="https://www.youtube.com/user/CAFtv" class="social-icon">YT</a>    <!-- YouTube -->
+<!-- Pied de page du site -->
+    <footer class="footer py-5">
+        <!-- Section de pied de page avec un padding vertical de 5 unités -->
+        <div class="container">
+            <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
+            <div class="row g-4">
+                <!-- Ligne avec espacement entre les colonnes -->
+                <div class="col-lg-4">
+                    <!-- Première colonne prenant 4/12 de la largeur sur grands écrans -->
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60" class="mb-3">
+                    <!-- Logo avec texte alternatif, hauteur définie et marge basse -->
+                    <p class="text-white-50">The Africa Cup of Nations (AFCON) is the main international men's association football competition in Africa. It is sanctioned by the Confederation of African Football (CAF) and Morocco is proud to host the 2025 edition.</p>
+                    <!-- Texte descriptif semi-transparent -->
+                    <div class="social-icons">
+                        <!-- Conteneur des icônes de réseaux sociaux -->
+                        <a href="https://www.facebook.com/CAFOnline" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3b5998"/><path d="M15.117 8.667h-1.367V7.667c0-.333.333-.333.667-.333h.667V5.333h-1.333c-1.333 0-2 .667-2 2v1.334H9.333v2h1.417V18h2.333v-7.333h1.333l.2-2z" fill="#fff"/></svg>
+                        </a>  
+                        <!-- Lien Facebook officiel de la CAF -->
+                        <a href="https://twitter.com/CAF_Online" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1da1f2"/><path d="M19.633 7.997c-.508.225-1.054.377-1.626.446a2.825 2.825 0 0 0 1.24-1.555 5.657 5.657 0 0 1-1.793.685 2.822 2.822 0 0 0-4.805 2.572A8.012 8.012 0 0 1 5.67 6.149a2.822 2.822 0 0 0 .873 3.77 2.8 2.8 0 0 1-1.278-.353v.036a2.825 2.825 0 0 0 2.263 2.767 2.82 2.82 0 0 1-1.276.048 2.825 2.825 0 0 0 2.637 1.96A5.66 5.66 0 0 1 4 17.542a8.002 8.002 0 0 0 12.29-6.708c0-.122-.003-.243-.009-.364a5.72 5.72 0 0 0 1.352-1.473z" fill="#fff"/></svg>
+                        </a>                        
+                        <!-- Lien Twitter officiel de la CAF -->
+                        <a href="https://www.instagram.com/caf_online/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#e4405f"/><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.2-7.8a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zm2.4 1.2c-.053-1.13-.31-2.13-1.13-2.95C17.13 4.31 16.13 4.053 15 4c-1.13-.053-4.52-.053-5.65 0-1.13.053-2.13.31-2.95 1.13C4.31 6.87 4.053 7.87 4 9c-.053 1.13-.053 4.52 0 5.65.053 1.13.31 2.13 1.13 2.95.82.82 1.82 1.077 2.95 1.13 1.13.053 4.52.053 5.65 0 1.13-.053 2.13-.31 2.95-1.13.82-.82 1.077-1.82 1.13-2.95.053-1.13.053-4.52 0-5.65zm-2.16 7.2a3.6 3.6 0 0 1-3.6 3.6h-2.8a3.6 3.6 0 0 1-3.6-3.6v-2.8a3.6 3.6 0 0 1 3.6-3.6h2.8a3.6 3.6 0 0 1 3.6 3.6v2.8z" fill="#fff"/></svg>
+                        </a>                        
+                        <!-- Lien Instagram officiel de la CAF -->
+                        <a href="https://www.youtube.com/user/CAFtv" class="social-icon" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff0000"/><path d="M17.5 9.5s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C12.1 6.5 12 6.5 12 6.5h0s-.1 0-2.8.1c-.4 0-1.2.1-1.9.9-.6.6-.8 2-.8 2S6 11.1 6 12.5v.9c0 1.4.2 2.9.2 2.9s.2 1.4.8 2c.7.8 1.6.8 2 .9 1.4.1 2.8.1 2.8.1s1.4 0 2.8-.1c.4 0 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.4.2-2.9v-.9c0-1.4-.2-2.9-.2-2.9zM10.5 14.5v-4l4 2-4 2z" fill="#fff"/></svg>
+                        </a>                        
+                        <!-- Lien YouTube officiel de la CAF -->
+                    </div>
                 </div>
-            </div>  
-            <!-- Colonne 2 : Liens rapides -->
-            <div class="col-md-4 col-lg-2"> 
-                <h5 class="text-white mb-3">Quick Links</h5>  <!-- Titre -->
-                <ul class="footer-links">  <!-- Liste de liens -->
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="teams.html">Teams</a></li>
-                    <li><a href="stadiums.html">Stadiums</a></li>
-                    <li><a href="schedule.html">Schedule</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
+                <div class="col-md-4 col-lg-2">
+                    <!-- Deuxième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-links">
+                        <!-- Liste des liens rapides -->
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Lien vers la page d'accueil -->
+                        <li><a href="teams.html">Teams</a></li>
+                        <!-- Lien vers la page des équipes -->
+                        <li><a href="stadiums.html">Stadiums</a></li>
+                        <!-- Lien vers la page des stades -->
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <!-- Lien vers la page du calendrier -->
+                        <li><a href="news.html">News</a></li>
+                        <!-- Lien vers la page d'actualités -->
+                        <li><a href="about.html">About</a></li>
+                        <!-- Lien vers la page À propos -->
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <!-- Troisième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Tournament Info</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-links">
+                        <!-- Liste des liens d'information -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-announce-match-schedule-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Competition Format</a></li>
+                        <!-- Lien vers la page du format de compétition -->
+                        <li><a target="_blank" href="https://tickets.cafonline.com/">Ticketing Information</a></li>
+                        <!-- Lien vers la page d'information sur la billetterie -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-and-morocco-loc-announce-host-cities-and-venues-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Host Cities</a></li>
+                        <!-- Lien vers la page des villes hôtes -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/totalenergies-caf-africa-cup-of-nations-afcon-finals-records/">Past Winners</a></li>
+                        <!-- Lien vers la page des anciens vainqueurs -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-confirms-totalenergies-caf-africa-cup-of-nations-morocco-2025-qualifiers-draw-procedures/">Qualification Process</a></li>
+                        <!-- Lien vers la page du processus de qualification -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/frequently-asked-questions-on-fan-id-and-afcon">FAQs</a></li>
+                        <!-- Lien vers la page des questions fréquentes -->
+                    </ul>
+                </div>                
+                <div class="col-md-4 col-lg-3">
+                    <!-- Quatrième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Contact</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-contact">
+                        <!-- Liste des informations de contact -->
+                        <li><i class="fas fa-map-marker-alt"></i> Avenue de la Palestine Mhanech I, TÉTOUAN</li>
+                        <!-- Adresse avec icône de localisation -->
+                        <li><i class="fas fa-phone"></i> +212 5XX XXX XXX</li>
+                        <!-- Numéro de téléphone avec icône -->
+                        <li><i class="fas fa-envelope"></i> info@cafonline2025.com</li>
+                        <!-- Email avec icône d'enveloppe -->
+                    </ul>
+                </div>
             </div>
-            <!-- Colonne 3 : Informations sur le tournoi -->
-            <div class="col-md-4 col-lg-3">  <!-- 4 colonnes sur medium, 3 sur large -->
-                <h5 class="text-white mb-3">Tournament Info</h5>
-                <ul class="footer-links">
-                    <li><a href="https://www.cafonline.com/...">Competition Format</a></li>
-                    <li><a href="https://tickets.cafonline.com/">Ticketing Information</a></li>
-                    <li><a href="https://www.cafonline.com/...">Host Cities</a></li>
-                    <li><a href="https://www.cafonline.com/...">Past Winners</a></li>
-                    <li><a href="https://www.cafonline.com/...">Qualification Process</a></li>
-                    <li><a href="https://www.cafonline.com/...">FAQs</a></li>
-                </ul>
-            </div>
-            <!-- Colonne 4 : Contact -->
-            <div class="col-md-4 col-lg-3">
-                <h5 class="text-white mb-3">Contact</h5>
-                <ul class="footer-contact">  <!-- Liste d'informations de contact -->
-                    <li>Avenue de la Palestine Mhanech I, TÉTOUAN</li>  <!-- Adresse -->
-                    <li>+212 5XX XXX XXX</li>  <!-- Téléphone -->
-                    <li>info@afcon2025.com</li>  <!-- Email -->
-                </ul>
+            <hr class="mt-4 mb-3 border-secondary">
+            <!-- Ligne horizontale de séparation avec marges et couleur secondaire -->
+            <div class="row">
+                <!-- Ligne pour le bas du pied de page -->
+                <div class="col-md-6">
+                    <!-- Première colonne prenant la moitié de la largeur sur écrans moyens et grands -->
+                    <p class="text-white-50 mb-md-0">&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+                    <!-- Texte de copyright semi-transparent sans marge basse sur écrans moyens et grands -->
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <!-- Seconde colonne avec texte aligné à droite sur écrans moyens et grands -->
+                    <ul class="footer-bottom-links">
+                        <!-- Liste des liens légaux -->
+                        <li><a target="_blank" href="https://www.cafonline.com/privacy-policy/">Privacy Policy</a></li>
+                        <!-- Lien vers la politique de confidentialité -->
+                        <li><a target="_blank" href="https://www.cafonline.com/terms-of-service">Terms of Service</a></li>
+                        <!-- Lien vers les conditions d'utilisation -->
+                        <li><a target="_blank" href="https://www.cafonline.com/cookie-policy/">Cookie Policy</a></li>
+                        <!-- Lien vers la politique des cookies -->
+                    </ul>
+                </div>                
             </div>
         </div>
-        <!-- Ligne de séparation -->
-        <hr class="mt-4 mb-3 border-secondary">  <!-- Marge haut/bas + couleur secondaire -->
-        <!-- Bas de footer : Copyright et liens légaux -->
-        <div class="row">
-            <!-- Copyright -->
-            <div class="col-md-6">
-                <p class="text-white-50 mb-md-0">  <!-- Texte avec opacité -->
-                    &copy; 2024 AFCON Morocco 2025. All Rights Reserved.
-                </p>
-            </div>
-            <!-- Liens légaux -->
-            <div class="col-md-6 text-md-end">  <!-- Alignement à droite sur medium+ -->
-                <ul class="footer-bottom-links">
-                    <li><a href="https://www.cafonline.com/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="https://www.cafonline.com/terms-of-service">Terms of Service</a></li>
-                    <li><a href="https://www.cafonline.com/cookie-policy/">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
+    </footer>
+    <div class="scroll-nav">
+        <button id="backToTopBtn" class="scroll-btn" title="Back to top">↑</button>
+        <button id="scrollToBottomBtn" class="scroll-btn" title="Scroll to bottom">↓</button>
     </div>
-</footer>
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            
-            function checkScroll() {
-                elements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    const isVisible = (rect.top <= window.innerHeight * 0.8);
-                    
-                    if (isVisible) {
-                        el.classList.add('visible');
-                    }
-                });
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Quand le DOM est entièrement chargé
+    document.addEventListener('DOMContentLoaded', function () {
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
+
+        // Lorsque l'utilisateur clique sur le bouton "haut", on remonte doucement en haut de la page
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        // Lorsque l'utilisateur clique sur le bouton "bas", on descend doucement tout en bas de la page
+        if (scrollToBottomBtn) {
+            scrollToBottomBtn.addEventListener('click', () => {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            });
+        }
+        // Affiche le bouton "haut" seulement si l'utilisateur a scrollé de plus de 300px
+        window.addEventListener('scroll', () => {
+            if (backToTopBtn) {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = 'block'; // Affiche le bouton
+                } else {
+                    backToTopBtn.style.display = 'none'; // Le cache à nouveau
+                }
             }
-            
-            // Initial check
-            checkScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkScroll);
         });
-    </script>
+    });
+    // Animation d'apparition lors du scroll (fade-in)
+    document.addEventListener('DOMContentLoaded', function() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+
+        function checkScroll() {
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight * 0.8); // Seuil de visibilité
+
+                if (isVisible) {
+                    el.classList.add('visible'); // Ajoute la classe "visible" quand l'élément est dans la zone visible
+                }
+            });
+        }
+        // Vérifie une première fois au chargement
+        checkScroll();
+        // Vérifie à chaque scroll
+        window.addEventListener('scroll', checkScroll);
+    });
+</script>
 </body>
 </html>
