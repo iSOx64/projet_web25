@@ -1,0 +1,962 @@
+/* General Styles */
+:root {
+    --primary-color: #a30606;
+    --secondary-color: #28a745;
+    --accent-color: #a30606;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --text-color: #333;
+    --text-light: #6c757d;
+    --white: #fff;
+    --black: #000;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 
+ * Header & Navigation Styles 
+ */
+header {
+    position: relative;
+    z-index: 1000;
+    background-color: var(--primary-red);
+}
+
+.navbar {
+    padding: 1rem 0;
+    background-color: #a30606 !important;
+    transition: var(--transition);
+}
+
+.navbar-brand img {
+    transition: var(--transition);
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem !important;
+    position: relative;
+    background-color: transparent;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #05b360 !important;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 3px;
+    background-color: #05b360;
+}
+
+/* Page Title Section */
+.page-title-section {
+    background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
+    background-size: cover;
+    color: var(--white);
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 1rem auto;
+}
+
+/* Info Card */
+.info-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.info-card ul {
+    padding-left: 0;
+}
+
+.info-card li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.75rem;
+    position: relative;
+}
+
+.info-card li::before {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+/* Stadium Cards */
+.stadium-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.stadium-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stadium-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.stadium-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.stadium-features {
+    margin: 1rem 0;
+}
+
+.badge {
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.card-text {
+    margin-bottom: 1.5rem;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Stadium List Items */
+.stadium-list-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.stadium-list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stadium-list-image {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.stadium-list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.stadium-list-item:hover .stadium-list-image img {
+    transform: scale(1.1);
+}
+
+.stadium-list-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.stadium-list-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stadium-location,
+.stadium-capacity {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Host Cities Grid */
+.host-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.city-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.city-card:hover {
+    transform: translateY(-10px);
+}
+
+.city-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.city-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.city-card:hover .city-image img {
+    transform: scale(1.1);
+}
+
+.city-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--white);
+    padding: 1rem;
+}
+
+.city-overlay h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.city-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.city-info {
+    padding: 1.5rem;
+}
+
+.city-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.city-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.city-stats span::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.city-stats span:first-child::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236c757d"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>');
+}
+
+.city-stats span:last-child::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236c757d"><path d="M15 13V5c0-1.66-1.34-3-3-3S9 3.34 9 5v8c-1.21.91-2 2.37-2 4 0 2.76 2.24 5 5 5s5-2.24 5-5c0-1.63-.79-3.09-2-4zm-4-8c0-.55.45-1 1-1s1 .45 1 1h-1v1h1v2h-1v1h1v2h-2V5z"/></svg>');
+}
+
+.city-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.highlight {
+    background: #f0f0f0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+/* City Info Cards */
+.city-info-card {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    padding: 2rem 1.5rem;
+    min-height: 220px;
+    border: 1px solid #f0f0f0;
+    transition: box-shadow 0.3s;
+    height: 100%;
+}
+
+.city-info-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+}
+
+.city-info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.city-info-card ul {
+    padding-left: 0;
+}
+
+.city-info-card li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.city-info-card li::before {
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Stadium Development Section */
+.stadium-improvements {
+    margin-top: 2rem;
+}
+
+.improvement-item {
+    margin-bottom: 1.5rem;
+}
+
+.improvement-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.improvement-icon::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.improvement-item:nth-child(1) .improvement-icon::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4H3v14h18V10h-3zm-10-4c0-2.206 1.794-4 4-4s4 1.794 4 4v4H8V6zm11 16H5V12h14v10z"/></svg>');
+}
+
+.improvement-item:nth-child(2) .improvement-icon::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>');
+}
+
+.improvement-item:nth-child(3) .improvement-icon::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm3.19-5.42c-.63-.28-1.3-.42-1.99-.42-.69 0-1.36.14-1.99.42-.54.24-.82.84-.58 1.38.24.54.84.82 1.38.58.31-.14.64-.21.98-.21.34 0 .67.07.98.21.54.24 1.14-.04 1.38-.58.24-.54-.04-1.14-.58-1.38z"/></svg>');
+}
+
+.improvement-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.development-progress {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.progress-item {
+    margin-bottom: 1.5rem;
+}
+
+.progress-item span:first-child {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.progress-item span:last-child {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 5px;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Stadium Gallery */
+.gallery-item {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Testimonials */
+.testimonial-item {
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.testimonial-position {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    position: relative;
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+    content: '"';
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    line-height: 0;
+}
+
+.testimonial-text::before {
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.testimonial-text::after {
+    vertical-align: bottom;
+    margin-left: 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: -20px;
+}
+
+.carousel-control-next {
+    right: -20px;
+}
+
+/* FAQ Section */
+.accordion-button {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 1.25rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(26, 62, 114, 0.05);
+    color: var(--primary-color);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0.125);
+}
+
+.accordion-body {
+    padding: 1.25rem;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+   background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
+    background-size: cover;
+    color: var(--white);
+    padding: 4rem 0;
+}
+
+.newsletter-form .form-control {
+    height: 50px;
+    border-radius: 50px 0 0 50px;
+    border: none;
+    padding-left: 1.5rem;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 50px 50px 0;
+    padding: 0.5rem 1.5rem;
+    height: 50px;
+    font-weight: 600;
+    /* Nouvelles propriétés pour la couleur verte */
+    background-color: #28a745; /* Vert standard Bootstrap */
+    border-color: #28a745;
+    color: white;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition fluide */
+}
+
+.newsletter-form .btn:hover {
+    background-color: #218838; /* Vert plus foncé au survol */
+    border-color: #1e7e34;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.footer h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+/* Ajoutez ce CSS */
+.footer-contact {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: white;
+}
+
+.footer-contact li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+/* Icône d'adresse */
+.footer-contact li:nth-child(1)::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
+}
+
+/* Icône de téléphone */
+.footer-contact li:nth-child(2)::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>');
+}
+
+/* Icône d'email */
+.footer-contact li:nth-child(3)::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+}
+
+
+
+
+/* Conteneur principal */
+.social-icons {
+    display: flex;
+    gap: 1rem; /* Espace entre les icônes */
+    justify-content: center; /* Centrage horizontal */
+    margin-top: 1.5rem;
+}
+
+/* Style de base des icônes */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Effet de survol */
+.social-icon:hover {
+    background-color: #05b360; 
+    transform: translateY(-3px);
+}
+
+
+.social-icon i {
+    display: none;
+}
+
+.social-icon::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1); /* Rend les icônes blanches */
+}
+
+/* Facebook */
+.social-icon[href*="facebook.com"]::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>');
+}
+
+/* Twitter */
+.social-icon[href*="twitter.com"]::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.162 5.656a8.384 8.384 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814 11.874 11.874 0 01-8.62-4.37 4.168 4.168 0 00-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 01-1.894-.523v.052a4.185 4.185 0 003.355 4.101 4.21 4.21 0 01-1.89.072A4.185 4.185 0 007.97 16.65a8.394 8.394 0 01-6.191 1.732 11.83 11.83 0 006.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 002.087-2.165z"/></svg>');
+}
+
+/* Instagram */
+.social-icon[href*="instagram.com"]::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>');
+}
+
+/* YouTube */
+.social-icon[href*="youtube.com"]::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>');
+}
+
+/* Version responsive */
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 0.75rem;
+    }
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .social-icon::before {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.85rem;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--white);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top::before {
+    content: "↑";
+    font-size: 1.25rem;
+}
+
+/* Scroll Navigation */
+.scroll-nav {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 998;
+}
+
+.scroll-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .stadium-list-item {
+        flex-direction: column;
+    }
+    
+    .stadium-list-image {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .host-cities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px;
+    }
+    
+    .page-title-section {
+        padding: 4rem 0 2rem;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    .footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-contact li {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-bottom-links {
+        justify-content: center;
+    }
+}

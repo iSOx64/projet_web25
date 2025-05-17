@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>AFCON Morocco 2025 | Official Portal</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   <!-- Début de la section d'en-tête avec navigation -->
+<!-- L'en-tête restera fixé en haut de la page lors du défilement (sticky-top) -->
+<header class="sticky-top">
+    <!-- Barre de navigation principale avec fond sombre -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <!-- Conteneur pour centrer le contenu de la navbar -->
+        <div class="container">
+            <!-- Logo de l'AFCON 2025 avec lien vers la page d'accueil -->
+            <a class="navbar-brand" href="index.html">
+                <!-- Image du logo avec hauteur fixe et texte alternatif -->
+                <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60">
+            </a>
+            <!-- Bouton de menu pour les écrans mobiles (s'affiche quand la navbar est réduite) -->
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <!-- Icône du bouton toggler (trois barres horizontales) -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Section de la navbar qui sera réduite/développée sur mobile -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Liste des liens de navigation -->
+                <ul class="navbar-nav ms-auto">  
+                    <!-- Élément de navigation pour la page d'accueil (actif) -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <!-- Élément de navigation pour la page des équipes -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="teams.html">Teams</a>
+                    </li>
+                    <!-- Élément de navigation pour la page des stades -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="stadiums.html">Stadiums</a>
+                    </li>
+                    <!-- Élément de navigation pour la page du calendrier -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="schedule.html">Schedule</a>
+                    </li>
+                    <!-- Élément de navigation pour la page des actualités -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                    <!-- Élément de navigation pour la page "À propos" -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <!-- Élément de navigation externe pour acheter des billets (ouvre dans un nouvel onglet) -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.sportsevents365.fr/dock/competition/2025-africa-cup-of-nations?competitorId=7673" target="_blank">Buy Tickets</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Fin de la section d'en-tête -->
+
+    <!-- Section Hero avec image -->
+<section class="hero-section position-relative">
+    <!-- Overlay semi-transparent pour améliorer la lisibilité du texte sur l'image de fond -->
+    <div class="overlay"></div>
+    <!-- Conteneur principal positionné relativement avec un z-index élevé pour être au-dessus de l'overlay -->
+    <div class="container h-100 position-relative" style="z-index: 2;">
+        <!-- Ligne qui occupe toute la hauteur avec alignement vertical au centre -->
+        <div class="row h-100 align-items-center">
+            <!-- Colonne pour le contenu principal (texte et boutons) -->
+            <!-- Sur mobile: centré, sur desktop: aligné à gauche (text-md-start) -->
+            <div class="col-md-8 text-center text-md-start">
+                <!-- Titre principal en gros et en gras -->
+                <h1 class="display-3 fw-bold text-white">AFCON MOROCCO 2025</h1>
+                <!-- Sous-titre/slogan -->
+                <p class="lead text-white">Africa's greatest football spectacle comes to Morocco</p>
+                <!-- Conteneur flexible pour les boutons avec espacement -->
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <!-- Bouton principal avec lien vers le planning des matchs -->
+                    <a href="schedule.html" class="btn btn-primary btn-lg position-relative">View Matches</a>
+                    <!-- Bouton secondaire avec contour blanc -->
+                    <a href="teams.html" class="btn btn-outline-light btn-lg position-relative">Explore Teams</a>
+                </div>
+            </div>
+            <!-- Colonne pour le compte à rebours -->
+            <!-- Sur mobile: margin-top, sur desktop: pas de margin-top -->
+            <div class="col-md-4 d-flex justify-content-center align-items-center mt-5 mt-md-0">
+                <!-- Conteneur du compte à rebours positionné relativement -->
+                <div class="countdown-container position-relative">
+                    <!-- Titre du compte à rebours -->
+                    <h3 class="text-white text-center mb-3">Tournament Begins In</h3>
+                    <!-- Conteneur du timer -->
+                    <div class="countdown-timer">
+                        <!-- Bloc pour les jours -->
+                        <div class="countdown-item">
+                            <span id="days">000</span>  <!-- Valeur des jours -->
+                            <span class="countdown-label">Days</span>  <!-- Libellé -->
+                        </div>
+                        <!-- Bloc pour les heures -->
+                        <div class="countdown-item">
+                            <span id="hours">00</span>  <!-- Valeur des heures -->
+                            <span class="countdown-label">Hours</span>  <!-- Libellé -->
+                        </div>
+                        <!-- Bloc pour les minutes -->
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>  <!-- Valeur des minutes -->
+                            <span class="countdown-label">Mins</span>  <!-- Libellé -->
+                        </div>
+                        <!-- Bloc pour les secondes -->
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>  <!-- Valeur des secondes -->
+                            <span class="countdown-label">Secs</span>  <!-- Libellé -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fin de la section Hero -->
+
+    <!-- Section des points forts du tournoi -->
+<!-- Section avec padding vertical (py-5) et fond clair (bg-light) -->
+<section class="py-5 bg-light">
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="container">
+        <!-- Titre de section centré avec marge en bas (mb-5) -->
+        <h2 class="section-title text-center mb-5">Tournament Highlights</h2>
+        <!-- Grille Bootstrap avec espacement entre les colonnes (g-4) -->
+        <div class="row g-4">
+
+            <!-- Première carte de mise en avant -->
+            <div class="col-md-4">
+                <!-- Carte avec hauteur 100% pour uniformité -->
+                <div class="card highlight-card h-100">
+                    <!-- Corps de la carte -->
+                    <div class="card-body">
+                        <!-- Titre de la carte -->
+                        <h3 class="card-title">December 2024</h3>
+                        <!-- Texte descriptif -->
+                        <p class="card-text">The 35th edition of the Africa Cup of Nations will showcase Africa's finest football talent across Morocco's beautiful cities.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin première carte -->
+            
+            <!-- Deuxième carte de mise en avant -->
+            <div class="col-md-4">
+                <div class="card highlight-card h-100">
+                    <div class="card-body">
+                        <!-- Titre de la carte -->
+                        <h3 class="card-title">24 Elite Teams</h3>
+                        <!-- Texte descriptif -->
+                        <p class="card-text">Africa's top national teams will compete in 52 matches of thrilling football, showcasing the continent's best talent.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin deuxième carte -->
+            
+            <!-- Troisième carte de mise en avant -->
+            <div class="col-md-4">
+                <div class="card highlight-card h-100">
+                    <div class="card-body">
+                        <!-- Titre de la carte -->
+                        <h3 class="card-title">6 Modern Venues</h3>
+                        <!-- Texte descriptif -->
+                        <p class="card-text">State-of-the-art stadiums in Casablanca, Rabat, Marrakech, Tangier, Agadir, and Fez will host this prestigious tournament.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin troisième carte -->
+            
+        </div>
+        <!-- Fin de la grille -->
+    </div>
+    <!-- Fin du conteneur -->
+</section>
+<!-- Fin de la section des points forts -->
+
+   <!-- Début de la section des équipes vedettes -->
+<!-- Section avec un padding vertical (py-5) -->
+<section class="py-5">
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="container">
+        <!-- Titre de la section centré avec une marge en bas (mb-5) -->
+        <h2 class="section-title text-center mb-5">Featured Teams</h2>
+        <!-- Grille Bootstrap avec espacement entre les colonnes (g-4) -->
+        <div class="row g-4">
+            <!-- Carte d'équipe 1 - Maroc -->
+            <!-- Colonne prenant 6/12 sur mobile et 3/12 sur desktop -->
+            <div class="col-6 col-md-3">
+                <!-- Conteneur de la carte d'équipe -->
+                <div class="team-card">
+                    <!-- Drapeau du pays avec texte alternatif -->
+                    <img src="img/flags/morocco.png" alt="Morocco Flag" class="team-flag">
+                    <!-- Nom de l'équipe (niveau de titre h4) -->
+                    <h4 class="team-name" style="color:#5a0303;" >Morocco</h4>
+                    <!-- Statut spécial de l'équipe -->
+                    <p class="team-status">Host Nation</p>
+                </div>
+            </div>
+            <!-- Fin carte d'équipe 1 -->
+
+            <!-- Carte d'équipe 2 - Sénégal -->
+            <div class="col-6 col-md-3">
+                <div class="team-card">
+                    <!-- Drapeau du Sénégal -->
+                    <img src="img/flags/senegal.png" alt="Senegal Flag" class="team-flag">
+                    <!-- Nom de l'équipe -->
+                    <h4 class="team-name" style="color: #5a0303;">Senegal</h4>
+                    <!-- Statut de champion en titre -->
+                    <p class="team-status">Defending Champion</p>
+                </div>
+            </div>
+            <!-- Fin carte d'équipe 2 -->
+
+            <!-- Carte d'équipe 3 - Egypte -->
+            <div class="col-6 col-md-3">
+                <div class="team-card">
+                    <!-- Drapeau de l'Egypte -->
+                    <img src="img/flags/egypt.png" alt="Egypt Flag" class="team-flag">
+                    <!-- Nom de l'équipe -->
+                    <h4 class="team-name" style="color: #5a0303;">Egypt</h4>
+                    <!-- Statut de record de victoires -->
+                    <p class="team-status">Record 7-time Champion</p>
+                </div>
+            </div>
+            <!-- Fin carte d'équipe 3 -->
+
+            <!-- Carte d'équipe 4 - Nigeria -->
+            <div class="col-6 col-md-3">
+                <div class="team-card">
+                    <!-- Drapeau du Nigeria -->
+                    <img src="img/flags/nigeria.png" alt="Nigeria Flag" class="team-flag">
+                    <!-- Nom de l'équipe -->
+                    <h4 class="team-name" style="color: #5a0303;">Nigeria</h4>
+                    <!-- Statut de triple champion -->
+                    <p class="team-status">3-time Champion</p>
+                </div>
+            </div>
+            <!-- Fin carte d'équipe 4 -->
+            
+        </div>
+        <!-- Fin de la grille des équipes -->
+        
+        <!-- Conteneur du bouton "Voir toutes les équipes" -->
+        <div class="text-center mt-4">
+            <!-- Bouton avec style outline (btn-outline-primary) -->
+            <a href="teams.html" class="btn btn-outline-primary">View All Teams</a>
+        </div>
+    </div>
+    <!-- Fin du conteneur principal -->
+</section>
+<!-- Fin de la section des équipes vedettes -->
+
+   <!-- Section des dernières actualités -->
+<!-- Section avec :
+     - padding vertical (py-5) 
+     - fond clair (bg-light)
+     - centrage flex (d-flex justify-content-center) -->
+<section class="py-5 bg-light d-flex justify-content-center">
+    <!-- Conteneur principal pour le contenu -->
+    <div class="container">
+        <!-- Titre de section centré avec marge en bas (mb-5) -->
+        <h2 class="section-title text-center mb-5">Latest News</h2>
+        <!-- Grille Bootstrap -->
+        <div class="row"> 
+            <!-- Colonne prenant 4/12 de largeur sur écran moyen et plus -->
+            <div class="col-md-4">
+                <!-- Carte d'actualité avec hauteur 100% -->
+                <div class="card news-card h-100">
+                    <!-- Image de l'article en haut de la carte -->
+                    <img src="img/news/img0.jpg" class="card-img-top" alt="Stadium Preparation">
+                    <!-- Corps principal de la carte -->
+                    <div class="card-body">
+                        <!-- Titre de l'article (niveau h5) -->
+                        <h5 class="card-title">Stadium Renovations On Track for AFCON 2025</h5>
+                        <!-- Extrait de l'article -->
+                        <p class="card-text">Morocco's preparations for hosting the 2025 Africa Cup of Nations are proceeding smoothly with stadium renovations on schedule.</p>
+                        <!-- Lien "Lire plus" sans padding (p-0) -->
+                        <a href="news.html#stadiums-update" class="btn btn-link p-0">Read More</a>
+                    </div>
+                    <!-- Pied de carte avec date -->
+                    <div class="card-footer text-muted">
+                        <!-- Date en petit texte -->
+                        <small>May 10, 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Conteneur du bouton "Plus d'actualités" -->
+        <div class="text-center mt-4">
+            <!-- Bouton avec style outline -->
+            <a href="news.html" class="btn btn-outline-primary">More News</a>
+        </div>
+    </div>
+    <!-- Fin du conteneur principal -->
+</section>
+<!-- Fin de la section des actualités -->
+
+<!-- Section des villes hôtes -->
+<!-- Section avec padding vertical (py-5) -->
+<section class="py-5">
+    <div class="container">
+        <!-- Titre de section centré avec marge en bas -->
+        <h2 class="section-title text-center mb-5">Host Cities</h2>
+        <!-- Grille Bootstrap avec espacement entre les colonnes -->
+        <div class="row g-4">
+            <!-- Carte ville 1 - Casablanca -->
+            <div class="col-md-4">
+                <!-- Conteneur de la carte ville -->
+                <div class="city-card">
+                    <!-- Image de la ville -->
+                    <img src="img/cities/casablanca.jpg" alt="Casablanca" class="city-image">
+                    <!-- Overlay avec nom de la ville -->
+                    <div class="city-overlay">
+                        <h3>Casablanca</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carte ville 2 - Marrakech -->
+            <div class="col-md-4">
+                <div class="city-card">
+                    <img src="img/cities/marrakech.jpg" alt="Marrakech" class="city-image">
+                    <div class="city-overlay">
+                        <h3>Marrakech</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carte ville 3 - Rabat -->
+            <div class="col-md-4">
+                <div class="city-card">
+                    <img src="img/cities/rabat.jpg" alt="Rabat" class="city-image">
+                    <div class="city-overlay">
+                        <h3>Rabat</h3>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>
+<!-- Fin section villes hôtes -->
+
+
+<!-- Section des partenaires officiels -->
+<!-- Section avec fond clair et padding vertical -->
+<section class="py-5 bg-light partners-section">
+    <div class="container">
+        <!-- Titre de section centré avec marge en bas -->
+        <h2 class="section-title text-center mb-5">Official Partners</h2>
+        <!-- Grille Bootstrap pour les logos partenaires -->
+        <!-- Alignement vertical et horizontal centré -->
+        <div class="row g-4 align-items-center justify-content-center">
+            <!-- Logo partenaire 1 -->
+            <!-- 6/12 sur mobile, 2/12 sur desktop -->
+            <div class="col-6 col-md-2">
+                <!-- Logo responsive (img-fluid) -->
+                <img src="img/sponsors/sponsor1.png" alt="Sponsor 1" class="img-fluid partner-logo">
+            </div>
+            <!-- Logo partenaire 2 -->
+            <div class="col-6 col-md-2">
+                <img src="img/sponsors/sponsor2.png" alt="Sponsor 2" class="img-fluid partner-logo">
+            </div>
+            <!-- Logo partenaire 3 -->
+            <div class="col-6 col-md-2">
+                <img src="img/sponsors/sponsor3.png" alt="Sponsor 3" class="img-fluid partner-logo">
+            </div>
+            <!-- Logo partenaire 4 -->
+            <div class="col-6 col-md-2">
+                <img src="img/sponsors/sponsor4.png" alt="Sponsor 4" class="img-fluid partner-logo">
+            </div>
+            <!-- Logo partenaire 5 -->
+            <div class="col-6 col-md-2">
+                <img src="img/sponsors/sponsor5.png" alt="Sponsor 5" class="img-fluid partner-logo">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fin section partenaires -->
+
+   <!-- Section d'inscription à la newsletter -->
+<section class="py-5 newsletter-section">
+    <!-- Conteneur principal -->
+    <div class="container">
+        <!-- Rangée centrée horizontalement -->
+        <div class="row justify-content-center">
+            <!-- Colonne centrée prenant 8/12 de largeur sur grand écran -->
+            <div class="col-lg-8 text-center">
+                <!-- Titre de section en blanc -->
+                <h2 class="section-title text-white">Stay Updated</h2>
+                <!-- Texte d'introduction en blanc avec marge en bas -->
+                <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
+                <!-- Formulaire d'inscription -->
+                <form class="newsletter-form">
+                    <!-- Groupe d'input avec marge en bas -->
+                    <div class="input-group mb-3">
+                        <!-- Champ email :
+                             - type email pour validation
+                             - placeholder pour l'indication
+                             - aria-label pour l'accessibilité -->
+                        <input type="email" class="form-control" 
+                               placeholder="Enter your email address" 
+                               aria-label="Enter your email address">
+                        <!-- Bouton de soumission primaire -->
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fin de la section newsletter -->
+
+     <!-- Pied de page du site -->
+    <footer class="footer py-5">
+        <!-- Section de pied de page avec un padding vertical de 5 unités -->
+        <div class="container">
+            <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
+            <div class="row g-4">
+                <!-- Ligne avec espacement entre les colonnes -->
+                <div class="col-lg-4">
+                    <!-- Première colonne prenant 4/12 de la largeur sur grands écrans -->
+                    <img src="img/afcon-logo.png" alt="AFCON 2025 Logo" height="60" class="mb-3">
+                    <!-- Logo avec texte alternatif, hauteur définie et marge basse -->
+                    <p class="text-white-50">The Africa Cup of Nations (AFCON) is the main international men's association football competition in Africa. It is sanctioned by the Confederation of African Football (CAF) and Morocco is proud to host the 2025 edition.</p>
+                    <!-- Texte descriptif semi-transparent -->
+                    <div class="social-icons">
+                        <!-- Conteneur des icônes de réseaux sociaux -->
+                        <a href="https://www.facebook.com/CAFOnline" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3b5998"/><path d="M15.117 8.667h-1.367V7.667c0-.333.333-.333.667-.333h.667V5.333h-1.333c-1.333 0-2 .667-2 2v1.334H9.333v2h1.417V18h2.333v-7.333h1.333l.2-2z" fill="#fff"/></svg>
+                        </a>  
+                        <!-- Lien Facebook officiel de la CAF -->
+                        <a href="https://twitter.com/CAF_Online" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1da1f2"/><path d="M19.633 7.997c-.508.225-1.054.377-1.626.446a2.825 2.825 0 0 0 1.24-1.555 5.657 5.657 0 0 1-1.793.685 2.822 2.822 0 0 0-4.805 2.572A8.012 8.012 0 0 1 5.67 6.149a2.822 2.822 0 0 0 .873 3.77 2.8 2.8 0 0 1-1.278-.353v.036a2.825 2.825 0 0 0 2.263 2.767 2.82 2.82 0 0 1-1.276.048 2.825 2.825 0 0 0 2.637 1.96A5.66 5.66 0 0 1 4 17.542a8.002 8.002 0 0 0 12.29-6.708c0-.122-.003-.243-.009-.364a5.72 5.72 0 0 0 1.352-1.473z" fill="#fff"/></svg>
+                        </a>                        
+                        <!-- Lien Twitter officiel de la CAF -->
+                        <a href="https://www.instagram.com/caf_online/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#e4405f"/><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.2-7.8a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zm2.4 1.2c-.053-1.13-.31-2.13-1.13-2.95C17.13 4.31 16.13 4.053 15 4c-1.13-.053-4.52-.053-5.65 0-1.13.053-2.13.31-2.95 1.13C4.31 6.87 4.053 7.87 4 9c-.053 1.13-.053 4.52 0 5.65.053 1.13.31 2.13 1.13 2.95.82.82 1.82 1.077 2.95 1.13 1.13.053 4.52.053 5.65 0 1.13-.053 2.13-.31 2.95-1.13.82-.82 1.077-1.82 1.13-2.95.053-1.13.053-4.52 0-5.65zm-2.16 7.2a3.6 3.6 0 0 1-3.6 3.6h-2.8a3.6 3.6 0 0 1-3.6-3.6v-2.8a3.6 3.6 0 0 1 3.6-3.6h2.8a3.6 3.6 0 0 1 3.6 3.6v2.8z" fill="#fff"/></svg>
+                        </a>                        
+                        <!-- Lien Instagram officiel de la CAF -->
+                        <a href="https://www.youtube.com/user/CAFtv" class="social-icon" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff0000"/><path d="M17.5 9.5s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C12.1 6.5 12 6.5 12 6.5h0s-.1 0-2.8.1c-.4 0-1.2.1-1.9.9-.6.6-.8 2-.8 2S6 11.1 6 12.5v.9c0 1.4.2 2.9.2 2.9s.2 1.4.8 2c.7.8 1.6.8 2 .9 1.4.1 2.8.1 2.8.1s1.4 0 2.8-.1c.4 0 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.4.2-2.9v-.9c0-1.4-.2-2.9-.2-2.9zM10.5 14.5v-4l4 2-4 2z" fill="#fff"/></svg>
+                        </a>                        
+                        <!-- Lien YouTube officiel de la CAF -->
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <!-- Deuxième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-links">
+                        <!-- Liste des liens rapides -->
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Lien vers la page d'accueil -->
+                        <li><a href="teams.html">Teams</a></li>
+                        <!-- Lien vers la page des équipes -->
+                        <li><a href="stadiums.html">Stadiums</a></li>
+                        <!-- Lien vers la page des stades -->
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <!-- Lien vers la page du calendrier -->
+                        <li><a href="news.html">News</a></li>
+                        <!-- Lien vers la page d'actualités -->
+                        <li><a href="about.html">About</a></li>
+                        <!-- Lien vers la page À propos -->
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <!-- Troisième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Tournament Info</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-links">
+                        <!-- Liste des liens d'information -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-announce-match-schedule-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Competition Format</a></li>
+                        <!-- Lien vers la page du format de compétition -->
+                        <li><a target="_blank" href="https://tickets.cafonline.com/">Ticketing Information</a></li>
+                        <!-- Lien vers la page d'information sur la billetterie -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-and-morocco-loc-announce-host-cities-and-venues-for-totalenergies-caf-africa-cup-of-nations-morocco-2025/">Host Cities</a></li>
+                        <!-- Lien vers la page des villes hôtes -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/totalenergies-caf-africa-cup-of-nations-afcon-finals-records/">Past Winners</a></li>
+                        <!-- Lien vers la page des anciens vainqueurs -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/caf-confirms-totalenergies-caf-africa-cup-of-nations-morocco-2025-qualifiers-draw-procedures/">Qualification Process</a></li>
+                        <!-- Lien vers la page du processus de qualification -->
+                        <li><a target="_blank" href="https://www.cafonline.com/caf-africa-cup-of-nations/news/frequently-asked-questions-on-fan-id-and-afcon">FAQs</a></li>
+                        <!-- Lien vers la page des questions fréquentes -->
+                    </ul>
+                </div>                
+                <div class="col-md-4 col-lg-3">
+                    <!-- Quatrième colonne avec largeur variable selon la taille d'écran -->
+                    <h5 class="text-white mb-3">Contact</h5>
+                    <!-- Titre de section en blanc avec marge basse -->
+                    <ul class="footer-contact">
+                        <!-- Liste des informations de contact -->
+                        <li><i class="fas fa-map-marker-alt"></i> Avenue de la Palestine Mhanech I, TÉTOUAN</li>
+                        <!-- Adresse avec icône de localisation -->
+                        <li><i class="fas fa-phone"></i> +212 5XX XXX XXX</li>
+                        <!-- Numéro de téléphone avec icône -->
+                        <li><i class="fas fa-envelope"></i> info@cafonline2025.com</li>
+                        <!-- Email avec icône d'enveloppe -->
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-secondary">
+            <!-- Ligne horizontale de séparation avec marges et couleur secondaire -->
+            <div class="row">
+                <!-- Ligne pour le bas du pied de page -->
+                <div class="col-md-6">
+                    <!-- Première colonne prenant la moitié de la largeur sur écrans moyens et grands -->
+                    <p class="text-white-50 mb-md-0">&copy; 2024 AFCON Morocco 2025. All Rights Reserved.</p>
+                    <!-- Texte de copyright semi-transparent sans marge basse sur écrans moyens et grands -->
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <!-- Seconde colonne avec texte aligné à droite sur écrans moyens et grands -->
+                    <ul class="footer-bottom-links">
+                        <!-- Liste des liens légaux -->
+                        <li><a target="_blank" href="https://www.cafonline.com/privacy-policy/">Privacy Policy</a></li>
+                        <!-- Lien vers la politique de confidentialité -->
+                        <li><a target="_blank" href="https://www.cafonline.com/terms-of-service">Terms of Service</a></li>
+                        <!-- Lien vers les conditions d'utilisation -->
+                        <li><a target="_blank" href="https://www.cafonline.com/cookie-policy/">Cookie Policy</a></li>
+                        <!-- Lien vers la politique des cookies -->
+                    </ul>
+                </div>                
+            </div>
+        </div>
+    </footer>
+  <button id="back-to-top" class="btn btn-primary back-to-top">
+        ↑
+    </button>
+
+    <div class="scroll-nav">
+        <button id="backToTopBtn" class="scroll-btn" title="Back to top">↑</button>
+        <button id="scrollToBottomBtn" class="scroll-btn" title="Scroll to bottom">↓</button>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/teams.js"></script>
+</body>
+</html>
