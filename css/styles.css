@@ -1,135 +1,215 @@
-
+/* Definition des variables CSS personnalisees */
 :root {
+    /* Couleur rouge primaire */
     --primary-red: #840404;
+    /* Version plus foncee du rouge */
     --primary-red-dark: #5a0303;
+    /* Version plus claire du rouge */
     --primary-red-light: #a30606;
+    /* Couleur verte secondaire */
     --secondary-green: #06d672;
+    /* Version plus foncee du vert */
     --secondary-green-dark: #05b360;
+    /* Version plus claire du vert */
     --secondary-green-light: #07f07f;
-    --accent-gold: #f7d000;
+    /* Couleur or accent */
+    --accent-gold: #f7d000;  /* Faute intentionnelle : gold -> gold */
+    /* Version plus foncee de l'or */
     --accent-gold-dark: #d9b800;
+    /* Couleur noir */
     --dark: #1a1a1a;
-    --light: #f8f8f8;
-    --gray: #6c757d;
+    /* Couleur blanc cassé */
+   --light: #f8f8f8;
+    /* Couleur gris */
+   --gray: #6c757d;
+    /* Gris clair */
     --gray-light: #e9ecef;
-    --gray-dark: #343a40;
-    --transition: all 0.3s ease;
+    /* Gris fonce */
+   --gray-dark: #343a40;
+    /* Transition par defaut */
+   --transition: all 0.3s ease;
+    /* Ombre legere */
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre plus prononcee */
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    /* Rayon des coins arrondis */
     --radius: 8px;
 }
 
 /* 
- * General Styles 
+ * Styles generaux 
  */
 body {
+    /* Police de caractere */
     font-family: 'Montserrat', sans-serif;
+    /* Couleur de texte */
     color: var(--dark);
+    /* Hauteur de ligne */
     line-height: 1.6;
+    /* Masquage du defilement horizontal */
     overflow-x: hidden;
+    /* Fond transparent */
     background-color: transparent;
 }
 
+/* Styles des titres */
 h1, h2, h3, h4, h5, h6 {
+    /* Texte en gras */
     font-weight: 700;
+    /* Hauteur de ligne reduite */
     line-height: 1.2;
 }
 
+/* Styles des liens */
 a {
+    /* Couleur rouge */
     color: var(--primary-red);
+    /* Pas de soulignement */
     text-decoration: none;
+    /* Transition douce */
     transition: var(--transition);
 }
 
+/* Effet au survol des liens */
 a:hover {
+    /* Rouge plus fonce */
     color: var(--primary-red-dark);
 }
 
-/* Button styles */
+/* Styles des boutons */
 .btn {
+    /* Coins arrondis */
     border-radius: var(--radius);
+    /* Espacement interne */
     padding: 0.5rem 1.5rem;
+    /* Texte en gras */
     font-weight: 600;
+    /* Transition douce */
     transition: var(--transition);
+    /* Fond transparent */
     background-color: transparent;
 }
 
+/* Bouton primaire */
 .btn-primary {
+    /* Fond rouge */
     background-color: var(--primary-red);
+    /* Bordure rouge */
     border-color: var(--primary-red);
+    /* Texte blanc */
     color: white;
 }
 
+/* Effet au survol/focus du bouton primaire */
 .btn-primary:hover, .btn-primary:focus {
+    /* Fond rouge fonce */
     background-color: var(--primary-red-dark);
+    /* Bordure rouge fonce */
     border-color: var(--primary-red-dark);
 }
 
+/* Bouton contour rouge */
 .btn-outline-primary {
+    /* Texte rouge */
     color: var(--primary-red);
+    /* Bordure rouge */
     border-color: var(--primary-red);
+    /* Fond transparent */
     background-color: transparent;
 }
 
+/* Effet au survol/focus */
 .btn-outline-primary:hover, .btn-outline-primary:focus {
+    /* Fond rouge */
     background-color: var(--primary-red);
+    /* Bordure rouge */
     border-color: var(--primary-red);
+    /* Texte blanc */
     color: white;
 }
-
-/* Section title with accent line */
+/* Titre de section avec ligne d'accent */
 .section-title {
+    /* Position relative pour les pseudo-elements */
     position: relative;
+    /* Texte en gras */
     font-weight: 700;
+    /* Marge en bas */
     margin-bottom: 1.5rem;
+    /* Couleur de texte */
     color: var(--dark);
 }
 
+/* Ligne rouge sous le titre */
 .section-title::after {
     content: '';
+    /* Affichage en bloc */
     display: block;
+    /* Largeur reduite */
     width: 50px;
+    /* Hauteur de 4px */
     height: 4px;
+    /* Couleur rouge */
     background-color: var(--primary-red);
+    /* Marge au dessus */
     margin: 0.5rem 0 0;
 }
 
+/* Centrage de la ligne pour les titres centres */
 .text-center .section-title::after {
     margin: 0.5rem auto 0;
 }
 
 /* 
- * Header & Navigation Styles 
+ * Styles d'en-tete et de navigation 
  */
 header {
+    /* Position relative */
     position: relative;
+    /* Z-index eleve */
     z-index: 1000;
+    /* Fond rouge */
     background-color: var(--primary-red);
 }
 
+/* Barre de navigation */
 .navbar {
+    /* Espacement interne */
     padding: 1rem 0;
+    /* Fond rouge force */
     background-color: var(--primary-red) !important;
+    /* Transition douce */
     transition: var(--transition);
 }
 
+/* Logo dans la navbar */
 .navbar-brand img {
+    /* Transition pour effets hover */
     transition: var(--transition);
 }
 
+/* Liens de navigation */
 .nav-link {
+    /* Texte blanc */
     color: white !important;
+    /* Texte en gras */
     font-weight: 600;
+    /* Texte en majuscules */
     text-transform: uppercase;
+    /* Espacement interne */
     padding: 0.5rem 1rem !important;
+    /* Position relative */
     position: relative;
+    /* Fond transparent */
     background-color: transparent;
 }
 
+/* Effet au survol et lien actif */
 .nav-link:hover, .nav-link.active {
+    /* Texte vert */
     color: var(--secondary-green) !important;
 }
 
+/* Ligne verte sous le lien actif */
 .nav-link.active::after {
     content: '';
     position: absolute;
@@ -141,586 +221,702 @@ header {
 }
 
 /* 
- * Hero Section Styles 
+ * Styles de la section Hero 
  */
 .hero-section {
+    /* Position relative */
     position: relative;
+    /* Hauteur complete de l'ecran */
     height: 100vh;
+    /* Hauteur minimale */
     min-height: 600px;
+    /* Image de fond */
     background-image: url('../img/hero-bg.jpg');
+    /* Ajustement de l'image */
     background-size: cover;
+    /* Centrage de l'image */
     background-position: center;
+    /* Texte blanc */
     color: white;
+    /* Disposition flex */
     display: flex;
+    /* Alignement vertical */
     align-items: center;
+    /* Pas de marge externe */
     margin: 0;
 }
 
+/* Overlay degrade rouge */
 .hero-section .overlay {
     position: absolute;
+    /* Couvre toute la section */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    /* Degrade rouge */
     background: linear-gradient(135deg, rgba(132, 4, 4, 0.8) 0%, rgba(132, 4, 4, 0.4) 100%);
 }
 
+/* Titre principal */
 .hero-section h1 {
+    /* Taille importante */
     font-size: 3.5rem;
+    /* Texte tres gras */
     font-weight: 800;
+    /* Ombre portee */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Sous-titre */
 .hero-section .lead {
+    /* Taille reduite */
     font-size: 1.5rem;
+    /* Ombre legere */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* 
- * Countdown Styles 
+ * Styles du compte a rebours 
  */
 .countdown-container {
+    /* Fond rouge semi-transparent */
     background-color: rgba(132, 4, 4, 0.8);
+    /* Coins arrondis */
     border-radius: var(--radius);
+    /* Espacement interne */
     padding: 1.5rem;
+    /* Ombre prononcee */
     box-shadow: var(--shadow-lg);
+    /* Pas de bordure */
     border: none;
 }
 
+/* Conteneur du timer */
 .countdown-timer {
+    /* Disposition flex */
     display: flex;
+    /* Espacement egal */
     justify-content: space-between;
+    /* Fond transparent */
     background-color: transparent;
 }
 
+/* Elements du compte a rebours */
 .countdown-item span {
+    /* Affichage en bloc */
     display: block;
 }
 
+/* Nombre (jours, heures...) */
 .countdown-item span:first-child {
+    /* Taille importante */
     font-size: 2rem;
+    /* Texte tres gras */
     font-weight: 700;
+    /* Couleur verte */
     color: var(--secondary-green);
 }
 
+/* Libelle (Jours, Heures...) */
 .countdown-label {
+    /* Petite taille */
     font-size: 0.8rem;
+    /* Texte en majuscules */
     text-transform: uppercase;
+    /* Couleur claire */
     color: var(--light);
 }
 
 /* 
- * Highlight Cards Styles 
+ * Styles des cartes en vedette 
  */
 .highlight-card {
+    /* Pas de bordure */
     border: none;
+    /* Coins arrondis */
     border-radius: var(--radius);
+    /* Ombre portee */
     box-shadow: var(--shadow);
+    /* Transition douce */
     transition: var(--transition);
+    /* Cache le debordement */
     overflow: hidden;
+    /* Fond blanc */
     background-color: white;
+    /* Bordure superieure rouge */
     border-top: 4px solid var(--primary-red);
 }
 
+/* Effet au survol */
 .highlight-card:hover {
+    /* Leger decalage vers le haut */
     transform: translateY(-5px);
+    /* Ombre plus prononcee */
     box-shadow: var(--shadow-lg);
+    /* Bordure superieure verte */
     border-top-color: var(--secondary-green);
 }
 
+/* Icône de carte */
 .card-icon {
+    /* Fond rouge */
     background-color: var(--primary-red);
+    /* Texte blanc */
     color: white;
+    /* Dimensions carrees */
     width: 60px;
     height: 60px;
+    /* Forme ronde */
     border-radius: 50%;
+    /* Centrage flex */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Marge automatique en bas */
     margin: 0 auto 1rem;
+    /* Taille d'icone */
     font-size: 1.5rem;
 }
 
+/* Corps de carte */
 .highlight-card .card-body {
+    /* Espacement superieur */
     padding-top: 2rem;
+    /* Texte centre */
     text-align: center;
 }
 
+/* Titre de carte */
 .highlight-card .card-title {
+    /* Texte en gras */
     font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.highlight-card .card-body {
-    padding-top: 2rem;
-    text-align: center;
-    background-color: transparent;
-}
-
-.highlight-card .card-title {
-    font-weight: 700;
+    /* Marge en bas */
     margin-bottom: 1rem;
 }
 
 /* 
- * Teams Section Styles 
+ * Styles de la section Equipes 
  */
 .team-card {
+    /* Texte centre */
     text-align: center;
+    /* Espacement interne */
     padding: 1.5rem;
+    /* Coins arrondis */
     border-radius: var(--radius);
+    /* Ombre portee */
     box-shadow: var(--shadow);
+    /* Transition douce */
     transition: var(--transition);
+    /* Fond blanc */
     background-color: white;
 }
 
+/* Effet au survol */
 .team-card:hover {
+    /* Leger decalage vers le haut */
     transform: translateY(-5px);
+    /* Ombre plus prononcee */
     box-shadow: var(--shadow-lg);
 }
 
+/* Drapeau d'equipe */
 .team-flag {
+    /* Dimensions */
     width: 100px;
     height: 70px;
+    /* Ajustement de l'image */
     object-fit: cover;
+    /* Coins legerement arrondis */
     border-radius: 4px;
+    /* Marge en bas */
     margin-bottom: 1rem;
+    /* Ombre subtile */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Fond transparent */
     background-color: transparent;
 }
 
+/* Nom d'equipe */
 .team-name {
+    /* Texte en gras */
     font-weight: 700;
+    /* Petite marge en bas */
     margin-bottom: 0.25rem;
 }
 
+/* Statut de l'equipe */
 .team-status {
+    /* Texte gris */
     color: var(--gray);
+    /* Taille reduite */
     font-size: 0.9rem;
 }
 
+/* Carte detaillee d'equipe */
 .team-detailed-card {
+    /* Texte centre */
     text-align: center;
+    /* Espacement interne */
     padding: 1.5rem;
+    /* Coins arrondis */
     border-radius: var(--radius);
+    /* Ombre portee */
     box-shadow: var(--shadow);
+    /* Transition douce */
     transition: var(--transition);
+    /* Fond blanc */
     background-color: white;
+    /* Hauteur complete */
     height: 100%;
 }
 
+/* Effet au survol */
 .team-detailed-card:hover {
+    /* Leger decalage vers le haut */
     transform: translateY(-5px);
+    /* Ombre plus prononcee */
     box-shadow: var(--shadow-lg);
 }
 
+/* Details d'equipe */
 .team-details {
+    /* Marge verticale reduite */
     margin: 0.5rem 0;
 }
 
+/* Info d'equipe */
 .team-info {
+    /* Petite marge en bas */
     margin-bottom: 0.25rem;
+    /* Taille reduite */
     font-size: 0.85rem;
 }
-
-/* 
- * News Cards Styles 
- */
+/* Carte d'actualité */
 .news-card {
-    border: none;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    overflow: hidden;
-    background-color: white;
+    border: none; /* Pas de bordure */
+    border-radius: var(--radius); /* Coins arrondis */
+    box-shadow: var(--shadow); /* Ombre légère */
+    transition: var(--transition); /* Transition fluide */
+    overflow: hidden; /* Cache le débordement */
+    background-color: white; /* Fond blanc */
 }
 
+/* Effet au survol */
 .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px); /* Légère élévation */
+    box-shadow: var(--shadow-lg); /* Ombre plus prononcée */
 }
 
+/* Image de la carte */
 .news-card .card-img-top {
-    height: 200px;
-    object-fit: cover;
-    background-color: transparent;
+    height: 200px; /* Hauteur fixe */
+    object-fit: cover; /* Ajustement de l'image */
+    background-color: transparent; /* Fond transparent */
 }
 
+/* Titre de la carte */
 .news-card .card-title {
-    font-weight: 700;
+    font-weight: 700; /* Texte en gras */
 }
 
+/* Pied de carte */
 .news-card .card-footer {
-    background-color: transparent;
-    border-top: 1px solid var(--gray-light);
+    background-color: transparent; /* Fond transparent */
+    border-top: 1px solid var(--gray-light); /* Bordure supérieure */
 }
 
-/* Article tags */
+/* Étiquettes d'article */
 .article-tags .badge {
-    margin-right: 0.5rem;
-    padding: 0.5rem 1rem;
+    margin-right: 0.5rem; /* Marge à droite */
+    padding: 0.5rem 1rem; /* Espacement interne */
 }
 
 /* 
- * City Cards Styles 
+ * Styles des cartes de ville 
  */
 .city-card {
-    position: relative;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
-    height: 250px;
-    background-color: transparent;
+    position: relative; /* Position relative */
+    border-radius: var(--radius); /* Coins arrondis */
+    overflow: hidden; /* Cache le débordement */
+    box-shadow: var(--shadow); /* Ombre légère */
+    margin-bottom: 1.5rem; /* Marge en bas */
+    height: 250px; /* Hauteur fixe */
+    background-color: transparent; /* Fond transparent */
 }
 
+/* Image de ville */
 .city-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-    background-color: transparent;
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+    object-fit: cover; /* Ajustement de l'image */
+    transition: var(--transition); /* Transition fluide */
+    background-color: transparent; /* Fond transparent */
 }
 
+/* Overlay de ville */
 .city-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-    color: white;
-    transition: var(--transition);
+    position: absolute; /* Position absolue */
+    bottom: 0; /* Alignement en bas */
+    left: 0; /* Alignement à gauche */
+    right: 0; /* Alignement à droite */
+    padding: 1.5rem; /* Espacement interne */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%); /* Dégradé noir */
+    color: white; /* Texte blanc */
+    transition: var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol */
 .city-card:hover .city-image {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Légère zoom */
 }
 
 .city-card:hover .city-overlay {
-    background: linear-gradient(to top, rgba(132, 4, 4, 0.8) 0%, rgba(132, 4, 4, 0) 100%);
+    background: linear-gradient(to top, rgba(132, 4, 4, 0.8) 0%, rgba(132, 4, 4, 0) 100%); /* Dégradé rouge */
 }
 
+/* Titre de l'overlay */
 .city-overlay h3 {
-    margin: 0;
-    font-weight: 700;
+    margin: 0; /* Pas de marge */
+    font-weight: 700; /* Texte en gras */
 }
 
 /* 
- * Partners Section Styles 
+ * Styles de la section Partenaires 
  */
 .partners-section {
-    padding: 4rem 0;
-    background-color: transparent;
+    padding: 4rem 0; /* Espacement vertical */
+    background-color: transparent; /* Fond transparent */
 }
 
-/* Partner logo styling - always show in color */
+/* Logo de partenaire */
 .partner-logo {
-  filter: grayscale(0%) !important; /* Force full color */
-  opacity: 1 !important; /* Ensure full visibility */
-  transition: all 0.3s ease;
-  max-height: 80px; /* Adjust as needed */
-  width: auto;
-  padding: 10px; /* Add some spacing around logos */
+  filter: grayscale(0%) !important; /* Couleur forcée */
+  opacity: 1 !important; /* Opacité totale */
+  transition: all 0.3s ease; /* Transition fluide */
+  max-height: 80px; /* Hauteur maximale */
+  width: auto; /* Largeur automatique */
+  padding: 10px; /* Espacement interne */
 }
 
-/* Optional hover effect (if you want to enhance on hover) */
+/* Effet au survol */
 .partner-logo:hover {
-  transform: scale(1.05); /* Slight zoom */
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); /* Add shadow */
+  transform: scale(1.05); /* Légère zoom */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); /* Ombre portée */
 }
 
 /* 
- * Newsletter Section Styles 
+ * Styles de la section Newsletter 
  */
 .newsletter-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/newsletter-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/newsletter-bg.jpg'); /* Image avec overlay */
+    background-size: cover; /* Couverture complète */
+    background-position: center; /* Centrage */
+    background-attachment: fixed; /* Fixe lors du défilement */
+    margin: 0; /* Pas de marge */
 }
 
+/* Champ de formulaire */
 .newsletter-form .form-control {
-    height: 50px;
-    border-radius: var(--radius) 0 0 var(--radius);
-    background-color: rgba(255,255,255,0.9);
+    height: 50px; /* Hauteur fixe */
+    border-radius: var(--radius) 0 0 var(--radius); /* Coins arrondis à gauche */
+    background-color: rgba(255,255,255,0.9); /* Fond blanc semi-transparent */
 }
 
+/* Bouton de formulaire */
 .newsletter-form .btn {
-    border-radius: 0 var(--radius) var(--radius) 0;
-    background-color: var(--accent-gold);
-    border-color: var(--accent-gold);
-    color: var(--dark);
-    font-weight: 700;
+    border-radius: 0 var(--radius) var(--radius) 0; /* Coins arrondis à droite */
+    background-color: var(--accent-gold); /* Fond or */
+    border-color: var(--accent-gold); /* Bordure or */
+    color: var(--dark); /* Texte sombre */
+    font-weight: 700; /* Texte en gras */
 }
 
+/* Effet au survol */
 .newsletter-form .btn:hover {
-    background-color: var(--accent-gold-dark);
-    border-color: var(--accent-gold-dark);
+    background-color: var(--accent-gold-dark); /* Fond or foncé */
+    border-color: var(--accent-gold-dark); /* Bordure or foncée */
 }
 
 /* 
- * Footer Styles 
+ * Styles de pied de page 
  */
 .footer {
-    background-color: var(--dark);
-    color: var(--light);
-    margin: 0;
+    background-color: var(--dark); /* Fond sombre */
+    color: var(--light); /* Texte clair */
+    margin: 0; /* Pas de marge */
 }
 
+/* Liens de pied de page */
 .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
 }
 
 .footer-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem; /* Marge en bas */
 }
 
 .footer-links a {
-    color: var(--gray);
-    transition: var(--transition);
-    background-color: transparent;
+    color: var(--gray); /* Texte gris */
+    transition: var(--transition); /* Transition fluide */
+    background-color: transparent; /* Fond transparent */
 }
 
+/* Effet au survol */
 .footer-links a:hover {
-    color: var(--accent-gold);
-    padding-left: 5px;
+    color: var(--accent-gold); /* Texte or */
+    padding-left: 5px; /* Décalage à gauche */
 }
 
+/* Contact du footer */
 .footer-contact {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
 }
 
 .footer-contact li {
-    margin-bottom: 1rem;
-    color: var(--gray);
-    display: flex;
-    align-items: flex-start;
+    margin-bottom: 1rem; /* Marge en bas */
+    color: var(--gray); /* Texte gris */
+    display: flex; /* Disposition flex */
+    align-items: flex-start; /* Alignement en haut */
 }
 
 .footer-contact li i {
-    margin-right: 0.75rem;
-    color: var(--primary-red);
+    margin-right: 0.75rem; /* Marge à droite */
+    color: var(--primary-red); /* Icône rouge */
 }
 
+/* Icônes sociales */
 .social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    display: flex; /* Disposition flex */
+    gap: 1rem; /* Espacement */
+    margin-top: 1.5rem; /* Marge en haut */
 }
 
+/* Icône sociale */
 .social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: var(--light);
-    transition: var(--transition);
+    display: inline-flex; /* Disposition inline-flex */
+    align-items: center; /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    width: 40px; /* Largeur fixe */
+    height: 40px; /* Hauteur fixe */
+    background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
+    border-radius: 50%; /* Forme ronde */
+    color: var(--light); /* Texte clair */
+    transition: var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol */
 .social-icon:hover {
-    background-color: var(--primary-red);
-    color: white;
-    transform: translateY(-3px);
+    background-color: var(--primary-red); /* Fond rouge */
+    color: white; /* Texte blanc */
+    transform: translateY(-3px); /* Légère élévation */
 }
 
+/* Liens du bas de footer */
 .footer-bottom-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: flex-end;
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
+    display: flex; /* Disposition flex */
+    gap: 1.5rem; /* Espacement */
+    justify-content: flex-end; /* Alignement à droite */
 }
 
 .footer-bottom-links li a {
-    color: var(--gray);
-    font-size: 0.9rem;
-    transition: var(--transition);
+    color: var(--gray); /* Texte gris */
+    font-size: 0.9rem; /* Taille réduite */
+    transition: var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol */
 .footer-bottom-links li a:hover {
-    color: var(--accent-gold);
+    color: var(--accent-gold); /* Texte or (faute intentionnelle) */
 }
 
 /* 
- * Back to Top Button Styles 
+ * Styles du bouton "Retour en haut" 
  */
 .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-red);
-    color: white;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-    transition: var(--transition);
-    border: none;
+    position: fixed; /* Position fixe */
+    bottom: 20px; /* 20px du bas */
+    right: 20px; /* 20px de la droite */
+    width: 45px; /* Largeur fixe */
+    height: 45px; /* Hauteur fixe */
+    border-radius: 50%; /* Forme ronde */
+    display: flex; /* Disposition flex */
+    align-items: center; /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    background-color: var(--primary-red); /* Fond rouge */
+    color: white; /* Texte blanc */
+    opacity: 0; /* Initialement invisible */
+    visibility: hidden; /* Initialement caché */
+    z-index: 1000; /* Au premier plan */
+    transition: var(--transition); /* Transition fluide */
+    border: none; /* Pas de bordure */
 }
 
+/* Classe pour afficher le bouton */
 .back-to-top.show {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1; /* Visible */
+    visibility: visible; /* Visible */
 }
 
+/* Effet au survol */
 .back-to-top:hover {
-    background-color: var(--primary-red-dark);
-    transform: translateY(-3px);
+    background-color: var(--primary-red-dark); /* Fond rouge foncé */
+    transform: translateY(-3px); /* Légère élévation */
 }
 
 /* 
- * Page Title Section Styles 
+ * Styles de la section de titre de page 
  */
 .page-title-section {
-    background: var(--primary-red);
-    padding: 60px 0;
-    color: white;
-    margin-bottom: 40px;
+    background: var(--primary-red); /* Fond rouge */
+    padding: 60px 0; /* Espacement vertical */
+    color: white; /* Texte blanc */
+    margin-bottom: 40px; /* Marge en bas */
 }
 
+/* Titre de page */
 .page-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 2.5rem; /* Taille importante */
+    font-weight: 700; /* Texte en gras */
+    margin-bottom: 10px; /* Marge en bas */
 }
 
+/* Sous-titre */
 .page-subtitle {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 15px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
+    font-size: 1.25rem; /* Taille moyenne */
+    font-weight: 400; /* Poids normal */
+    color: rgba(255, 255, 255, 0.9); /* Blanc semi-transparent */
+    margin-top: 15px; /* Marge en haut */
+    max-width: 800px; /* Largeur maximale */
+    margin-left: auto; /* Centrage */
+    margin-right: auto; /* Centrage */
+    line-height: 1.5; /* Hauteur de ligne */
 }
 
+/* Fil d'Ariane */
 .breadcrumb {
-    background: transparent;
-    padding: 0;
-    margin: 0;
+    background: transparent; /* Fond transparent */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
 }
 
 .breadcrumb-item a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8); /* Blanc semi-transparent */
+    text-decoration: none; /* Pas de soulignement */
 }
 
 .breadcrumb-item.active {
-    color: white;
+    color: white; /* Texte blanc */
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8); /* Séparateur semi-transparent */
 }
 
 /* 
- * Info Card Styles 
+ * Styles des cartes d'information 
  */
 .info-card {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 20px;
-    box-shadow: var(--shadow);
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
+    background: #fff; /* Fond blanc */
+    border-radius: var(--radius); /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    box-shadow: var(--shadow); /* Ombre légère */
+    margin-bottom: 20px; /* Marge en bas */
+    border: 1px solid #ddd; /* Bordure légère */
 }
 
+/* Titre de carte */
 .info-card h3 {
-    color: #333;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--primary-red);
-    padding-bottom: 10px;
+    color: #333; /* Texte sombre */
+    font-size: 1.25rem; /* Taille moyenne */
+    margin-bottom: 15px; /* Marge en bas */
+    border-bottom: 2px solid var(--primary-red); /* Bordure inférieure rouge */
+    padding-bottom: 10px; /* Espacement en bas */
 }
 
 .info-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
 }
 
 .info-card ul li {
-    margin-bottom: 10px;
-    color: #666;
-    display: flex;
-    align-items: center;
+    margin-bottom: 10px; /* Marge en bas */
+    color: #666; /* Texte gris */
+    display: flex; /* Disposition flex */
+    align-items: center; /* Centrage vertical */
 }
 
 .info-card ul li i {
-    color: var(--primary-red);
-    margin-right: 10px;
-    width: 20px;
+    color: var(--primary-red); /* Icône rouge */
+    margin-right: 10px; /* Marge à droite */
+    width: 20px; /* Largeur fixe */
 }
 
 /* 
- * Group Card Styles 
+ * Styles des cartes de groupe 
  */
- /* Custom btn-link styles */
+/* Bouton lien personnalisé */
 .btn-link {
-  color: var(--primary-red);
-  text-decoration: none;
-  padding: 0;
-  background-color: transparent !important;
-  border: 0 !important;
+  color: var(--primary-red); /* Texte rouge */
+  text-decoration: none; /* Pas de soulignement */
+  padding: 0; /* Pas de padding */
+  background-color: transparent !important; /* Fond transparent */
+  border: 0 !important; /* Pas de bordure */
 }
 
+/* Effet au survol */
 .btn-link:hover {
-  color: var(--primary-red-dark);
-  text-decoration: underline;
+  color: var(--primary-red-dark); /* Texte rouge foncé */
+  text-decoration: underline; /* Soulignement */
 }
 
+/* Carte de groupe */
 .group-card {
-    border: none;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
-    transition: var(--transition);
-    background-color: white;
+    border: none; /* Pas de bordure */
+    border-radius: var(--radius); /* Coins arrondis */
+    overflow: hidden; /* Cache le débordement */
+    box-shadow: var(--shadow); /* Ombre légère */
+    margin-bottom: 1.5rem; /* Marge en bas */
+    transition: var(--transition); /* Transition fluide */
+    background-color: white; /* Fond blanc */
 }
 
+/* Effet au survol */
 .group-card:hover {
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg); /* Ombre plus prononcée */
 }
 
+/* Titre de groupe */
 .group-title {
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 700;
+    font-size: 1.2rem; /* Taille moyenne */
+    margin: 0; /* Pas de marge */
+    font-weight: 700; /* Texte en gras */
 }
 
+/* Drapeau de groupe */
 .group-flag {
-    width: 40px;
-    height: 28px;
-    object-fit: cover;
-    border-radius: 2px;
-    background-color: transparent;
+    width: 40px; /* Largeur fixe */
+    height: 28px; /* Hauteur fixe */
+    object-fit: cover; /* Ajustement de l'image */
+    border-radius: 2px; /* Coins légèrement arrondis */
+    background-color: transparent; /* Fond transparent */
 }
 
+/* Item de liste */
 .list-group-item {
-    padding: 0.75rem 1rem;
-    border-color: var(--gray-light);
-    background-color: transparent;
+    padding: 0.75rem 1rem; /* Espacement interne */
+    border-color: var(--gray-light); /* Bordure claire */
+    background-color: transparent; /* Fond transparent */
 }
-
-
-
 /* Team Hero Section */
 .team-hero {
     /* Fond dégradé rouge avec image en arrière-plan */
@@ -1144,374 +1340,515 @@ html {
 
 
 /* 
- * Animation Classes 
+ * Classes d'animation 
  */
 .fade-in {
+    /* Animation de fondu entrant durant 1 seconde */
     animation: fadeIn 1s ease-in-out;
+    /* Fond transparent */
     background-color: transparent;
 }
 
 .slide-in-left {
+    /* Animation de glissement depuis la gauche durant 1 seconde */
     animation: slideInLeft 1s ease-in-out;
+    /* Fond transparent */
     background-color: transparent;
 }
 
 .slide-in-right {
+    /* Animation de glissement depuis la droite durant 1 seconde */
     animation: slideInRight 1s ease-in-out;
+    /* Fond transparent */
     background-color: transparent;
 }
 
 @keyframes fadeIn {
+    /* Debut de l'animation : completement transparent */
     from { opacity: 0; }
+    /* Fin de l'animation : completement visible */
     to { opacity: 1; }
 }
 
 @keyframes slideInLeft {
+    /* Debut : element décalé de 50px a gauche et invisible */
     from { transform: translateX(-50px); opacity: 0; }
+    /* Fin : element a sa position normale et visible */
     to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes slideInRight {
+    /* Debut : element décalé de 50px a droite et invisible */
     from { transform: translateX(50px); opacity: 0; }
+    /* Fin : element a sa position normale et visible */
     to { transform: translateX(0); opacity: 1; }
 }
 
 /* 
- * Responsive Styles 
+ * Styles responsifs 
  */
 @media (max-aspect-ratio: 16/9) {
+    /* Adaptation des images d'equipe en format portrait */
     .team-slide-image {
+        /* L'image couvre la zone sans déformation */
         object-fit: cover;
+        /* Largeur automatique */
         width: auto;
+        /* Hauteur a 100% */
         height: 100%;
     }
 }
 
 @media (min-aspect-ratio: 16/9) {
+    /* Adaptation des images d'equipe en format paysage */
     .team-slide-image {
+        /* L'image couvre la zone sans déformation */
         object-fit: cover;
+        /* Largeur a 100% */
         width: 100%;
+        /* Hauteur automatique */
         height: auto;
     }
 }
 
 @media (max-width: 991px) {
+    /* Styles pour les ecrans moyens */
     .navbar-collapse {
+        /* Fond sombre pour le menu */
         background-color: var(--dark);
+        /* Espacement interne */
         padding: 1rem;
+        /* Coins arrondis */
         border-radius: var(--radius);
+        /* Marge au dessus */
         margin-top: 0.5rem;
     }
     
+    /* Reduction de la taille du titre principal */
     .hero-section h1 {
         font-size: 2.5rem;
     }
     
+    /* Reduction de la taille du sous-titre */
     .hero-section .lead {
         font-size: 1.2rem;
     }
     
+    /* Ajustement des elements du compte a rebours */
     .countdown-item span:first-child {
         font-size: 1.5rem;
     }
     
+    /* Reorganisation des statistiques en colonne */
     .hero-stats {
         flex-direction: column;
+        /* Espacement entre elements */
         gap: 1rem;
     }
     
+    /* Style des items de statistique */
     .stat-item {
         padding: 1rem;
     }
     
+    /* Taille des nombres dans les stats */
     .stat-number {
         font-size: 2rem;
     }
     
+    /* Ajustement des etapes */
     .format-steps {
         padding-left: 1.5rem;
     }
     
+    /* Positionnement des elements avant les etapes */
     .step::before {
         left: -2rem;
     }
     
+    /* Positionnement des numeros d'etape */
     .step-number {
         left: -2rem;
     }
 }
 
 @media (max-width: 767px) {
+    /* Styles pour les petits ecrans */
     .hero-section {
+        /* Centrage du texte */
         text-align: center;
+        /* Hauteur automatique */
         height: auto;
+        /* Espacement vertical */
         padding: 8rem 0;
     }
     
+    /* Reduction supplementaire du titre */
     .hero-section h1 {
         font-size: 2rem;
     }
     
+    /* Marge pour le compte a rebours */
     .countdown-container {
         margin-top: 2rem;
     }
     
+    /* Reduction des titres de page */
     .page-title {
         font-size: 2.2rem;
     }
     
+    /* Hauteur fixe pour les cartes de ville */
     .city-card {
         height: 200px;
     }
     
+    /* Centrage des liens de pied de page */
     .footer-bottom-links {
         justify-content: center;
         margin-top: 1rem;
     }
     
+    /* Ajustement du diaporama d'equipe */
     .team-slideshow {
         height: 50vh;
+        /* Hauteur minimale */
         min-height: 400px;
     }
     
+    /* Reduction des titres */
     .slide-title {
         font-size: 2rem;
     }
     
+    /* Reduction des noms d'equipe */
     .team-name {
         font-size: 2rem;
     }
     
+    /* Reorganisation des stats d'equipe en colonne */
     .team-stats {
         flex-direction: column;
         align-items: center;
     }
     
+    /* Marge entre les items de stats */
     .stat-item {
         margin-bottom: 15px;
     }
     
+    /* Positionnement de la navigation de défilement */
     .scroll-nav {
         right: 10px;
         bottom: 10px;
     }
     
+    /* Taille des boutons de défilement */
     .scroll-btn {
         width: 45px;
         height: 45px;
         font-size: 1.3rem;
     }
     
+    /* Reorganisation des items de stade en colonne */
     .stadium-list-item {
         flex-direction: column;
     }
     
+    /* Taille fixe pour les images de stade */
     .stadium-list-image {
         width: 100%;
         height: 200px;
     }
     
+    /* Ajustement de la section hero "about" */
     .about-hero {
         padding: 60px 0;
     }
     
+    /* Reduction du titre */
     .about-hero h1 {
         font-size: 2rem;
     }
     
+    /* Reduction du sous-titre */
     .about-hero .lead {
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 575px) {
+    /* Styles pour les tres petits ecrans */
     .team-flag {
+        /* Dimensions reduites des drapeaux */
         width: 80px;
         height: 56px;
     }
     
+    /* Reduction des elements du compte a rebours */
     .countdown-item span:first-child {
         font-size: 1.2rem;
     }
     
+    /* Reduction des libellés du compte a rebours */
     .countdown-label {
         font-size: 0.7rem;
     }
     
+    /* Reduction des titres de section */
     .section-title {
         font-size: 1.8rem;
     }
     
+    /* Hauteur reduite pour les elements de galerie */
     .gallery-item {
         height: 150px;
     }
 }
 
-/* Improved Performance */
+/* Amelioration des performances */
 html {
+    /* Défilement fluide */
     scroll-behavior: smooth;
+    /* Fond transparent */
     background-color: transparent;
 }
 
-/* Red pagination styling to match your theme */
+/* Style de pagination en rouge pour correspondre au theme */
 .pagination {
+  /* Marge au dessus */
   margin-top: 2rem;
 }
-
+/* Style des items de pagination */
 .page-item .page-link {
-  color: var(--primary-red); /* Using your theme's red color variable */
+  /* Couleur rouge primaire du theme */
+  color: var(--primary-red);
+  /* Bordure grise */
   border: 1px solid #dee2e6;
-  transition: var(--transition); /* Using your theme's transition */
+  /* Transition douce */
+  transition: var(--transition);
+  /* Marge horizontale reduite */
   margin: 0 3px;
-  border-radius: var(--radius) !important; /* Using your theme's radius */
+  /* Coins arrondis */
+  border-radius: var(--radius) !important;
 }
 
+/* Effet au survol */
 .page-item .page-link:hover {
-  color: var(--primary-red-dark); /* Your darker red variable */
+  /* Rouge plus fonce */
+  color: var(--primary-red-dark);
+  /* Fond leger */
   background-color: #f8f9fa;
+  /* Bordure grise */
   border-color: #dee2e6;
 }
 
+/* Style de la page active */
 .page-item.active .page-link {
+  /* Fond rouge */
   background-color: var(--primary-red);
+  /* Bordure rouge */
   border-color: var(--primary-red);
+  /* Texte blanc */
   color: white !important;
 }
 
+/* Style des pages desactivees */
 .page-item.disabled .page-link {
+  /* Texte gris */
   color: #6c757d;
+  /* Fond leger */
   background-color: #f8f9fa;
+  /* Bordure grise */
   border-color: #dee2e6;
 }
 
-/* Next/Previous arrows with red color */
+/* Style des fleches Suivant/Precedent */
 .page-link[aria-label^="Next"],
 .page-link[aria-label^="Previous"] {
+  /* Position relative pour les pseudo-elements */
   position: relative;
+  /* Padding reduit */
   padding: 0.5rem 0.75rem;
+  /* Couleur rouge */
   color: var(--primary-red) !important;
 }
 
+/* Effet au survol des fleches */
 .page-link[aria-label^="Next"]:hover,
 .page-link[aria-label^="Previous"]:hover {
+  /* Rouge plus fonce */
   color: var(--primary-red-dark) !important;
 }
 
-
-
+/* Fleche droite pour "Suivant" */
 .page-link[aria-label^="Next"]::after {
-  content: "\f054"; /* arrow-right */
+  content: "\f054"; /* icone fleche droite */
 }
 
+/* Fleche gauche pour "Precedent" */
 .page-link[aria-label^="Previous"]::before {
-  content: "\f053"; /* arrow-left */
+  content: "\f053"; /* icone fleche gauche */
 }
 
-/* Group Cards Styling */
+/* Style des cartes de groupe */
 .group-card {
+  /* Pas de bordure */
   border: none;
+  /* Coins arrondis */
   border-radius: var(--radius);
+  /* Ombre portee */
   box-shadow: var(--shadow);
+  /* Transition douce */
   transition: var(--transition);
+  /* Cache le debordement */
   overflow: hidden;
+  /* Marge en bas */
   margin-bottom: 1.5rem;
 }
 
+/* Effet au survol de la carte */
 .group-card:hover {
+  /* Leger decalage vers le haut */
   transform: translateY(-5px);
+  /* Ombre plus prononcee */
   box-shadow: var(--shadow-lg);
 }
 
-/* Group Header - Red Background */
+/* En-tete de carte - fond rouge */
 .group-card .card-header {
+  /* Fond rouge */
   background-color: var(--primary-red) !important;
+  /* Pas de bordure en bas */
   border-bottom: none;
+  /* Espacement interne */
   padding: 1rem;
 }
 
+/* Titre du groupe */
 .group-title {
+  /* Reset de la marge */
   margin: 0;
+  /* Texte en gras */
   font-weight: 700;
+  /* Taille du texte */
   font-size: 1.25rem;
+  /* Texte blanc */
   color: white;
+  /* Centrage du texte */
   text-align: center;
 }
 
-/* Group Body Styling */
+/* Corps de la carte */
 .group-card .card-body {
+  /* Pas de padding */
   padding: 0;
 }
 
+/* Items de la liste */
 .group-card .list-group-item {
+  /* Espacement interne */
   padding: 1rem;
+  /* Bordure subtile */
   border-color: rgba(0, 0, 0, 0.05);
+  /* Transition douce */
   transition: var(--transition);
+  /* Disposition flex */
   display: flex;
+  /* Alignement vertical */
   align-items: center;
 }
 
+/* Effet au survol des items */
 .group-card .list-group-item:hover {
+  /* Fond rouge tres leger */
   background-color: rgba(132, 4, 4, 0.05);
 }
 
+/* Style des drapeaux */
 .group-flag {
+  /* Dimensions reduites */
   width: 30px;
   height: 20px;
+  /* Ajustement de l'image */
   object-fit: cover;
+  /* Coins legerement arrondis */
   border-radius: 2px;
+  /* Ombre subtile */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Alternate row coloring for better readability */
+/* Alternance de couleur pour les lignes */
 .group-card .list-group-item:nth-child(odd) {
+  /* Fond leger pour les lignes impaires */
   background-color: rgba(248, 249, 250, 0.5);
 }
 
-/* Hover effect on flags */
+/* Effet de zoom sur les drapeaux au survol */
 .group-flag {
   transition: transform 0.2s ease;
 }
 
 .group-card .list-group-item:hover .group-flag {
+  /* Leger zoom */
   transform: scale(1.1);
 }
 
-/* Match Schedule Tabs Styling - Always Visible */
+/* Style des onglets de programme */
 .fixture-tabs {
+  /* Bordure en bas */
   border-bottom: 2px solid #e9ecef;
+  /* Marge en bas */
   margin-bottom: 2rem;
+  /* Disposition flex */
   display: flex;
+  /* Pas de retour a la ligne */
   flex-wrap: nowrap;
+  /* Defilement horizontal */
   overflow-x: auto;
+  /* Defilement fluide sur iOS */
   -webkit-overflow-scrolling: touch;
+  /* Padding en bas */
   padding-bottom: 5px;
 }
 
-/* Base tab style - always visible */
+/* Style de base des onglets */
 .fixture-tab-link {
-  color: var(--dark) !important; /* Force dark text always */
+  /* Texte noir */
+  color: var(--dark) !important;
+  /* Texte en gras */
   font-weight: 600;
+  /* Espacement interne */
   padding: 0.75rem 1.25rem;
+  /* Bordure transparente en bas */
   border-bottom: 3px solid transparent;
+  /* Transition douce */
   transition: all 0.3s ease;
+  /* Pas de retour a la ligne */
   white-space: nowrap;
+  /* Position relative pour pseudo-elements */
   position: relative;
 }
 
-/* Hover state */
+/* Etat survole */
 .fixture-tab-link:hover {
+  /* Texte rouge fonce */
   color: var(--primary-red-dark) !important;
+  /* Bordure rouge transparente */
   border-bottom-color: rgba(132, 4, 4, 0.3);
 }
 
-/* Active state */
+/* Etat actif */
 .fixture-tab-link.active {
+  /* Texte rouge */
   color: var(--primary-red) !important;
+  /* Bordure rouge */
   border-bottom-color: var(--primary-red);
+  /* Texte plus gras */
   font-weight: 700;
 }
 
-/* Active tab indicator */
+/* Indicateur d'onglet actif */
 .fixture-tab-link.active::after {
   content: '';
   position: absolute;
@@ -1522,37 +1859,40 @@ html {
   background-color: var(--primary-red);
 }
 
-/* Scrollbar styling */
+/* Style de la barre de defilement */
 .fixture-tabs::-webkit-scrollbar {
   height: 4px;
 }
 
 .fixture-tabs::-webkit-scrollbar-thumb {
+  /* Curseur rouge */
   background-color: var(--primary-red);
   border-radius: 4px;
 }
 
-/* Mobile adjustments */
+/* Ajustements mobile */
 @media (max-width: 767px) {
   .fixture-tabs {
     padding-bottom: 8px;
   }
   
   .fixture-tab-link {
+    /* Padding reduit */
     padding: 0.5rem 0.75rem;
+    /* Texte plus petit */
     font-size: 0.9rem;
   }
 }
 
-/* Override Bootstrap's default blue colors with red theme */
+/* Override des couleurs Bootstrap par le theme rouge */
 :root {
-  --bs-primary: #840404;       /* Your primary red */
+  --bs-primary: #840404;       /* Rouge primaire */
   --bs-primary-rgb: 132, 4, 4;
-  --bs-primary-dark: #5a0303;   /* Darker red */
-  --bs-primary-light: #a30606;  /* Lighter red */
+  --bs-primary-dark: #5a0303;   /* Rouge plus fonce */
+  --bs-primary-light: #a30606;  /* Rouge plus clair */
 }
 
-/* Primary color overrides */
+/* Boutons primaires */
 .btn-primary {
   --bs-btn-color: #fff;
   --bs-btn-bg: var(--bs-primary);
@@ -1565,7 +1905,7 @@ html {
   --bs-btn-disabled-border-color: var(--bs-primary);
 }
 
-/* Link colors */
+/* Liens */
 a {
   color: var(--bs-primary);
 }
@@ -1573,7 +1913,7 @@ a:hover {
   color: var(--bs-primary-dark);
 }
 
-/* Nav tabs */
+/* Onglets de navigation */
 .nav-tabs {
   --bs-nav-tabs-link-active-color: var(--bs-primary);
   --bs-nav-tabs-link-active-border-color: var(--bs-primary);
@@ -1590,7 +1930,7 @@ a:hover {
   --bs-pagination-hover-color: var(--bs-primary-dark);
 }
 
-/* Form controls */
+/* Champs de formulaire */
 .form-control:focus {
   border-color: var(--bs-primary);
   box-shadow: 0 0 0 0.25rem rgba(132, 4, 4, 0.25);
@@ -1600,7 +1940,7 @@ a:hover {
   border-color: var(--bs-primary);
 }
 
-/* Alerts */
+/* Alertes */
 .alert-primary {
   --bs-alert-color: #fff;
   --bs-alert-bg: var(--bs-primary);
@@ -1612,18 +1952,18 @@ a:hover {
   background-color: var(--bs-primary) !important;
 }
 
-/* Dropdowns */
+/* Menus deroulants */
 .dropdown-item.active, 
 .dropdown-item:active {
   background-color: var(--bs-primary);
 }
 
-/* Progress bars */
+/* Barres de progression */
 .progress-bar {
   background-color: var(--bs-primary);
 }
 
-/* Tooltips */
+/* Infobulles */
 .tooltip .tooltip-inner {
   background-color: var(--bs-primary);
 }
@@ -1638,7 +1978,7 @@ a:hover {
   color: white;
 }
 
-/* Override all primary utility classes */
+/* Override des classes utilitaires */
 .bg-primary {
   background-color: var(--bs-primary) !important;
 }
