@@ -91,40 +91,15 @@
             </div>
         </nav>
     </header>
-    
-    <section class="about-intro" style="background: #8B1818;">
-    <!-- Section d’introduction avec fond bordeaux pour présenter la page des actualités -->
-    <div class="container-fluid p-0">
-        <!-- Conteneur Bootstrap pleine largeur sans padding -->
-        <div class="row g-0">
-            <!-- Ligne Bootstrap sans espacement entre les colonnes -->
-            <!-- Colonne image -->
-            <div class="col-lg-6">
-                <!-- Colonne prenant 6/12 de la largeur sur grands écrans pour l’image -->
-                <div class="about-intro-image">
-                    <!-- Conteneur pour l’image d’introduction -->
-                    <img src="img/news/caf25.jpg" alt="AFCON 2025 Introduction" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
-                    <!-- Image responsive couvrant tout l’espace, avec texte alternatif pour l’accessibilité -->
-                </div>
-            </div>
-            <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                <!-- Colonne prenant 6/12 de la largeur, centrée verticalement et horizontalement -->
-                <div class="w-100 text-center" style="color: #fff; padding: 2.5rem 1.5rem;">
-                    <!-- Conteneur centré, texte blanc, avec padding interne -->
-                    <h1 class="page-title fw-bold mb-4" style="font-size: 2.8rem; letter-spacing: 1px; font-family: 'Montserrat', Arial, sans-serif;">AFCON 2025 News</h1>
-                    <!-- Titre principal en gras, grande taille, police personnalisée -->
-                    <p class="lead mb-4" style="font-size: 1.35rem; font-family: 'Montserrat', Arial, sans-serif; font-weight: 500;">
-                        Stay updated with the latest news, updates, and developments about Africa's biggest football tournament.
-                    </p>
-                    <!-- Slogan ou phrase d’accroche, police et taille personnalisées, marge basse -->
-                    <p class="mb-0" style="font-size: 1.12rem; opacity: 0.92; font-family: 'Montserrat', Arial, sans-serif;">
-                        Find exclusive stories, match previews, interviews, and all the buzz around the Africa Cup of Nations 2025 in Morocco.
-                    </p>
-                    <!-- Texte complémentaire, police personnalisée, taille réduite, légère transparence -->
-                </div>
-            </div>
+    <section class="team-hero">
+        <!-- Section d'en-tête de la page avec un titre principal et une description -->
+        <div class="container">
+            <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
+            <h1 class="page-title" >AFCON 2025 News</h1>
+            <!-- Titre principal de la page avec animation "fade-up" au défilement (AOS) -->
+            <p class="lead">Stay updated with the latest news, updates, and developments about Africa's biggest football tournament</p>
+            <!-- Sous-titre descriptif avec classe "lead" de Bootstrap pour mise en forme -->
         </div>
-    </div>
     </section>
 
     <section class="py-5">
@@ -404,40 +379,34 @@
         </div>
     </section>
 
-   <!-- Section d'inscription à la newsletter -->
-<section class="py-5 newsletter-section">
-    <!-- Conteneur principal -->
-    <div class="container">
-        <!-- Rangée centrée horizontalement -->
-        <div class="row justify-content-center">
-            <!-- Colonne centrée prenant 8/12 de largeur sur grand écran -->
-            <div class="col-lg-8 text-center">
-                <!-- Titre de section en blanc -->
-                <h2 class="section-title text-white">Stay Updated</h2>
-                <!-- Texte d'introduction en blanc avec marge en bas -->
-                <p class="text-white mb-4">Subscribe to our newsletter to receive the latest news and updates about AFCON Morocco 2025</p>
-                <!-- Formulaire d'inscription -->
-                <form class="newsletter-form">
-                    <!-- Groupe d'input avec marge en bas -->
-                    <div class="input-group mb-3">
-                        <!-- Champ email :
-                             - type email pour validation
-                             - placeholder pour l'indication
-                             - aria-label pour l'accessibilité -->
-                        <input type="email" class="form-control" 
-                               placeholder="Enter your email address" 
-                               aria-label="Enter your email address">
-                        <!-- Bouton de soumission primaire -->
-                        <button class="btn btn-primary" type="submit">Subscribe</button>
-                    </div>
-                </form>
+    <section class="py-5 newsletter-section">
+        <!-- Section d'abonnement à la newsletter avec espacement vertical -->
+        <div class="container">
+            <!-- Conteneur Bootstrap centré qui limite la largeur du contenu -->
+            <div class="row justify-content-center">
+                <!-- Ligne centrée horizontalement -->
+                <div class="col-lg-8 text-center">
+                    <!-- Colonne centrée prenant 8/12 de la largeur sur grands écrans -->
+                    <h3 class="text-white">Stay Updated with AFCON 2025</h3>
+                    <!-- Titre en blanc -->
+                    <p class="text-white-50 mb-4">Subscribe to our newsletter to receive the latest news and updates about Africa Cup of Nations 2025.</p>
+                    <!-- Texte descriptif semi-transparent avec marge basse -->
+                    <form class="newsletter-form">
+                        <!-- Formulaire d'abonnement -->
+                        <div class="input-group mb-3">
+                            <!-- Groupe d'entrée avec marge basse -->
+                            <input type="email" class="form-control" placeholder="Enter your email address">
+                            <!-- Champ de saisie pour l'email avec placeholder -->
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                            <!-- Bouton d'envoi accolé au champ de saisie -->
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Fin de la section newsletter -->
+    </section>
 
-     <!-- Pied de page du site -->
+    <!-- Pied de page du site -->
     <footer class="footer py-5">
         <!-- Section de pied de page avec un padding vertical de 5 unités -->
         <div class="container">
@@ -549,17 +518,20 @@
             </div>
         </div>
     </footer>
-    <button id="back-to-top" class="btn btn-primary back-to-top">
-        ↑
-    </button>
 
-    <div class="scroll-nav">
-        <button id="backToTopBtn" class="scroll-btn" title="Back to top">↑</button>
-        <button id="scrollToBottomBtn" class="scroll-btn" title="Scroll to bottom">↓</button>
-    </div>
-<!-- Bibliothèque Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts JavaScript chargés à la fin pour optimiser le chargement de la page -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/teams.js"></script>
+    <!-- Importation du JavaScript de Bootstrap depuis un CDN pour les fonctionnalités interactives -->
+    <script src="js/news.js"></script>
+    <!-- Boutons de navigation de défilement rapide -->
+    <div class="scroll-nav">
+        <!-- Conteneur des boutons de défilement -->
+        <button id="backToTopBtn" class="scroll-btn" title="Back to top" aria-label="Back to top">
+        ↑      <!-- Flèche pointant vers le haut pour remonter en haut de page -->
+        </button>
+        <button id="scrollToBottomBtn" class="scroll-btn" title="Scroll to bottom" aria-label="Scroll to bottom">
+        ↓      <!-- Flèche pointant vers le bas pour descendre en bas de page -->
+        </button>
+    </div>
 </body>
 </html>
