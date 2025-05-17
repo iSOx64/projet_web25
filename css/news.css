@@ -1,0 +1,247 @@
+/* Styles pour la grille d'actualités */
+.news-card {
+    /* Ajoute une transition fluide pour l'animation au survol */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Supprime la bordure par défaut des cartes */
+    border: none;
+    /* Ajoute une ombre légère pour donner de la profondeur */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.news-card:hover {
+    /* Déplace la carte vers le haut de 5px au survol */
+    transform: translateY(-5px);
+    /* Augmente l'ombre pour un effet de surélévation */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.news-card .card-img-top {
+    /* Définit une hauteur fixe pour les images */
+    height: 200px;
+    /* Assure que l'image couvre tout l'espace disponible sans déformation */
+    object-fit: cover;
+}
+
+.news-card .card-title {
+    /* Taille de police pour les titres des cartes d'actualités */
+    font-size: 1.1rem;
+    /* Rend le texte plus épais pour une meilleure lisibilité */
+    font-weight: 600;
+    /* Ajoute de l'espace au-dessus et en-dessous du titre */
+    margin: 0.5rem 0;
+    /* Définit la hauteur de ligne pour améliorer la lisibilité */
+    line-height: 1.4;
+}
+
+.news-card .card-text {
+    /* Taille de police légèrement plus petite pour le texte descriptif */
+    font-size: 0.9rem;
+    /* Couleur grise pour distinguer du titre */
+    color: #666;
+    /* Espacement en bas du texte */
+    margin-bottom: 1rem;
+}
+
+.news-card .btn-link {
+    /* Utilise la couleur primaire définie dans les variables Bootstrap */
+    color: var(--bs-primary);
+    /* Supprime le soulignement par défaut des liens */
+    text-decoration: none;
+    /* Épaisseur moyenne du texte pour le bouton */
+    font-weight: 500;
+}
+
+.news-card .btn-link:hover {
+    /* Assombrit la couleur primaire au survol */
+    color: var(--bs-primary-dark);
+}
+
+/* Styles pour la pagination */
+.pagination .page-link {
+    /* Couleur des liens de pagination selon la variable primaire Bootstrap */
+    color: var(--bs-primary);
+    /* Supprime les bordures des éléments de pagination */
+    border: none;
+    /* Définit l'espace interne des boutons de pagination */
+    padding: 0.5rem 1rem;
+    /* Ajoute un espacement entre les boutons */
+    margin: 0 0.2rem;
+    /* Arrondit fortement les coins pour un aspect moderne */
+    border-radius: 20px;
+}
+
+.pagination .page-item.active .page-link {
+    /* Applique la couleur de fond primaire pour la page active */
+    background-color: var(--bs-primary);
+    /* Texte blanc pour contraster avec le fond coloré */
+    color: white;
+}
+
+/* Styles pour les badges de catégorie */
+.badge {
+    /* Ajoute un rembourrage généreux aux badges */
+    padding: 0.5rem 1rem;
+    /* Arrondit les coins pour un look moderne */
+    border-radius: 15px;
+    /* Police moyennement épaisse pour une bonne lisibilité */
+    font-weight: 500;
+    /* Taille de police réduite pour les badges */
+    font-size: 0.8rem;
+}
+
+/* Hero principale */
+.news-card.hero {
+  /* Supprime la bordure standard */
+  border: none;
+  /* Ajoute une ombre plus prononcée pour mettre en avant l'élément principal */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  /* Transition douce pour l'effet d'ombre au survol */
+  transition: box-shadow 0.3s;
+}
+.news-card.hero:hover {
+  /* Renforce l'ombre au survol pour un effet de profondeur */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+.news-card.hero img {
+  /* Utilise toute la largeur disponible */
+  width: 100%;
+  /* Hauteur plus importante que les images standard pour l'élément hero */
+  height: 320px;
+  /* Assure que l'image couvre tout l'espace sans déformation */
+  object-fit: cover;
+  /* Arrondit uniquement les coins supérieurs */
+  border-radius: 12px 12px 0 0;
+}
+.news-card .badge {
+  /* Taille de police plus grande pour le badge de l'article principal */
+  font-size: 1rem;
+  /* Police en gras pour un meilleur impact visuel */
+  font-weight: 700;
+  /* Espacement interne proportionnel à la taille du texte */
+  padding: 0.5em 1em;
+  /* Coins très arrondis pour un style badge */
+  border-radius: 20px;
+}
+
+/* Cartes secondaires */
+.all-news-article .card {
+  /* Transition combinée pour la transformation et l'ombre */
+  transition: transform 0.2s, box-shadow 0.2s;
+  /* Coins arrondis pour toutes les cartes */
+  border-radius: 12px;
+}
+.all-news-article .card:hover {
+  /* Effet combiné de déplacement vers le haut et d'agrandissement au survol */
+  transform: translateY(-6px) scale(1.03);
+  /* Ombre plus prononcée au survol */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.all-news-article img {
+  /* Hauteur fixe pour les images des articles secondaires */
+  height: 180px;
+  /* Maintient les proportions de l'image en remplissant l'espace */
+  object-fit: cover;
+  /* Arrondit uniquement les coins supérieurs de l'image */
+  border-radius: 12px 12px 0 0;
+}
+.card-title {
+  /* Taille intermédiaire pour les titres de carte */
+  font-size: 1.1rem;
+  /* Titre en gras pour une meilleure lisibilité */
+  font-weight: 700;
+}
+.card-text {
+  /* Taille légèrement réduite pour le texte descriptif */
+  font-size: 0.98rem;
+}
+
+/* Sidebar */
+.card.mb-4 ul li {
+  /* Affiche les éléments de liste en flex pour aligner les contenus */
+  display: flex;
+  /* Centre verticalement les éléments */
+  align-items: center;
+  /* Ajoute un espace entre l'image et le texte */
+  gap: 0.7em;
+}
+.card.mb-4 img {
+  /* Définit la largeur des vignettes dans la barre latérale */
+  width: 48px;
+  /* Maintient le rapport hauteur/largeur carré */
+  height: 48px;
+  /* Assure que l'image couvre l'espace sans déformation */
+  object-fit: cover;
+  /* Arrondit légèrement les coins des vignettes */
+  border-radius: 8px;
+}
+
+/* Pagination */
+.pagination .page-link {
+  /* Taille de police plus grande pour les liens de pagination */
+  font-size: 1.1rem;
+  /* Rembourrage proportionnel à la taille du texte */
+  padding: 0.6em 1.2em;
+  /* Coins légèrement arrondis pour les boutons de pagination */
+  border-radius: 8px;
+}
+
+.latest-link {
+    /* Couleur du texte des liens d’actualités récentes (sidebar) */
+    color: #222;
+    /* Transition douce pour le changement de couleur au survol */
+    transition: color 0.2s;
+}
+.latest-link:hover {
+    /* Change la couleur du lien au survol pour la couleur principale du site */
+    color: var(--bs-primary);
+    /* Ajoute un soulignement au survol pour indiquer l’interactivité */
+    text-decoration: underline;
+}
+.card {
+    /* Arrondit les coins de toutes les cartes */
+    border-radius: 1rem;
+}
+.card .card-title {
+    /* Taille de police plus grande pour les titres de carte */
+    font-size: 1.2rem;
+    /* Titre en gras pour une meilleure lisibilité */
+    font-weight: 700;
+}
+
+.social-icons {
+  /* Affiche les icônes sociales en ligne avec un espace entre elles */
+  display: flex;
+  /* Centre horizontalement les icônes */
+  justify-content: center;
+  /* Espace horizontal entre chaque icône */
+  gap: 1.2rem;
+  /* Marge en haut pour séparer du contenu précédent */
+  margin-top: 1rem;
+}
+.social-icon {
+  /* Affiche chaque icône comme un cercle centré */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Taille fixe pour chaque icône */
+  width: 48px;
+  height: 48px;
+  /* Rend l’icône parfaitement ronde */
+  border-radius: 50%;
+  /* Fond légèrement blanc et transparent */
+  background: rgba(255,255,255,0.08);
+  /* Transition douce pour le fond et la transformation au survol */
+  transition: background 0.2s, transform 0.2s;
+  /* Supprime le soulignement des liens */
+  text-decoration: none;
+}
+.social-icon:hover {
+  /* Fond plus visible au survol */
+  background: rgba(255,255,255,0.18);
+  /* Légère mise à l’échelle pour effet d’agrandissement au survol */
+  transform: scale(1.08);
+}
+.social-icon svg {
+  /* Affiche le SVG en bloc pour un alignement correct */
+  display: block;
+}
