@@ -1,6 +1,6 @@
 /* General Styles */
 :root {
-    --primary-color: #a30606;
+    --primary-color: #840404;
     --secondary-color: #28a745;
     --accent-color: #a30606;
     --light-color: #f8f9fa;
@@ -9,6 +9,9 @@
     --text-light: #6c757d;
     --white: #fff;
     --black: #000;
+    --radius: 8px;
+    --accent-gold-dark: #d9b800;
+    --accent-gold: #f7d000;
 }
 
 body {
@@ -60,27 +63,31 @@ header {
     background-color: #05b360;
 }
 
-/* Page Title Section */
+/* 
+ * Page Title Section Styles 
+ */
 .page-title-section {
-    background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
-    background-size: cover;
-    color: var(--white);
-    padding: 6rem 0 4rem;
-    text-align: center;
+    background: #840404;
+    padding: 60px 0;
+    color: white;
+    margin-bottom: 40px;
 }
 
 .page-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 .page-subtitle {
     font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
 }
 
 /* Section Titles */
@@ -89,7 +96,7 @@ header {
     font-weight: 700;
     margin-bottom: 2rem;
     position: relative;
-    color: var(--primary-color);
+    color: #840404;
     text-align: center;
 }
 
@@ -211,8 +218,8 @@ header {
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: #218838; /* Vert plus foncé au survol */
+    border-color: #1e7e34;
 }
 
 /* Stadium List Items */
@@ -614,42 +621,39 @@ header {
     padding: 1.25rem;
 }
 
-/* Newsletter Section */
+/* 
+ * Newsletter Section Styles 
+ */
 .newsletter-section {
-   background: linear-gradient(rgba(132, 4, 4, 0.9), rgba(132, 4, 4, 0.7)), url('../img/about/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/newsletter-bg.jpg');
     background-size: cover;
-    color: var(--white);
-    padding: 4rem 0;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
 }
 
 .newsletter-form .form-control {
     height: 50px;
-    border-radius: 50px 0 0 50px;
-    border: none;
-    padding-left: 1.5rem;
+    border-radius: var(--radius) 0 0 var(--radius);
+    background-color: rgba(255,255,255,0.9);
 }
 
 .newsletter-form .btn {
-    border-radius: 0 50px 50px 0;
-    padding: 0.5rem 1.5rem;
-    height: 50px;
-    font-weight: 600;
-    /* Nouvelles propriétés pour la couleur verte */
-    background-color: #28a745; /* Vert standard Bootstrap */
-    border-color: #28a745;
-    color: white;
-    transition: background-color 0.3s, border-color 0.3s; /* Transition fluide */
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--dark);
+    font-weight: 700;
 }
 
 .newsletter-form .btn:hover {
-    background-color: #218838; /* Vert plus foncé au survol */
-    border-color: #1e7e34;
+    background-color: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
 }
-
 /* Footer Styles */
 .footer {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color:#1a1a1a;
+    color: #f8f8f8;
     padding: 4rem 0 2rem;
 }
 
@@ -686,7 +690,7 @@ header {
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: #f7d000;
     padding-left: 5px;
 }
 
@@ -940,8 +944,10 @@ header {
     }
     
     .footer {
-        text-align: center;
-    }
+    background-color: var(--dark);
+    color: var(--light);
+    margin: 0;
+}
     
     .footer h5::after {
         left: 50%;
