@@ -1,18 +1,23 @@
+// Attend que le DOM soit entièrement chargé avant d'exécuter le code
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all slideshows
+    // Initialise tous les diaporamas
     initSlideshows();
     
-    // Initialize countdown
+    // Initialise le compte à rebours
     initCountdown();
     
-    // Smooth scrolling for navigation
+    // Initialise le défilement fluide pour la navigation
     initSmoothScrolling();
 });
 
+// Fonction pour initialiser les diaporamas
 function initSlideshows() {
+    // Sélectionne tous les conteneurs de diaporama
     const slideshowContainers = document.querySelectorAll('.slideshow-container, .sponsors-slideshow');
     
+    // Pour chaque conteneur de diaporama
     slideshowContainers.forEach(container => {
+        // Éléments du diaporama
         const track = container.querySelector('.slideshow-track, .sponsors-track');
         const slides = container.querySelectorAll('.slide, .sponsor-slide');
         const prevBtn = container.querySelector('.prev');
@@ -21,7 +26,7 @@ function initSlideshows() {
         let currentIndex = 0;
         let slideInterval;
         
-        // Create dots if container exists
+        // Crée les indicateurs de points (dots) si le conteneur existe
         if (dotsContainer) {
             slides.forEach((_, index) => {
                 const dot = document.createElement('div');
@@ -34,99 +39,104 @@ function initSlideshows() {
         
         const dots = container.querySelectorAll('.dot');
         
-        // Start auto-scrolling
+        // Démarre le diaporama automatique
         startSlideshow();
         
-        // Function to go to specific slide
+        // Fonction pour aller à une diapositive spécifique
         function goToSlide(index) {
-            // Reset all slides and dots
+            // Réinitialise toutes les diapositives et points
             slides.forEach(slide => slide.classList.remove('active'));
             if (dots.length > 0) {
                 dots.forEach(dot => dot.classList.remove('active'));
             }
             
-            // Set new active slide and dot
+            // Définit la nouvelle diapositive et point actifs
             currentSlide = index;
             slides[currentSlide].classList.add('active');
             if (dots.length > 0) {
                 dots[currentSlide].classList.add('active');
             }
             
-            // Update track position
+            // Met à jour la position de la piste
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
             
-            // Reset timer
+            // Réinitialise le minuteur
             resetSlideshow();
         }
         
-        // Function to go to next slide
+        // Fonction pour passer à la diapositive suivante
         function nextSlide() {
             const nextIndex = (currentSlide + 1) % slides.length;
             goToSlide(nextIndex);
         }
         
-        // Function to start auto-scrolling
+        // Fonction pour démarrer le défilement automatique
         function startSlideshow() {
-            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            slideInterval = setInterval(nextSlide, 5000); // Change de diapositive toutes les 5 secondes
         }
         
-        // Function to reset timer
+        // Fonction pour réinitialiser le minuteur
         function resetSlideshow() {
             clearInterval(slideInterval);
             startSlideshow();
         }
         
-        // Event listeners for buttons
+        // Écouteurs d'événements pour les boutons
         if (nextBtn) nextBtn.addEventListener('click', nextSlide);
         if (prevBtn) prevBtn.addEventListener('click', () => {
             const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
             goToSlide(prevIndex);
         });
         
-        // Pause on hover (optional)
+        // Met en pause au survol 
         container.addEventListener('mouseenter', () => clearInterval(slideInterval));
         container.addEventListener('mouseleave', startSlideshow);
     });
 }
 
+// Fonction pour initialiser le compte à rebours
 function initCountdown() {
+    // Date du tournoi (21 décembre 2025)
     const tournamentDate = new Date('December 21, 2025 00:00:00').getTime();
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
     const secondsEl = document.getElementById('seconds');
     
+    // Fonction pour mettre à jour le compte à rebours
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = tournamentDate - now;
         
-        // Time calculations
+        // Calculs du temps restant
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        // Update DOM
+        // Met à jour le DOM
         if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
         if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
         if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
         if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
         
-        // If countdown is finished
+        // Si le compte à rebours est terminé
         if (distance < 0) {
             clearInterval(countdownInterval);
             document.querySelector('.countdown-timer').innerHTML = '<div class="tournament-begun">The tournament has begun!</div>';
         }
     }
     
-    // Initial update
+    // Mise à jour initiale
     updateCountdown();
     
-    // Update every second
+    // Met à jour toutes les secondes
     const countdownInterval = setInterval(updateCountdown, 1000);
 }
 
+// Fonction pour initialiser le défilement fluide
 function initSmoothScrolling() {
+    // Sélectionne tous les liens d'ancrage
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -136,9 +146,10 @@ function initSmoothScrolling() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Calculate header height for offset
+                // Calcule la hauteur de l'en-tête pour le décalage
                 const headerHeight = document.querySelector('.main-header').offsetHeight;
                 
+                // Défilement fluide vers la cible
                 window.scrollTo({
                     top: targetElement.offsetTop - headerHeight,
                     behavior: 'smooth'
